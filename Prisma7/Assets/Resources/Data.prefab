@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114286344013448648}
   - component: {fileID: 114817009447118542}
   - component: {fileID: 114485381752848230}
+  - component: {fileID: 114130665364723832}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -42,6 +43,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114130665364723832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111523512907480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0945b51b85f920e44a1c70f0d12e2f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondLevels:
+  - levelNumber: 0
+    color: {r: 0.6666667, g: 0.38431373, b: 0.77254903, a: 1}
+  - levelNumber: 1
+    color: {r: 0.4745098, g: 0.6666667, b: 0.85882354, a: 1}
+  - levelNumber: 2
+    color: {r: 0.42745098, g: 0.80784315, b: 0.84313726, a: 1}
+  - levelNumber: 3
+    color: {r: 0.2784314, g: 0.9098039, b: 0.34117648, a: 1}
+  - levelNumber: 4
+    color: {r: 1, g: 0.84705883, b: 0.24313726, a: 1}
+  - levelNumber: 5
+    color: {r: 1, g: 0.6313726, b: 0.27058825, a: 1}
+  - levelNumber: 6
+    color: {r: 0.99607843, g: 0.49803922, b: 0.5019608, a: 1}
+  actualDiamondLevel: 0
 --- !u!114 &114286344013448648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -54,7 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isArcade: 0
-  figurasManager: {fileID: 0}
+  figurasData: {fileID: 0}
+  levelsData: {fileID: 0}
   currentLevel: 
 --- !u!114 &114485381752848230
 MonoBehaviour:
@@ -75,19 +104,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1111523512907480}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9e03f4206423149adfdc101febfb6a, type: 3}
+  m_Script: {fileID: 11500000, guid: 7635410c701bf214f808fa8f03650bca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runas:
   - name: Capsula
     go: {fileID: 1408149391732362, guid: 9e571ee09fa4adf4d99aeb672f271a6c, type: 2}
-    enabled: 1
+    enabled: 0
   - name: Cilindro
     go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 2}
     enabled: 1
   - name: Cubo
     go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
-    enabled: 0
+    enabled: 1
   - name: Esfera
     go: {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 2}
     enabled: 0

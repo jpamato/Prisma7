@@ -11,7 +11,8 @@ public class Data : MonoBehaviour
     const string PREFAB_PATH = "Data";
     
     static Data mInstance = null;
-	public FigurasManager figurasManager;
+	public FigurasData figurasData;
+	public LevelsData levelsData;
 
 	public static Data Instance
     {
@@ -54,7 +55,8 @@ public class Data : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
-		figurasManager = GetComponent<FigurasManager> ();
+		figurasData = GetComponent<FigurasData> ();
+		levelsData = GetComponent<LevelsData> ();
 
     }
     void Update()
