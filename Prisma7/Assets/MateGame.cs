@@ -9,10 +9,13 @@ public class MateGame : MonoBehaviour {
 	public Text timerField;
 	public Image timerImage;
 	public GameObject doneSign;
+	public GameObject loseSign;
 
 	public int totalTime = 20;
 	public int actualTime;
 	private bool timeRunning;
+
+	Color clockColor;
 
 	public states state;
 	public enum states
@@ -72,5 +75,29 @@ public class MateGame : MonoBehaviour {
 
 		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
 
+	}
+
+	public void TimePenalty(){
+		clockColor = timerImage.color;
+		timerImage.color = Color.red;
+		
+		actualTime--;
+		string secText = "";
+		if (actualTime < 10)
+			secText = "0" + actualTime.ToString();
+		else
+			secText = actualTime.ToString();
+		timerField.text = "00:" + secText;
+
+		if (actualTime < 1)
+			Events.OnTimeOver ();
+
+
+		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
+		Invoke ("ResetClockColor", 0.5f);
+	}
+
+	void ResetClockColor(){
+		timerImage.color = clockColor;
 	}
 }

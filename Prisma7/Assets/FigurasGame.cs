@@ -16,8 +16,16 @@ public class FigurasGame : MateGame {
 	void Start () {
 		Events.OnMouseCollide += FigureSelect;
 		Events.FiguraComplete += FiguraComplete;
+		Events.OnTimeOver = TimeOver;
+		Init ();
+	}
+
+	void Init(){
+		doneSign.SetActive (false);
+		loseSign.SetActive (false);
 		enabledButtons = new Dictionary<string,bool> ();
-		figura = Data.Instance.figurasData.figuras.Find (x=>x.go.name == figuraGO.name);
+		//figura = Data.Instance.figurasData.figuras.Find (x=>x.go.name == figuraGO.name);
+		SetFigura();
 		foreach (GameObject go in runasButtons) {
 			bool enabled = Data.Instance.figurasData.runas.Find (x=>x.go.name ==go.name).enabled;
 			if (!enabled) {
@@ -29,6 +37,7 @@ public class FigurasGame : MateGame {
 		}
 		SetBarColor ();
 		InitTimer ();
+		state = states.PLAYING;
 	}
 
 	void OnDestroy(){
@@ -42,12 +51,14 @@ public class FigurasGame : MateGame {
 	}
 
 	void FigureSelect(GameObject hit){		
-		if (hit.tag == "Runa") {
+		if (hit.tag == "Runa" && state == states.PLAYING) {
 			if (enabledButtons[hit.name]) {
 				bool done = figura.CheckRuna (hit.name);
 				Transform t = figuraGO.transform.Find (hit.name);
 				if (t != null) {
 					t.GetComponent<Renderer> ().material.color = Color.red;
+				} else {
+					TimePenalty ();
 				}
 
 				if (done)
@@ -60,6 +71,60 @@ public class FigurasGame : MateGame {
 		state = states.ENDED;
 		colorBar.value += 0.1f;
 		doneSign.SetActive (true);
+		foreach (GameObject go in runasButtons)
+			Destroy (go);
+		runasButtons.Clear ();
+		Destroy (figuraGO);
+		Invoke ("Init", 3);
 	}
 
+	void SetFigura(){
+		for (int i = 0; i < Data.Instance.figurasData.figuras.Count; i++) {			
+			if (!Data.Instance.figurasData.figuras [i].done) {
+				figura = Data.Instance.figurasData.figuras [i];
+				figuraGO = Instantiate (figura.go);
+				figuraGO.transform.SetParent(gameObject.transform.Find("Figura"));
+				figuraGO.transform.localPosition = Vector3.zero;
+				figuraGO.transform.localRotation = Quaternion.identity;
+				i = Data.Instance.figurasData.figuras.Count;
+			}
+		}
+		SetButtons ();
+	}
+
+	void SetButtons(){
+		for (int i = 0; i < 5; i++) {
+			if (i < figura.runas.Count) {
+				runasButtons.Add (figura.runas [i].go);
+			} else {
+				FigurasData.Runa r = Data.Instance.figurasData.GetRandomRuna ();
+				if (runasButtons.Contains (r.go)) {
+					i--;
+				} else {
+					runasButtons.Add (r.go);
+				}
+
+			}				
+		}
+		Utils.Shuffle (runasButtons);
+
+		for(int i=0;i<runasButtons.Count;i++){
+			string name = runasButtons [i].name;
+			runasButtons[i] = Instantiate (runasButtons[i]);
+			runasButtons [i].name = name;
+			runasButtons[i].transform.SetParent(gameObject.transform.Find("Runas"));
+			runasButtons[i].transform.localPosition = new Vector3(2*i,0,0);
+		}
+	}
+
+	void TimeOver(){
+		state = states.ENDED;
+		loseSign.SetActive (true);
+		foreach (GameObject go in runasButtons)
+			Destroy (go);
+		runasButtons.Clear ();
+		Destroy (figuraGO);
+		figura.ClearRunas ();
+		Invoke ("Init", 3);
+	}
 }

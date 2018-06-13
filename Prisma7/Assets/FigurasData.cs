@@ -41,5 +41,14 @@ public class FigurasData : MonoBehaviour {
 			}
 			return done;
 		}
+
+		public void ClearRunas(){
+			foreach(Runa r in runas)
+				r.enabled = false;
+		}
+	}
+
+	public Runa GetRandomRuna(){
+		return runas [UnityEngine.Random.Range (0,runas.Count)];
 	}
 }
