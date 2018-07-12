@@ -7,6 +7,7 @@ public class LevelsData : MonoBehaviour {
 
 	public List<DiamondLevel> diamondLevels;
 	public int actualDiamondLevel;
+	public float actualLevelPercent;//0-1
 
 	// Use this for initialization
 	void Start () {
