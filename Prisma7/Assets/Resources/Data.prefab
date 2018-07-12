@@ -116,8 +116,12 @@ MonoBehaviour:
     enabled: 1
   - go: {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 2}
     enabled: 1
-  - go: {fileID: 1354069394452052, guid: 15870b654d16876438d4d3ff7a2947cf, type: 2}
-    enabled: 0
+  - go: {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 2}
+    enabled: 1
+  - go: {fileID: 1188766808447460, guid: fd0cb0ddfcaa5334c896650af9a3005c, type: 2}
+    enabled: 1
+  - go: {fileID: 1433994642584956, guid: 68bcffb889b0a1348a11d066f625e973, type: 2}
+    enabled: 1
   figuras:
   - go: {fileID: 1875657867419506, guid: 48e2a6940bce328458979f4e5c3d2f03, type: 2}
     runas:
@@ -138,6 +142,31 @@ MonoBehaviour:
     - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
       enabled: 0
     - go: {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 2}
+      enabled: 0
+    - go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 2}
+      enabled: 0
+    done: 0
+  - go: {fileID: 1706156145881036, guid: 19d912a72fe3b144aa464b56306f98b4, type: 2}
+    runas:
+    - go: {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 2}
+      enabled: 0
+    - go: {fileID: 1188766808447460, guid: fd0cb0ddfcaa5334c896650af9a3005c, type: 2}
+      enabled: 0
+    done: 0
+  - go: {fileID: 1318863332139600, guid: e99a3561d3623e54d8d7a1965dc2ef66, type: 2}
+    runas:
+    - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
+      enabled: 0
+    - go: {fileID: 1433994642584956, guid: 68bcffb889b0a1348a11d066f625e973, type: 2}
+      enabled: 0
+    - go: {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 2}
+      enabled: 0
+    done: 0
+  - go: {fileID: 1893822111274090, guid: 9e85f21393055c945a21541577c90ff3, type: 2}
+    runas:
+    - go: {fileID: 1188766808447460, guid: fd0cb0ddfcaa5334c896650af9a3005c, type: 2}
+      enabled: 0
+    - go: {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 2}
       enabled: 0
     - go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 2}
       enabled: 0

@@ -9,6 +9,7 @@ public class MateGame : MonoBehaviour {
 	public Text timerField;
 	public Image timerImage;
 	public GameObject doneSign;
+	public GameObject colorDoneSign;
 	public GameObject loseSign;
 
 	public int totalTime = 20;
