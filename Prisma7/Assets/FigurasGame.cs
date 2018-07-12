@@ -29,7 +29,10 @@ public class FigurasGame : MateGame {
 		foreach (GameObject go in runasButtons) {
 			bool enabled = Data.Instance.figurasData.runas.Find (x=>x.go.name ==go.name).enabled;
 			if (!enabled) {
-				go.GetComponent<Renderer> ().material.color = new Color (0.5F, 0.5F, 0.5F, 0.5f);
+				Renderer r = go.GetComponent<Renderer> ();
+				if(r==null)
+					r = go.GetComponentInChildren<Renderer> ();
+				r.material.color = new Color (0.25F, 0.25F, 0.25F, 0.25f);
 				enabledButtons.Add (go.name, false);
 			} else {
 				enabledButtons.Add (go.name, true);
@@ -56,7 +59,10 @@ public class FigurasGame : MateGame {
 				bool done = figura.CheckRuna (hit.name);
 				Transform t = figuraGO.transform.Find (hit.name);
 				if (t != null) {
-					t.GetComponent<Renderer> ().material.color = Color.red;
+					Renderer r = t.GetComponent<Renderer> ();
+					if(r==null)
+						r = t.GetComponentInChildren<Renderer> ();
+					r.material.color = Color.red;
 				} else {
 					TimePenalty ();
 				}
@@ -69,8 +75,11 @@ public class FigurasGame : MateGame {
 
 	void FiguraComplete(string name){
 		state = states.ENDED;
-		colorBar.value += 0.1f;
-		doneSign.SetActive (true);
+		colorBar.value += 1;
+		if (colorBar.value == colorBar.maxValue)
+			colorDoneSign.SetActive (true);
+		else
+			doneSign.SetActive (true);
 		foreach (GameObject go in runasButtons)
 			Destroy (go);
 		runasButtons.Clear ();
