@@ -63,7 +63,12 @@ public class Data : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            Application.Quit();
-        }
+            //Application.Quit();
+			SceneManager.LoadScene(0);
+		}else if(Input.GetKeyDown(KeyCode.Alpha2))
+		{
+			//Application.Quit();
+			SceneManager.LoadScene(1);
+		}
     }
 }

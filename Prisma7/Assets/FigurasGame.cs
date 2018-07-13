@@ -14,6 +14,7 @@ public class FigurasGame : MateGame {
 
 	// Use this for initialization
 	void Start () {
+		colorBar.value = Data.Instance.levelsData.actualLevelPercent * colorBar.maxValue;
 		Events.OnMouseCollide += FigureSelect;
 		Events.FiguraComplete += FiguraComplete;
 		Events.OnTimeOver = TimeOver;
@@ -45,7 +46,7 @@ public class FigurasGame : MateGame {
 
 	void OnDestroy(){
 		Events.OnMouseCollide -= FigureSelect;
-		Events.FiguraComplete += FiguraComplete;
+		Events.FiguraComplete -= FiguraComplete;
 	}
 	
 	// Update is called once per frame
@@ -76,6 +77,7 @@ public class FigurasGame : MateGame {
 	void FiguraComplete(string name){
 		state = states.ENDED;
 		colorBar.value += 1;
+		Data.Instance.levelsData.actualLevelPercent = 1f*colorBar.value / colorBar.maxValue;
 		if (colorBar.value == colorBar.maxValue)
 			colorDoneSign.SetActive (true);
 		else
@@ -84,7 +86,8 @@ public class FigurasGame : MateGame {
 			Destroy (go);
 		runasButtons.Clear ();
 		Destroy (figuraGO);
-		Invoke ("Init", 3);
+		//Invoke ("Init", 3);
+		Invoke ("BackToWorld", 3);
 	}
 
 	void SetFigura(){
@@ -134,6 +137,11 @@ public class FigurasGame : MateGame {
 		runasButtons.Clear ();
 		Destroy (figuraGO);
 		figura.ClearRunas ();
-		Invoke ("Init", 3);
+		Invoke ("BackToWorld", 3);
+		//Invoke ("Init", 3);
+	}
+
+	void BackToWorld(){
+		Data.Instance.LoadScene ("World");
 	}
 }
