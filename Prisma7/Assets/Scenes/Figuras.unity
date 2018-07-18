@@ -16492,8 +16492,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Mir\xE1 la figura m\xE1gica, reconoc\xE9 sus formas y toc\xE1 las runas
-    correspondientes.\n\xA1Buena suerte!\t"
+  m_Text: "Mir\xE1 las esculturas de cristal, reconoc\xE9 sus formas y toc\xE1 las
+    runas correspondientes.\n\xA1Buena suerte!\t"
 --- !u!222 &1598251663
 CanvasRenderer:
   m_ObjectHideFlags: 0
