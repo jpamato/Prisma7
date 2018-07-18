@@ -8,8 +8,8 @@ public class FigurasGame : MateGame {
 	public GameObject figuraGO;
 	public List<GameObject> runasButtons;
 	public Color figurOKColor;
-	public GameObject figurOKPS;
-	public GameObject figurWrongPS;
+	public GameObject figurOKPS1,figurOKPS2;
+	public GameObject figurWrongPS1,figurWrongPS2;
 
 	Dictionary<string, bool> enabledButtons;
 
@@ -74,38 +74,45 @@ public class FigurasGame : MateGame {
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
 					r.material.color = figurOKColor;
-					figurOKPS.SetActive (true);
-					Vector3 p = figurOKPS.transform.position;
-					Vector3 h = hit.gameObject.transform.position;
-					figurOKPS.transform.position = new Vector3(h.x,h.y+2,h.z);
+					figurOKPS1.SetActive (true);
+					figurOKPS2.SetActive (true);
+					Vector3 h1 = hit.gameObject.transform.position;
+					Vector3 h2 = figuraGO.transform.position;
+					figurOKPS1.transform.position = new Vector3(h1.x,h1.y+2,h1.z);
+					figurOKPS2.transform.position = new Vector3(h2.x,h2.y+2,h2.z);
 					Invoke ("StopFiguraOKPS", 1f);
 				} else {
 					TimePenalty ();
-					figurWrongPS.SetActive (true);
-					Vector3 p = figurWrongPS.transform.position;
-					Vector3 h = hit.gameObject.transform.position;
-					figurWrongPS.transform.position = new Vector3(h.x,h.y-5,h.z);
+					figurWrongPS1.SetActive (true);
+					figurWrongPS2.SetActive (true);
+					Vector3 h1 = hit.gameObject.transform.position;
+					Vector3 h2 = figuraGO.transform.position;
+					figurWrongPS1.transform.position = new Vector3(h1.x,h1.y-5,h1.z);
+					figurWrongPS2.transform.position = new Vector3(h2.x,h2.y-5,h2.z);
 					Invoke ("StopFigurWrongPS", 1f);
 				}
 
-				if (done)
+				if (done) {
+					state = states.ENDED;
 					Invoke ("FiguraComplete", 1.1f);
+				}
 
 			}
 		}
 	}
 
 	void StopFigurWrongPS(){
-		figurWrongPS.SetActive (false);
+		figurWrongPS1.SetActive (false);
+		figurWrongPS2.SetActive (false);
 	}
 
 	void StopFiguraOKPS(){
-		figurOKPS.SetActive (false);
+		figurOKPS1.SetActive (false);
+		figurOKPS2.SetActive (false);
 	}
 
 	void FiguraComplete(){
 		Events.FiguraComplete (figura.go.name);
-		state = states.ENDED;
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		if (Data.Instance.levelsData.actualLevelPercent >= 1f)
