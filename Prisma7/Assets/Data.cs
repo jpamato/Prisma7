@@ -32,6 +32,7 @@ public class Data : MonoBehaviour
         }
     }
     public string currentLevel;
+	public int currentLevelIndex;
     public void LoadScene(string aLevelName)
     {
         this.currentLevel = aLevelName;
@@ -57,6 +58,7 @@ public class Data : MonoBehaviour
 
 		figurasData = GetComponent<FigurasData> ();
 		levelsData = GetComponent<LevelsData> ();
+		currentLevelIndex = SceneManager.GetActiveScene ().buildIndex;
 
     }
     void Update()
