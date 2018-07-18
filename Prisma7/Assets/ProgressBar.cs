@@ -8,7 +8,7 @@ public class ProgressBar : MonoBehaviour {
 	public Image image;
 
 	void Start () {
-		image.fillAmount = 0;
+		//image.fillAmount = 0;
 	}
 
 	public void SetValue(float _value) {

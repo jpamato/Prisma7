@@ -33,6 +33,7 @@ public class FruitsManager : MonoBehaviour {
 	{
 		Fruit fruit = Instantiate (newFruit);
 		fruit.transform.SetParent (target);
+		fruit.transform.localScale = new Vector2 (0.5f, 0.5f);
 		fruit.transform.localPosition = Vector3.zero;
 	}
 }

@@ -11,21 +11,23 @@ public class CharacterInputManager : MonoBehaviour {
 		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
 		
-		Vector3 mousePos = Input.mousePosition;
-		Ray mouseRay = cam.ScreenPointToRay(mousePos);
-		RaycastHit hit = new RaycastHit();
-
-		//If Right mouse button is pressed.
 		if (Input.GetMouseButtonDown(0)){
-			if(Physics.Raycast(mouseRay, out hit, 100))
+			
+			Vector3 mousePos = Input.mousePosition;
+			Ray mouseRay = cam.ScreenPointToRay(mousePos);
+
+			RaycastHit[] hits = Physics.RaycastAll(mouseRay);
+
+			for (int i = 0; i < hits.Length; i++)
 			{
+				RaycastHit hit = hits[i];
 				InteractiveObject io = hit.transform.gameObject.GetComponent<InteractiveObject> ();
 				if (io!= null) {
 					Events.OnCharacterHitInteractiveObject (io);
 					return;
 				}
 				else
-				if (hit.transform.gameObject.name == "floor") {
+					if (hit.transform.gameObject.name == "floor") {
 					Ray testRay = new Ray (hit.point, Vector3.up);
 					Events.OnFloorClicked (hit.point);
 				}

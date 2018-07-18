@@ -6,7 +6,7 @@ public class FruitNinja : MonoBehaviour {
 
 	public FruitsManager fruitsManager;
 	public ProgressBar progressBar;
-
+	InteractiveObject interactiveObject;
 	public int totalPoints;
 	int points;
 
@@ -20,10 +20,11 @@ public class FruitNinja : MonoBehaviour {
 		Events.OnFruitNinjaClickedBubble -= OnFruitNinjaClickedBubble;
 		Events.OpenFruitNinja -= Events.OpenFruitNinja;
 	}
-	void OpenFruitNinja()
+	void OpenFruitNinja(InteractiveObject _interactiveObject)
 	{
+		this.interactiveObject = _interactiveObject;
 		points = 0;
-		progressBar.SetValue (0);
+		progressBar.SetValue (1);
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
@@ -44,13 +45,15 @@ public class FruitNinja : MonoBehaviour {
 			points = totalPoints;
 			Done ();
 		}			
-		progressBar.SetValue ((float)points/(float)totalPoints);
+		progressBar.SetValue (1-(float)points/(float)totalPoints);
 	}
 	void Done()
 	{
 		fruitsManager.Reset ();
 		fruitsManager.gameObject.SetActive (false);
 		Game.Instance.ChangeMode (Game.modes.WORLD);
+		Events.CloseFruitNinja ();
+		interactiveObject.GetComponent<Door> ().OnOpen ();
 	}
 
 }
