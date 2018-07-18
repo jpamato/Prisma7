@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: bubbles
+  m_Name: bomb
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
     _SPECGLOSSMAP
@@ -106,12 +106,12 @@ Material:
     - _EmissionEnabled: 0
     - _EnableExternalAlpha: 0
     - _FlipbookMode: 0
-    - _GlossMapScale: 0.78
+    - _GlossMapScale: 0.81
     - _Glossiness: 0.35
     - _GlossyReflections: 1
     - _InvFade: 0.01
     - _LightingEnabled: 1
-    - _Metallic: 0.8
+    - _Metallic: 0.46
     - _Mode: 2
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -126,8 +126,8 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 1, g: 0.8970643, b: 0, a: 0.92941177}
-    - _EmissionColor: {r: 1, g: 0.70483726, b: 0.4009434, a: 1}
+    - _Color: {r: 0.754717, g: 0, b: 0.29860947, a: 0.92941177}
+    - _EmissionColor: {r: 0.39208794, g: 0.4202835, b: 0.9339623, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
