@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FruitsManager : MonoBehaviour {
 
+	public Vector2 speed;
 	public Fruit genericFruit;
 	public Fruit badFruit;
 
@@ -14,7 +15,7 @@ public class FruitsManager : MonoBehaviour {
 	}
 	public void Reset() {
 		CancelInvoke ();
-		Invoke ("Delayed", 0.1f);
+		Invoke ("Delayed", 0.2f);
 	}
 	void Delayed()
 	{
@@ -35,5 +36,6 @@ public class FruitsManager : MonoBehaviour {
 		fruit.transform.SetParent (target);
 		fruit.transform.localScale = new Vector2 (0.5f, 0.5f);
 		fruit.transform.localPosition = Vector3.zero;
+		fruit.Init (speed);
 	}
 }

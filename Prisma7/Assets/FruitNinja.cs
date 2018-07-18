@@ -22,6 +22,7 @@ public class FruitNinja : MonoBehaviour {
 	}
 	void OpenFruitNinja(InteractiveObject _interactiveObject)
 	{
+		Events.OnDragger (true);
 		this.interactiveObject = _interactiveObject;
 		points = 0;
 		progressBar.SetValue (1);
@@ -49,6 +50,7 @@ public class FruitNinja : MonoBehaviour {
 	}
 	void Done()
 	{
+		Events.OnDragger (false);
 		fruitsManager.Reset ();
 		fruitsManager.gameObject.SetActive (false);
 		Game.Instance.ChangeMode (Game.modes.WORLD);
