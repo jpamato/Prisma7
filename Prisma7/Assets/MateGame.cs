@@ -56,7 +56,7 @@ public class MateGame : MonoBehaviour {
 
 	public void TimerLoop()
 	{
-		Invoke ("TimerLoop", 1);
+		Invoke ("TimerLoop", 0.1f);
 
 		if(state == states.PLAYING)
 			actualTime--;
