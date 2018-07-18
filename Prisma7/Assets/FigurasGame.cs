@@ -9,6 +9,7 @@ public class FigurasGame : MateGame {
 	public List<GameObject> runasButtons;
 	public Color figurOKColor;
 	public GameObject figurOKPS;
+	public GameObject figurWrongPS;
 
 	Dictionary<string, bool> enabledButtons;
 
@@ -74,9 +75,17 @@ public class FigurasGame : MateGame {
 						r = t.GetComponentInChildren<Renderer> ();
 					r.material.color = figurOKColor;
 					figurOKPS.SetActive (true);
+					Vector3 p = figurOKPS.transform.position;
+					Vector3 h = hit.gameObject.transform.position;
+					figurOKPS.transform.position = new Vector3(h.x,h.y+2,h.z);
 					Invoke ("StopFiguraOKPS", 1f);
 				} else {
 					TimePenalty ();
+					figurWrongPS.SetActive (true);
+					Vector3 p = figurWrongPS.transform.position;
+					Vector3 h = hit.gameObject.transform.position;
+					figurWrongPS.transform.position = new Vector3(h.x,h.y-5,h.z);
+					Invoke ("StopFigurWrongPS", 1f);
 				}
 
 				if (done)
@@ -84,6 +93,10 @@ public class FigurasGame : MateGame {
 
 			}
 		}
+	}
+
+	void StopFigurWrongPS(){
+		figurWrongPS.SetActive (false);
 	}
 
 	void StopFiguraOKPS(){
