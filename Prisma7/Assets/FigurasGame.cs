@@ -18,7 +18,7 @@ public class FigurasGame : MateGame {
 		Events.OnMouseCollide += FigureSelect;
 		Events.FiguraComplete += FiguraComplete;
 		Events.OnTimeOver = TimeOver;
-		Init ();
+		Invoke ("Init", 5);
 	}
 
 	void Init(){
@@ -41,6 +41,7 @@ public class FigurasGame : MateGame {
 		}
 		SetBarColor ();
 		InitTimer ();
+		consigna.SetActive (false);
 		state = states.PLAYING;
 	}
 

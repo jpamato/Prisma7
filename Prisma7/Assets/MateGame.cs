@@ -11,6 +11,7 @@ public class MateGame : MonoBehaviour {
 	public GameObject doneSign;
 	public GameObject colorDoneSign;
 	public GameObject loseSign;
+	public GameObject consigna;
 
 	public int times2FullBar = 6;
 	public int totalTime = 20;
