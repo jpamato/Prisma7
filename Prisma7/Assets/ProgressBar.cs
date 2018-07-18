@@ -8,7 +8,8 @@ public class ProgressBar : MonoBehaviour {
 	public Image image;
 
 	void Start () {
-		if(Data.Instance.currentLevelIndex>0)
+		//if(Data.Instance.currentLevelIndex>0)
+		if(Data.Instance.currentLevel=="Figuras")
 			image.fillAmount = 0;
 	}
 
