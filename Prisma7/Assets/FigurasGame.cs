@@ -7,6 +7,7 @@ public class FigurasGame : MateGame {
 
 	public GameObject figuraGO;
 	public List<GameObject> runasButtons;
+	public Color figurOKColor;
 
 	Dictionary<string, bool> enabledButtons;
 
@@ -64,7 +65,7 @@ public class FigurasGame : MateGame {
 					Renderer r = t.GetComponent<Renderer> ();
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
-					r.material.color = Color.red;
+					r.material.color = figurOKColor;
 				} else {
 					TimePenalty ();
 				}

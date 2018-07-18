@@ -77,7 +77,7 @@ public class MateGame : MonoBehaviour {
 			Events.OnTimeOver ();
 
 
-		timerImage.fillAmount = ((float)(totalTime-actualTime)/(float)totalTime);
+		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
 
 	}
 
