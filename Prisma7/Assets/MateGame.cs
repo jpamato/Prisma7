@@ -5,16 +5,18 @@ using UnityEngine.UI;
 
 public class MateGame : MonoBehaviour {
 
-	public Slider colorBar;
+	public ColorBar colorBar;
 	public Text timerField;
 	public Image timerImage;
 	public GameObject doneSign;
 	public GameObject colorDoneSign;
 	public GameObject loseSign;
 
+	public int times2FullBar = 6;
 	public int totalTime = 20;
 	public int actualTime;
 	private bool timeRunning;
+	protected float levelBarStep;
 
 	Color clockColor;
 
@@ -38,7 +40,7 @@ public class MateGame : MonoBehaviour {
 	}
 
 	public void SetBarColor(){		
-		colorBar.fillRect.GetComponent<Image>().color = Data.Instance.levelsData.diamondLevels[Data.Instance.levelsData.actualDiamondLevel+1].color;
+		//colorBar.SetValue(Data.Instance.levelsData.diamondLevels[Data.Instance.levelsData.actualDiamondLevel+1].color);
 	}
 
 	public void InitTimer(){
@@ -74,7 +76,7 @@ public class MateGame : MonoBehaviour {
 			Events.OnTimeOver ();
 
 
-		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
+		timerImage.fillAmount = ((float)(totalTime-actualTime)/(float)totalTime);
 
 	}
 

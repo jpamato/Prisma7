@@ -13,8 +13,8 @@ public class FigurasGame : MateGame {
 	public FigurasData.Figura figura;
 
 	// Use this for initialization
-	void Start () {
-		colorBar.value = Data.Instance.levelsData.actualLevelPercent * colorBar.maxValue;
+	void Start () {		
+		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
 		Events.FiguraComplete += FiguraComplete;
 		Events.OnTimeOver = TimeOver;
@@ -76,9 +76,9 @@ public class FigurasGame : MateGame {
 
 	void FiguraComplete(string name){
 		state = states.ENDED;
-		colorBar.value += 1;
-		Data.Instance.levelsData.actualLevelPercent = 1f*colorBar.value / colorBar.maxValue;
-		if (colorBar.value == colorBar.maxValue)
+		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
+		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
+		if (Data.Instance.levelsData.actualLevelPercent >= 1f)
 			colorDoneSign.SetActive (true);
 		else
 			doneSign.SetActive (true);
