@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f39a9f951940f6d498bb8c28965c48ff
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: IM FELL Great Primer
+  fontNames:
+  - IM FELL Great Primer
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e2229f867110db040a4b22f841461659, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
