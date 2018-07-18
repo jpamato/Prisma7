@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 13622179}
+  - component: {fileID: 13622180}
   m_Layer: 0
   m_Name: Runas
   m_TagString: Untagged
@@ -135,7 +136,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 13622178}
   m_LocalRotation: {x: -0.1737342, y: -0, z: -0, w: 0.9847926}
-  m_LocalPosition: {x: -4, y: 3, z: 1}
+  m_LocalPosition: {x: -4, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1212654396}
@@ -149,6 +150,18 @@ Transform:
   m_Father: {fileID: 66339903}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -20.01, y: 0, z: 0}
+--- !u!114 &13622180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 13622178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25f1c9cdb88c6341807a56aeed310cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
 --- !u!1 &32856239
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,10 +332,14 @@ MonoBehaviour:
   figuraGO: {fileID: 606841407}
   runasButtons: []
   figurOKColor: {r: 0, g: 0.3647059, b: 0.7294118, a: 1}
+  figurOKPS: {fileID: 2053876997}
   figura:
     go: {fileID: 0}
     runas: []
     done: 0
+  runasTween: {fileID: 13622180}
+  consignaTween: {fileID: 585751052}
+  partidaGames: 3
 --- !u!4 &66339903
 Transform:
   m_ObjectHideFlags: 0
@@ -1085,6 +1102,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 585751051}
+  - component: {fileID: 585751052}
   m_Layer: 5
   m_Name: Consigna
   m_TagString: Untagged
@@ -1112,6 +1130,18 @@ RectTransform:
   m_AnchoredPosition: {x: -9, y: -598}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &585751052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585751050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e25f1c9cdb88c6341807a56aeed310cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.1
 --- !u!1 &603000754
 GameObject:
   m_ObjectHideFlags: 0
@@ -1482,7 +1512,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -5759,7 +5789,7 @@ ParticleSystem:
   lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -9966,7 +9996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2053876998
 Transform:
   m_ObjectHideFlags: 0

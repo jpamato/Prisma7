@@ -8,16 +8,22 @@ public class FigurasGame : MateGame {
 	public GameObject figuraGO;
 	public List<GameObject> runasButtons;
 	public Color figurOKColor;
+	public GameObject figurOKPS;
 
 	Dictionary<string, bool> enabledButtons;
 
 	public FigurasData.Figura figura;
 
+	public Tween runasTween;
+	public Tween consignaTween;
+
+	public int partidaGames;
+	int gamesPlayeds;
+
 	// Use this for initialization
 	void Start () {		
 		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
-		Events.FiguraComplete += FiguraComplete;
 		Events.OnTimeOver = TimeOver;
 		Invoke ("Init", 5);
 	}
@@ -42,13 +48,14 @@ public class FigurasGame : MateGame {
 		}
 		SetBarColor ();
 		InitTimer ();
-		consigna.SetActive (false);
+		//consigna.SetActive (false);
+		consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
+		runasTween.SetTween(new Vector3(-4f,3f,1f),0.05f);
 		state = states.PLAYING;
 	}
 
 	void OnDestroy(){
 		Events.OnMouseCollide -= FigureSelect;
-		Events.FiguraComplete -= FiguraComplete;
 	}
 	
 	// Update is called once per frame
@@ -66,17 +73,25 @@ public class FigurasGame : MateGame {
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
 					r.material.color = figurOKColor;
+					figurOKPS.SetActive (true);
+					Invoke ("StopFiguraOKPS", 1f);
 				} else {
 					TimePenalty ();
 				}
 
 				if (done)
-					Events.FiguraComplete (figura.go.name);
+					Invoke ("FiguraComplete", 1.1f);
+
 			}
 		}
 	}
 
-	void FiguraComplete(string name){
+	void StopFiguraOKPS(){
+		figurOKPS.SetActive (false);
+	}
+
+	void FiguraComplete(){
+		Events.FiguraComplete (figura.go.name);
 		state = states.ENDED;
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
@@ -88,8 +103,12 @@ public class FigurasGame : MateGame {
 			Destroy (go);
 		runasButtons.Clear ();
 		Destroy (figuraGO);
-		//Invoke ("Init", 3);
-		Invoke ("BackToWorld", 3);
+		gamesPlayeds++;
+		if (gamesPlayeds >= partidaGames) 
+			Invoke ("BackToWorld", 3);
+		else
+			Invoke ("Init", 3);
+		
 	}
 
 	void SetFigura(){
