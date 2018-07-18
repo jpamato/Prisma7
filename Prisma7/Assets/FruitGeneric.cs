@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class FruitGeneric : Fruit {
 	
-
-	void Update()
+	void FixedUpdate()
 	{
 		Vector2 pos = transform.localPosition;
-		speedV -= 10;
+		speedV -= (speed.y) /3;
 		pos.y += speedV * Time.deltaTime;
 		pos.x += speedH * Time.deltaTime;
 		transform.localPosition = pos;

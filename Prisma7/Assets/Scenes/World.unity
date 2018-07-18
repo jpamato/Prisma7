@@ -10315,7 +10315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b8784d914351440be5e52b5d39d129, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: {x: 2, y: 30}
+  speed: {x: 2, y: 55}
   genericFruit: {fileID: 114918499383039600, guid: 8e9dd3146e00d3b45ad6e515b890cd66,
     type: 2}
   badFruit: {fileID: 114441125408388272, guid: f67f319dd1e98734da4aedbbbee499c9, type: 2}

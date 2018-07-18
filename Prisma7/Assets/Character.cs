@@ -56,7 +56,7 @@ public class Character : MonoBehaviour {
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 0.5f;
 			OnFloorClicked (newPos);
-			Invoke ("EnterMinigame", 1);
+			Invoke ("EnterMinigame", 2);
 		}
 	}
 	void EnterMinigame()
