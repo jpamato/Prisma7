@@ -7,7 +7,7 @@ public class FigurasGame : MateGame {
 
 	public GameObject figuraGO;
 	public List<GameObject> runasButtons;
-	public Color figurOKColor;
+	public List<Material> figurOKMaterials;
 	public GameObject figurOKPS1,figurOKPS2;
 	public GameObject figurWrongPS1,figurWrongPS2;
 
@@ -73,7 +73,8 @@ public class FigurasGame : MateGame {
 					Renderer r = t.GetComponent<Renderer> ();
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
-					r.material.color = figurOKColor;
+					//r.material.color = figurOKColor;
+					r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
 					figurOKPS1.SetActive (true);
 					figurOKPS2.SetActive (true);
 					Vector3 h1 = hit.gameObject.transform.position;

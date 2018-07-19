@@ -3821,7 +3821,13 @@ MonoBehaviour:
   state: 0
   figuraGO: {fileID: 606841407}
   runasButtons: []
-  figurOKColor: {r: 0, g: 0.3647059, b: 0.7294118, a: 1}
+  figurOKMaterials:
+  - {fileID: 2100000, guid: 6c861eff026a68f499366de0be80de63, type: 2}
+  - {fileID: 2100000, guid: 8b11d25aeb3b9bd46a32e6b394122780, type: 2}
+  - {fileID: 2100000, guid: 84677f3a6be208d428798e8a52c02f16, type: 2}
+  - {fileID: 2100000, guid: a5aac6794fbc83a4a9e05e03eb110d0a, type: 2}
+  - {fileID: 2100000, guid: 9e20dcfabc1400b44b9b1b1cf961716e, type: 2}
+  - {fileID: 2100000, guid: 26948f85c961a2b499e8924dc9c7b18e, type: 2}
   figurOKPS1: {fileID: 2053876997}
   figurOKPS2: {fileID: 1716045236}
   figurWrongPS1: {fileID: 1778925199}
