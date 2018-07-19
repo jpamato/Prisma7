@@ -8,16 +8,26 @@ public class Dragger : MonoBehaviour {
 	bool isOn;
 	public GameObject panel;
 	public GameObject trailObject;
+	public ParticlesManager particles;
 
 	public void Start()
 	{
 		isOn = false;
 		panel.SetActive (false);
 		Events.OnDragger += OnDragger;
+		Events.OnFruitNinjaClickedBubble += OnFruitNinjaClickedBubble;
 	}
 	void OnDestroy()
 	{
 		Events.OnDragger -= OnDragger;
+		Events.OnFruitNinjaClickedBubble -= OnFruitNinjaClickedBubble;
+	}
+	bool addParticle;
+	Fruit.types fruitType;
+	void OnFruitNinjaClickedBubble(Fruit.types type)
+	{
+		addParticle = true;
+		this.fruitType = type;
 	}
 	void Update()
 	{
@@ -35,6 +45,10 @@ public class Dragger : MonoBehaviour {
 				RaycastHit hit = hits [i];
 				if (hit.transform.gameObject.name == "draggerPlane") {
 					trailObject.transform.position = hit.point;
+					if (addParticle) {
+						particles.SetOn (fruitType, hit.point);
+						addParticle = false;
+					}
 				}
 			}
 		} else if (Input.GetMouseButtonUp (0)) {

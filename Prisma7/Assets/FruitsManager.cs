@@ -22,8 +22,11 @@ public class FruitsManager : MonoBehaviour {
 		Utils.RemoveAllChildsIn (target);
 	}
 	void Loop () {
-		Invoke ("Loop", 0.25f);
+		Invoke ("Loop", 0.5f);
 
+		if (Random.Range (0, 10) < 3)
+			return;
+		
 		Fruit fruit = genericFruit;
 		if (Random.Range (0, 10) < 3)
 			fruit = badFruit;
