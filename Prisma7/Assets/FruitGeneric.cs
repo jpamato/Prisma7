@@ -8,8 +8,11 @@ public class FruitGeneric : Fruit {
 	{
 		Vector2 pos = transform.localPosition;
 		speedV -= (speed.y) /3;
-		pos.y += speedV * Time.deltaTime;
-		pos.x += speedH * Time.deltaTime;
+
+		float deltaTime = 0.02f;
+
+		pos.y += speedV * deltaTime;
+		pos.x += speedH * deltaTime;
 		transform.localPosition = pos;
 		if (pos.y < 0)
 			Destroy (this.gameObject);

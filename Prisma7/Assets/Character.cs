@@ -33,9 +33,11 @@ public class Character : MonoBehaviour {
 		Events.OnCharacterStopWalking -= OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject -= OnCharacterHitInteractiveObject;
 	}
-	void CloseFruitNinja()
+	void CloseFruitNinja(bool win)
 	{
 		state = states.PLAYING;
+		if (win)
+			anim.Cheer ();
 	}
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
@@ -51,21 +53,25 @@ public class Character : MonoBehaviour {
 			newPos.z -= 2;
 			OnFloorClicked (newPos);
 		} else {
-			state = states.ENTERING_DOOR;
+			
 			selectedInteractiveObject = io;
 			Vector3 newPos = io.transform.localPosition;
-			newPos.z -= 0.5f;
+			newPos.z -= 0.35f;
 			OnFloorClicked (newPos);
-			Invoke ("EnterMinigame", 2);
+			state = states.ENTERING_DOOR;
 		}
 	}
-	void EnterMinigame()
+	IEnumerator EnterMinigame()
 	{
-		if (state == states.ENTERING_DOOR) {
-			Data.Instance.LoadScene ("Figuras");
-		}
+		anim.Enter ();
+		yield return new WaitForSeconds (1.25f);
+		Data.Instance.LoadScene ("Figuras");
 	}
 	void OnFloorClicked (Vector3 pos) {
+		
+		if (state == states.ENTERING_DOOR)
+			return;
+		
 		target.transform.position = pos;
 		LookAtTarget (target);
 		Vector3 rot = transform.localEulerAngles;
@@ -90,6 +96,11 @@ public class Character : MonoBehaviour {
 		}
 
 		selectedInteractiveObject = null;
+		if (state == states.ENTERING_DOOR) {
+			StartCoroutine (EnterMinigame ());
+			return;
+		}		
+
 		anim.Idle ();
 	}
 }

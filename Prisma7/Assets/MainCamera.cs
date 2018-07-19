@@ -29,7 +29,7 @@ public class MainCamera : MonoBehaviour {
 		else
 			FollowingUpdate ();
 	}
-	void CloseFruitNinja()
+	void CloseFruitNinja(bool win)
 	{
 		state = states.FOLLOWING_CHARACTER;
 	}

@@ -11,7 +11,8 @@ public class CharacterAnimations : MonoBehaviour {
 	public enum states
 	{
 		IDLE,
-		WALK
+		WALK,
+		ENTER
 	}
 	void Start()
 	{
@@ -24,6 +25,13 @@ public class CharacterAnimations : MonoBehaviour {
 	public void Walk () {
 		anim.Play ("walk");
 		state = states.WALK;
+	}
+	public void Enter () {
+		anim.Play ("enter");
+		state = states.ENTER;
+	}
+	public void Cheer () {
+		anim.Play ("festejo");
 	}
 
 }
