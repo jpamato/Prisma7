@@ -37,6 +37,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4041102960714190}
+  - component: {fileID: 114043431715982964}
   m_Layer: 0
   m_Name: Prisma
   m_TagString: Untagged
@@ -51,7 +52,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1433994642584956}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4645854, y: -6.727255, z: -1.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4417613833012120}
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1347575923623098}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.5, y: -0.5, z: -1}
+  m_LocalPosition: {x: 0.5, y: -0.25, z: 0.25}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 4041102960714190}
@@ -84,7 +85,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: eb6864c55a3687148a8197658d0059ec, type: 2}
   m_StaticBatchInfo:
@@ -125,3 +125,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44880244, y: 0.3977084, z: 0.85959184}
   m_Center: {x: -0.22440122, y: 0.1988542, z: 0.26230246}
+--- !u!114 &114043431715982964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1433994642584956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b131f1bc58e5ff409bb348c5dd743b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doRotate: 1
+  speed: {x: 0, y: 0.2, z: 0}

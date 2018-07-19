@@ -51,4 +51,9 @@ public class FigurasData : MonoBehaviour {
 	public Runa GetRandomRuna(){
 		return runas [UnityEngine.Random.Range (0,runas.Count)];
 	}
+
+	public void ResetFiguresDone(){
+		foreach (Figura f in figuras)
+			f.done = false;
+	}
 }

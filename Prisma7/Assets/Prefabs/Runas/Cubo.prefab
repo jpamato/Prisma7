@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33261101426907244}
   - component: {fileID: 65528178429401090}
   - component: {fileID: 23254733110353760}
+  - component: {fileID: 114246849152543462}
   m_Layer: 0
   m_Name: Cubo
   m_TagString: Runa
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1999227643823362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.4883167, y: -8.039656, z: -1.16}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -55,7 +56,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: eb6864c55a3687148a8197658d0059ec, type: 2}
   m_StaticBatchInfo:
@@ -96,3 +96,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114246849152543462
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999227643823362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b131f1bc58e5ff409bb348c5dd743b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  doRotate: 1
+  speed: {x: 0, y: 0.2, z: 0}
