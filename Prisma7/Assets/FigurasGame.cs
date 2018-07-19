@@ -7,7 +7,7 @@ public class FigurasGame : MateGame {
 
 	public GameObject figuraGO;
 	public List<GameObject> runasButtons;
-	public Color figurOKColor;
+	public List<Material> figurOKMaterials;
 	public GameObject figurOKPS1,figurOKPS2;
 	public GameObject figurWrongPS1,figurWrongPS2;
 
@@ -73,7 +73,8 @@ public class FigurasGame : MateGame {
 					Renderer r = t.GetComponent<Renderer> ();
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
-					r.material.color = figurOKColor;
+					//r.material.color = figurOKColor;
+					r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
 					figurOKPS1.SetActive (true);
 					figurOKPS2.SetActive (true);
 					Vector3 h1 = hit.gameObject.transform.position;
@@ -115,19 +116,24 @@ public class FigurasGame : MateGame {
 		Events.FiguraComplete (figura.go.name);
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
-		if (Data.Instance.levelsData.actualLevelPercent >= 1f)
-			colorDoneSign.SetActive (true);
-		else
-			doneSign.SetActive (true);
 		foreach (GameObject go in runasButtons)
 			Destroy (go);
 		runasButtons.Clear ();
 		Destroy (figuraGO);
-		gamesPlayeds++;
-		if (gamesPlayeds >= partidaGames) 
+		if (Data.Instance.levelsData.actualLevelPercent >= 1f) {
+			colorDoneSign.SetActive (true);
+			Events.OnColorComplete ();
+			Data.Instance.figurasData.ResetFiguresDone ();
 			Invoke ("BackToWorld", 3);
-		else
-			Invoke ("Init", 3);
+		} else {
+			doneSign.SetActive (true);
+			gamesPlayeds++;
+			if (gamesPlayeds >= partidaGames) 
+				Invoke ("BackToWorld", 3);
+			else
+				Invoke ("Init", 3);
+		}
+
 		
 	}
 
@@ -167,6 +173,7 @@ public class FigurasGame : MateGame {
 			runasButtons [i].name = name;
 			runasButtons[i].transform.SetParent(gameObject.transform.Find("Runas"));
 			runasButtons[i].transform.localPosition = new Vector3(2*i,0,0);
+			runasButtons[i].transform.localRotation = Quaternion.identity;
 		}
 	}
 
