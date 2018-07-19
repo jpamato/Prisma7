@@ -14,11 +14,14 @@ public class MateGame : MonoBehaviour {
 	public GameObject consigna;
 
 	public int times2FullBar = 6;
+	[Tooltip("Tiempo en segundos")]
 	public int totalTime = 20;
 	public int actualTime;
 	private bool timeRunning;
 	protected float levelBarStep;
 
+	private float timerStep = 0.1f; // 100 milisegundos
+	private int totalTimeSteps;
 	Color clockColor;
 
 	public states state;
@@ -51,12 +54,13 @@ public class MateGame : MonoBehaviour {
 			timeRunning = true;
 			state = states.PLAYING;
 		}
-		actualTime = totalTime;
+		totalTimeSteps = (int)(totalTime / timerStep);
+		actualTime = totalTimeSteps;
 	}
 
 	public void TimerLoop()
 	{
-		Invoke ("TimerLoop", 0.1f);
+		Invoke ("TimerLoop", timerStep);
 
 		if(state == states.PLAYING)
 			actualTime--;
@@ -77,7 +81,7 @@ public class MateGame : MonoBehaviour {
 			Events.OnTimeOver ();
 
 
-		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
+		timerImage.fillAmount = 1-((float)(totalTimeSteps-actualTime)/(float)totalTimeSteps);
 
 	}
 

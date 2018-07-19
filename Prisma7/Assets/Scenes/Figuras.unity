@@ -3816,7 +3816,7 @@ MonoBehaviour:
   loseSign: {fileID: 1696698050}
   consigna: {fileID: 585751050}
   times2FullBar: 6
-  totalTime: 60
+  totalTime: 10
   actualTime: 0
   state: 0
   figuraGO: {fileID: 606841407}
