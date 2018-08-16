@@ -25,7 +25,7 @@ public class FigurasGame : MateGame {
 	void Start () {		
 		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
-		Events.OnTimeOver = TimeOver;
+		Events.OnTimeOver += TimeOver;
 		Invoke ("Init", 5);
 	}
 
@@ -57,6 +57,7 @@ public class FigurasGame : MateGame {
 
 	void OnDestroy(){
 		Events.OnMouseCollide -= FigureSelect;
+		Events.OnTimeOver -= TimeOver;
 	}
 	
 	// Update is called once per frame

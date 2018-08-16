@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Runa
+  - draggable_ui
+  - dropable_ui
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - gemas
   - 
   - 
   - 
@@ -39,6 +41,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: gemas
+    uniqueID: 3336972525
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

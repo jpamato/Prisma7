@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4782984183057282}
   - component: {fileID: 114286344013448648}
   - component: {fileID: 114817009447118542}
+  - component: {fileID: 114018816959660178}
   - component: {fileID: 114485381752848230}
   - component: {fileID: 114130665364723832}
   m_Layer: 0
@@ -43,6 +44,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114018816959660178
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111523512907480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 498c1adb45024414282ce7712fa6575d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemas:
+  - sprite: {fileID: 21300000, guid: cc237a164f16696488dda586febc875d, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: 036da022ae27df944a4ba8ed3d66afe5, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: ff1adb3b9c7b5874da141395a77ae417, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: b8b4b634a2feab94aada27cf03d42b79, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: a251c1556f94c0442a995b26d23e7c3a, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: d0ebd5c0a19e92c48957e992bb02aa5f, type: 3}
+    size: 0
+  - sprite: {fileID: 21300000, guid: acdd82065fa9850459c4942fe392b239, type: 3}
+    size: 0
 --- !u!114 &114130665364723832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -70,6 +97,7 @@ MonoBehaviour:
   - levelNumber: 6
     color: {r: 0.99607843, g: 0.49803922, b: 0.5019608, a: 1}
   actualDiamondLevel: 0
+  actualLevelPercent: 0
 --- !u!114 &114286344013448648
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -85,6 +113,7 @@ MonoBehaviour:
   figurasData: {fileID: 0}
   levelsData: {fileID: 0}
   currentLevel: 
+  currentLevelIndex: 0
 --- !u!114 &114485381752848230
 MonoBehaviour:
   m_ObjectHideFlags: 1
