@@ -57,19 +57,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gemas:
   - sprite: {fileID: 21300000, guid: cc237a164f16696488dda586febc875d, type: 3}
-    size: 0
+    size: 3
+  - sprite: {fileID: 21300000, guid: a251c1556f94c0442a995b26d23e7c3a, type: 3}
+    size: 3
+  - sprite: {fileID: 21300000, guid: d0ebd5c0a19e92c48957e992bb02aa5f, type: 3}
+    size: 2
+  - sprite: {fileID: 21300000, guid: acdd82065fa9850459c4942fe392b239, type: 3}
+    size: 2
+  - sprite: {fileID: 21300000, guid: b8b4b634a2feab94aada27cf03d42b79, type: 3}
+    size: 1
+  - sprite: {fileID: 21300000, guid: ff1adb3b9c7b5874da141395a77ae417, type: 3}
+    size: 1
   - sprite: {fileID: 21300000, guid: 036da022ae27df944a4ba8ed3d66afe5, type: 3}
     size: 0
-  - sprite: {fileID: 21300000, guid: ff1adb3b9c7b5874da141395a77ae417, type: 3}
-    size: 0
-  - sprite: {fileID: 21300000, guid: b8b4b634a2feab94aada27cf03d42b79, type: 3}
-    size: 0
-  - sprite: {fileID: 21300000, guid: a251c1556f94c0442a995b26d23e7c3a, type: 3}
-    size: 0
-  - sprite: {fileID: 21300000, guid: d0ebd5c0a19e92c48957e992bb02aa5f, type: 3}
-    size: 0
-  - sprite: {fileID: 21300000, guid: acdd82065fa9850459c4942fe392b239, type: 3}
-    size: 0
+  combinatoriasLevels:
+  - valores: e8030000f40100006400000019000000
+    combinaciones: 5
+    resultado: 2650
+  currentLevel: 0
 --- !u!114 &114130665364723832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,6 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isArcade: 0
   figurasData: {fileID: 0}
+  combinatoriasData: {fileID: 0}
   levelsData: {fileID: 0}
   currentLevel: 
   currentLevelIndex: 0
@@ -125,6 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c769ca8c4e41a4f44bdfb7da411a57ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  raycastWorld: 0
+  raycastUI: 1
+  dragging: 0
 --- !u!114 &114817009447118542
 MonoBehaviour:
   m_ObjectHideFlags: 1

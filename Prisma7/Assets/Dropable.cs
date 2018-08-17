@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class Dropable : MonoBehaviour {
 
@@ -16,8 +17,12 @@ public class Dropable : MonoBehaviour {
 			go.transform.localScale = Vector3.one;
 			go.name = go.name + dropN;
 			dropN++;
+			GemaItem gi = go.GetComponent<GemaItem> ();
+			gi.image.raycastTarget = true;
+			gi.text.enabled = false;
+			go.GetComponent<Draggable> ().dropable = true;
+			Events.DroppedUI (dragged);
 		} else {
-			Debug.Log("ACA");
 			dragged.transform.SetAsFirstSibling ();
 		}
 	}

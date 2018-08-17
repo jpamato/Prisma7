@@ -12,6 +12,7 @@ public class Data : MonoBehaviour
     
     static Data mInstance = null;
 	public FigurasData figurasData;
+	public CombinatoriasData combinatoriasData;
 	public LevelsData levelsData;
 
 	public static Data Instance
@@ -59,6 +60,7 @@ public class Data : MonoBehaviour
 
 		figurasData = GetComponent<FigurasData> ();
 		levelsData = GetComponent<LevelsData> ();
+		combinatoriasData = GetComponent<CombinatoriasData> ();
 		Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
