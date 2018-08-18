@@ -15,4 +15,6 @@ public static class Events {
 	public static System.Action<InteractiveObject> OpenFruitNinja = delegate {	};
 	public static System.Action<bool> CloseFruitNinja = delegate {	};
 	public static System.Action<bool> OnDragger = delegate {	};
+
+	public static System.Action<GameObject> DroppedUI = delegate {	};
 }

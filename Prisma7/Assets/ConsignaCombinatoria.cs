@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GemaItem : MonoBehaviour {
+public class ConsignaCombinatoria : MonoBehaviour {
 
-	public Image image;
-	public Text text;
-	public int val;
+	public Text texto;
+	public Text valor;
 
 	// Use this for initialization
 	void Start () {

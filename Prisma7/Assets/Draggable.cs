@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour{
 
+	public bool dropable;
 	public Vector2 _startPosition;
 	private Transform _startParent;
 
@@ -47,6 +48,7 @@ public class Draggable : MonoBehaviour{
 	}
 
 	public void OnDropingOut(){
-		Destroy (gameObject);
+		if (dropable)			
+			Destroy (gameObject);
 	}
 }
