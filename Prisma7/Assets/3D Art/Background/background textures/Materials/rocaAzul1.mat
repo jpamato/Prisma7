@@ -78,6 +78,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
+    - _InvFade: 1
     - _LightingEnabled: 1
     - _Metallic: 0
     - _Mode: 0
@@ -93,7 +94,8 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 0.72706676, g: 0.64400005, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SoftParticleFadeParams: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.77714807, g: 0.8773585, b: 0.40970984, a: 1}
+    - _TintColor: {r: 0.50286, g: 0.6788609, b: 0.867, a: 1}
