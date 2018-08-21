@@ -18,7 +18,8 @@ public class Dropable : MonoBehaviour {
 			go.name = go.name + dropN;
 			dropN++;
 			GemaItem gi = go.GetComponent<GemaItem> ();
-			gi.image.raycastTarget = true;
+			//gi.image.raycastTarget = true;
+			gi.GetComponent<Image>().raycastTarget = true;
 			gi.text.enabled = false;
 			go.GetComponent<Draggable> ().dropable = true;
 			Events.DroppedUI (dragged);

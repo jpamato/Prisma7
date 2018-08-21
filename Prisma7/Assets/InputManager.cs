@@ -76,7 +76,7 @@ public class InputManager : MonoBehaviour {
 					dragging = true;
 					draggable.OnBeginDrag ();
 				} else
-					print ("falta clase Draggable en gameobject");
+					print (clickedGO.name+": falta clase Draggable en gameobject");
 			} else {
 				Dropable dropable = clickedGO.GetComponent<Dropable> ();
 				if (dropable != null) {				

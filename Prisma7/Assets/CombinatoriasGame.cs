@@ -16,21 +16,29 @@ public class CombinatoriasGame : MateGame {
 	public GameObject gemaItem;
 	public GameObject gemaSlot;
 	public Transform inventarioContent;
+	public Transform centralContent;
+	public List<Burbuja> burbujas;
+	public int burbujasDone;
 	public int sumaCentral;
 
 	CombinatoriasData.Level cLevelData;
+
+	public List<GameObject> gemasCentral;
 
 	// Use this for initialization
 	void Start () {		
 		levelBarStep = 1f / times2FullBar;
 		Events.OnTimeOver += TimeOver;
 		Events.DroppedUI += DroppedUI;
+		Events.OnDropingOut += OnDropingOut;
 		Invoke ("Init", 5);
 	}
 
 	void Init(){
 		doneSign.SetActive (false);
 		loseSign.SetActive (false);
+
+		gemasCentral = new List<GameObject> ();
 
 		SetCombiLevel ();
 
@@ -81,8 +89,19 @@ public class CombinatoriasGame : MateGame {
 		}
 
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
-		cs.texto.text = "Encierra dentro de los anillos de poder "+cLevelData.combinaciones+"combinaciones que sumen";
+		cs.texto.text = "Encierra dentro de los anillos de poder "+cLevelData.combinaciones+" combinaciones que sumen";
 		cs.valor.text = ""+cLevelData.resultado;
+	}
+
+	void OnDropingOut(){
+		Invoke ("ResetSuma",0.1f);
+	}
+
+	void ResetSuma(){
+		sumaCentral = 0;
+		for (int i = 0; i < centralContent.childCount; i++) {
+			sumaCentral += centralContent.GetChild (i).GetComponent<GemaItem> ().val;
+		}
 	}
 
 	void DroppedUI(GameObject dragged){
@@ -103,7 +122,46 @@ public class CombinatoriasGame : MateGame {
 	}
 
 	void RingDone(){
+		if (burbujasDone > 0) {
+			int[] vals = new int[centralContent.childCount];
+			for (int i = 0; i < centralContent.childCount; i++) {
+				vals [i] = centralContent.GetChild (i).GetComponent<GemaItem> ().val;
+			}
+			bool repetido;
+			for (int i = 0; i < burbujasDone; i++) {
+				repetido = true;
+				if (burbujas [i].combinacion.Count == vals.Length) {
+					System.Array.Sort (vals);
+					List<int> l = burbujas [i].combinacion;
+					for (int j = 0; j < vals.Length; j++) {
+						if (vals [j] != l [j])
+							repetido = false;
+					}
+				} else {
+					repetido = false;
+				}
+
+				if (repetido)
+					return;
+			}
+		}
+
+		for (int i = centralContent.childCount-1; i >-1 ; i--) {
+			Transform t = centralContent.GetChild (i);
+			t.SetParent(burbujas[burbujasDone].content.transform);
+			t.localPosition = Vector3.zero;
+			t.localScale = new Vector3 (0.4f, 0.4f, 0.4f);
+			burbujas [burbujasDone].combinacion.Add (t.GetComponent<GemaItem> ().val);
+			burbujas [burbujasDone].combinacion.Sort ();
+		}
+
+
+
+		burbujas [burbujasDone].done.SetActive (true);
+		burbujasDone++;
 		sumaCentral = 0;
+		if (burbujasDone >= cLevelData.combinaciones)
+			FiguraComplete ();
 	}
 
 	void FiguraComplete(){

@@ -17,4 +17,5 @@ public static class Events {
 	public static System.Action<bool> OnDragger = delegate {	};
 
 	public static System.Action<GameObject> DroppedUI = delegate {	};
+	public static System.Action OnDropingOut = delegate {	};
 }

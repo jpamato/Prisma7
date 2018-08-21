@@ -48,7 +48,9 @@ public class Draggable : MonoBehaviour{
 	}
 
 	public void OnDropingOut(){
-		if (dropable)			
+		if (dropable) {	
+			Events.OnDropingOut();
 			Destroy (gameObject);
+		}
 	}
 }
