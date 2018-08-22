@@ -26,7 +26,8 @@ public class CombinatoriasGame : MateGame {
 	public List<GameObject> gemasCentral;
 
 	// Use this for initialization
-	void Start () {		
+	void Start () {	
+		Data.Instance.inputManager.raycastUI = true;
 		levelBarStep = 1f / times2FullBar;
 		Events.OnTimeOver += TimeOver;
 		Events.DroppedUI += DroppedUI;

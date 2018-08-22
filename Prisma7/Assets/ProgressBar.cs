@@ -9,7 +9,7 @@ public class ProgressBar : MonoBehaviour {
 
 	void Start () {
 		//if(Data.Instance.currentLevelIndex>0)
-		if(Data.Instance.currentLevel=="Figuras")
+		if(Data.Instance.currentLevel=="Figuras"||Data.Instance.currentLevel=="Combinatorias")
 			image.fillAmount = 0;
 	}
 

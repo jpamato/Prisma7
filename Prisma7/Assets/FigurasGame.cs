@@ -22,7 +22,8 @@ public class FigurasGame : MateGame {
 	int gamesPlayeds;
 
 	// Use this for initialization
-	void Start () {		
+	void Start () {
+		Data.Instance.inputManager.raycastWorld = true;	
 		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
 		Events.OnTimeOver += TimeOver;
