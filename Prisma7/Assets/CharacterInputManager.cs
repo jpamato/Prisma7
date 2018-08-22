@@ -5,14 +5,20 @@ using UnityEngine;
 public class CharacterInputManager : MonoBehaviour {
 
 	public Camera cam;
-
+	float lastTimeClicked;
+	float delay = 0.1f;
 	void Update()
 	{
 		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
 		
-		if (Input.GetMouseButtonDown(0)){
-			
+		if (Input.GetMouseButton(0)){
+			if (lastTimeClicked != 0 && lastTimeClicked > Time.time)
+				return;
+
+			lastTimeClicked = Time.time + delay;
+			print ("lat:" + lastTimeClicked);
+
 			Vector3 mousePos = Input.mousePosition;
 			Ray mouseRay = cam.ScreenPointToRay(mousePos);
 
