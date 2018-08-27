@@ -10,7 +10,10 @@ public class FruitsManager : MonoBehaviour {
 
 	public Transform target;
 
+	public AudioSource audioSource;
+
 	public void Init() {
+		audioSource = transform.parent.GetComponent<AudioSource> ();
 		Loop ();
 	}
 	public void Reset() {
