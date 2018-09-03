@@ -5,9 +5,11 @@ using UnityEngine;
 public class Door : InteractiveObject {
 
 	public int id;
+	public int diamondLevel;
 	public states state;
 	public enum states
 	{
+		UNAVAILABLE,
 		CLOSED,
 		OPENED,
 		OPENING
