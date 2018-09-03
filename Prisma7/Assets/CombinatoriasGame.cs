@@ -168,7 +168,8 @@ public class CombinatoriasGame : MateGame {
 	void FiguraComplete(){
 		//Events.FiguraComplete (figura.go.name);
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
-		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
+		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
+		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		foreach (GameObject go in gemasButtons)
 			Destroy (go);
 		gemasButtons.Clear ();

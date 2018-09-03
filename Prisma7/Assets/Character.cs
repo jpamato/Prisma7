@@ -17,6 +17,8 @@ public class Character : MonoBehaviour {
 
 	InteractiveObject selectedInteractiveObject;
 
+	string nextScene;
+
 	void Start () {
 		state = states.PLAYING;
 		moveTo = GetComponent<MoveTo> ();
@@ -59,6 +61,8 @@ public class Character : MonoBehaviour {
 			OnFloorClicked (newPos);
 		} else {			
 			selectedInteractiveObject = io;
+			Door d = selectedInteractiveObject as Door;
+			nextScene = d.minigame.ToString ();
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 0.35f;
 			OnFloorClicked (newPos);
@@ -69,7 +73,7 @@ public class Character : MonoBehaviour {
 	{
 		anim.Enter ();
 		yield return new WaitForSeconds (1.25f);
-		Data.Instance.LoadScene ("Figuras");
+		Data.Instance.LoadScene (nextScene);
 	}
 	void OnFloorClicked (Vector3 pos) {
 		

@@ -15616,6 +15616,10 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 1959643066383436, guid: 6a9f124df5b66f64daae3c58398e8cdd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6a9f124df5b66f64daae3c58398e8cdd, type: 2}
   m_IsPrefabAsset: 0
@@ -16149,7 +16153,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}
@@ -21632,7 +21636,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1855969378518560, guid: f8fe196d94dc6d84b80413475025c16b, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1116810176185332, guid: f8fe196d94dc6d84b80413475025c16b, type: 2}
       propertyPath: m_IsActive

@@ -193,7 +193,7 @@ public class FigurasGame : MateGame {
 		//Invoke ("Init", 3);
 	}
 
-	void BackToWorld(){
+	void BackToWorld(){		
 		Data.Instance.LoadScene ("World");
 	}
 }

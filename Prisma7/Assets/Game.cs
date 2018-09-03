@@ -26,8 +26,9 @@ public class Game : MonoBehaviour {
 		mInstance = this;
 	}
 	void Start()
-	{
+	{		
 		mode = modes.WORLD;
+		Data.Instance.ui.HideTimer ();
 	}
 	public void ChangeMode(modes _mode)
 	{

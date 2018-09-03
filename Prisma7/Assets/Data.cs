@@ -18,6 +18,12 @@ public class Data : MonoBehaviour
 	public UserData userData;
 	public UI ui;
 
+	public enum minigamesScenes
+	{
+		Figuras,
+		Combinatorias
+	}
+
 	public static Data Instance
     {
         get

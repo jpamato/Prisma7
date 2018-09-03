@@ -6,6 +6,7 @@ public class Door : InteractiveObject {
 
 	public int id;
 	public int diamondLevel;
+	public Data.minigamesScenes minigame;
 	public states state;
 	public enum states
 	{
