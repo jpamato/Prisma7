@@ -23,7 +23,7 @@ public class MoveTo : MonoBehaviour {
 
 		transform.position = Vector3.MoveTowards(transform.position, destination, step);
 
-		if (Vector3.Distance (transform.position , destination) < 0.15f) {
+		if (Vector3.Distance (transform.position , destination) < 0.3f) {
 			Events.OnCharacterStopWalking ();
 			isOn = false;
 		}

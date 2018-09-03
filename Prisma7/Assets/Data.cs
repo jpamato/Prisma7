@@ -15,6 +15,8 @@ public class Data : MonoBehaviour
 	public CombinatoriasData combinatoriasData;
 	public LevelsData levelsData;
 	public InputManager inputManager;
+	public UserData userData;
+	public UI ui;
 
 	public static Data Instance
     {

@@ -10,6 +10,7 @@ public class FruitsManager : MonoBehaviour {
 
 	public Transform target;
 
+	[HideInInspector]
 	public AudioSource audioSource;
 
 	public void Init() {

@@ -5,8 +5,6 @@ using UnityEngine;
 public class FruitNinja : MonoBehaviour {
 
 	public FruitsManager fruitsManager;
-	public ProgressBar progressBar;
-	public ProgressBar timerProgressBar;
 	InteractiveObject interactiveObject;
 	public int totalPoints;
 	int points;
@@ -19,7 +17,7 @@ public class FruitNinja : MonoBehaviour {
 
 	void Start () {
 		fruitsManager.gameObject.SetActive (false);
-		clockSource = timerProgressBar.gameObject.GetComponent<AudioSource> ();
+		clockSource = Data.Instance.ui.timer.gameObject.GetComponent<AudioSource> ();
 		Events.OpenFruitNinja += OpenFruitNinja;
 		Events.OnFruitNinjaClickedBubble += OnFruitNinjaClickedBubble;
 	}
@@ -31,11 +29,12 @@ public class FruitNinja : MonoBehaviour {
 	void OpenFruitNinja(InteractiveObject _interactiveObject)
 	{
 		timer = 0;
+		Data.Instance.ui.StartTimer ();
 		playing = true;
 		Events.OnDragger (true);
 		this.interactiveObject = _interactiveObject;
 		points = 0;
-		progressBar.SetValue (1);
+		Data.Instance.ui.progressBar.SetValue (1);
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
@@ -59,7 +58,7 @@ public class FruitNinja : MonoBehaviour {
 			points = totalPoints;
 			Done (true);
 		}			
-		progressBar.SetValue (1-(float)points/(float)totalPoints);
+		Data.Instance.ui.progressBar.SetValue (1-(float)points/(float)totalPoints);
 	}
 	void Done(bool win)
 	{
@@ -73,7 +72,7 @@ public class FruitNinja : MonoBehaviour {
 		Events.CloseFruitNinja (win);
 		clockSource.Stop ();
 		if(win)
-			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENED);
+			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENING);
 	}
 
 	void CloseManager(){
@@ -88,7 +87,7 @@ public class FruitNinja : MonoBehaviour {
 		if (timer >= duration) {
 			Done (false);
 		}
-		timerProgressBar.SetValue (timer/duration);
+		Data.Instance.ui.timer.SetValue (timer/duration);
 	}
 
 }

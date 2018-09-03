@@ -26,6 +26,8 @@ public class Character : MonoBehaviour {
 		Events.CloseFruitNinja += CloseFruitNinja;
 		Events.OnCharacterStopWalking += OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject += OnCharacterHitInteractiveObject;
+
+		transform.localPosition = Data.Instance.userData.lastPosition;
 	}
 	void OnDestroy () {
 		Events.OnFloorClicked -= OnFloorClicked;
@@ -41,6 +43,7 @@ public class Character : MonoBehaviour {
 	}
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
+		print ("OnCharacterHitInteractiveObject " + io);
 		if (state != states.PLAYING)
 			return;
 		Door door = io.GetComponent<Door> ();
@@ -52,8 +55,7 @@ public class Character : MonoBehaviour {
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 2;
 			OnFloorClicked (newPos);
-		} else {
-			
+		} else {			
 			selectedInteractiveObject = io;
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 0.35f;
@@ -91,6 +93,7 @@ public class Character : MonoBehaviour {
 		if (selectedInteractiveObject != null) {
 			if (state == states.OPENING_FRUIT_NINJA) {
 				LookAtTarget (selectedInteractiveObject.transform.gameObject);
+				Data.Instance.userData.SaveLastPosition ();
 				Events.OpenFruitNinja (selectedInteractiveObject);
 			}
 		}

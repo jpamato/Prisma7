@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class DoorsManager : MonoBehaviour {
 
-	// Use this for initialization
+	public List<Door> doors;
+
 	void Start () {
-		
+		foreach (Door door in doors)
+			door.SetState (Door.states.CLOSED);
+		foreach (int doorID in Data.Instance.userData.doorsPlayed) {
+			GetDoorByID (doorID).SetState (Door.states.OPENED);				
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	Door GetDoorByID(int id)
+	{
+		foreach (Door door in doors)
+			if (door.id == id)
+				return door;
+		return null;
 	}
+
 }

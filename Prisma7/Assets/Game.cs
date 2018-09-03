@@ -5,6 +5,8 @@ using UnityEngine;
 public class Game : MonoBehaviour {
 
 	public modes mode;
+	public Character character;
+
 	public enum modes
 	{
 		WORLD,
