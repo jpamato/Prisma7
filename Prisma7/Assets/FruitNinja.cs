@@ -62,6 +62,7 @@ public class FruitNinja : MonoBehaviour {
 	}
 	void Done(bool win)
 	{
+		Data.Instance.ui.HideTimer ();
 		fruitsManager.audioSource.PlayOneShot (ninjaDone);
 		playing = false;
 		Events.OnDragger (false);
@@ -87,7 +88,7 @@ public class FruitNinja : MonoBehaviour {
 		if (timer >= duration) {
 			Done (false);
 		}
-		Data.Instance.ui.timer.SetValue (timer/duration);
+		Data.Instance.ui.timer.SetValue (1-(timer/duration));
 	}
 
 }

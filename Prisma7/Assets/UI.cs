@@ -6,6 +6,8 @@ public class UI : MonoBehaviour {
 
 	public ProgressBar timer;
 	public ProgressBar progressBar;
+	public ColorBar colorBar;
+	public Prisma prisma;
 
 	public void HideTimer()
 	{

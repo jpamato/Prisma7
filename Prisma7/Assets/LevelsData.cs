@@ -28,6 +28,13 @@ public class LevelsData : MonoBehaviour {
 		if (actualDiamondLevel >= diamondLevels.Count)
 			actualDiamondLevel = diamondLevels.Count - 1;
 		actualLevelPercent = 0;
+
+		Invoke ("ColorsReset", 1);
+	}
+
+	void ColorsReset(){
+		Data.Instance.ui.colorBar.Reset ();
+		Data.Instance.ui.prisma.Reset ();
 	}
 
 	[Serializable]

@@ -11,15 +11,23 @@ public class ColorBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Reset ();
+	}
+
+	void OnColorComplete(){
+
+	}
+
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	public void Reset(){
 		index = Data.Instance.levelsData.actualDiamondLevel;
 		image = colors [index].GetComponent<Image> ();
 		SetColorBar ();
 		SetValue(Data.Instance.levelsData.actualLevelPercent);
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 
 	public void SetColorBar(){

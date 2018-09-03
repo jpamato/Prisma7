@@ -8,12 +8,16 @@ public class Prisma : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		SetColors (Data.Instance.levelsData.actualDiamondLevel);
+		Reset ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	public void Reset(){
+		SetColors (Data.Instance.levelsData.actualDiamondLevel);
 	}
 
 	public void SetColors(int index){

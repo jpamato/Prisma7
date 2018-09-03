@@ -48,6 +48,7 @@ public class MateGame : MonoBehaviour {
 	}
 
 	public void InitTimer(){
+		Data.Instance.ui.StartTimer ();
 		timerField.text = "";
 		if (!timeRunning) {
 			TimerLoop ();
@@ -81,13 +82,17 @@ public class MateGame : MonoBehaviour {
 			Events.OnTimeOver ();
 
 
-		timerImage.fillAmount = 1-((float)(totalTimeSteps-actualTime)/(float)totalTimeSteps);
+		//timerImage.fillAmount = 1-((float)(totalTimeSteps-actualTime)/(float)totalTimeSteps);
+		Data.Instance.ui.timer.image.fillAmount = 1-((float)(totalTimeSteps-actualTime)/(float)totalTimeSteps);
 
 	}
 
 	public void TimePenalty(){
-		clockColor = timerImage.color;
-		timerImage.color = Color.red;
+		/*clockColor = timerImage.color;
+		timerImage.color = Color.red;*/
+
+		clockColor = Data.Instance.ui.timer.image.color;
+		Data.Instance.ui.timer.image.color = Color.red;
 		
 		actualTime--;
 		string secText = "";
@@ -101,11 +106,13 @@ public class MateGame : MonoBehaviour {
 			Events.OnTimeOver ();
 
 
-		timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
+		//timerImage.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
+		Data.Instance.ui.timer.image.fillAmount = 1-((float)(totalTime-actualTime)/(float)totalTime);
 		Invoke ("ResetClockColor", 0.5f);
 	}
 
-	void ResetClockColor(){
-		timerImage.color = clockColor;
+	void ResetClockColor(){		
+		//timerImage.color = clockColor;
+		Data.Instance.ui.timer.image.color = clockColor;
 	}
 }

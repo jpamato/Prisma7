@@ -82,7 +82,8 @@ public class FigurasGame : MateGame {
 					Vector3 h1 = hit.gameObject.transform.position;
 					Vector3 h2 = figuraGO.transform.position;
 					figurOKPS1.transform.position = new Vector3(h1.x,h1.y+2,h1.z);
-					figurOKPS2.transform.position = new Vector3(h2.x,h2.y+2,h2.z);
+					//figurOKPS2.transform.position = new Vector3(h2.x,h2.y+2,h2.z);
+					figurOKPS2.transform.position = t.position;
 					Invoke ("StopFiguraOKPS", 1f);
 				} else {
 					TimePenalty ();
@@ -117,7 +118,8 @@ public class FigurasGame : MateGame {
 	void FiguraComplete(){
 		Events.FiguraComplete (figura.go.name);
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
-		colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
+		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
+		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		foreach (GameObject go in runasButtons)
 			Destroy (go);
 		runasButtons.Clear ();
