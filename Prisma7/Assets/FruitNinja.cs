@@ -73,7 +73,7 @@ public class FruitNinja : MonoBehaviour {
 		Events.CloseFruitNinja (win);
 		clockSource.Stop ();
 		if(win)
-			interactiveObject.GetComponent<Door> ().OnOpen ();
+			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENED);
 	}
 
 	void CloseManager(){

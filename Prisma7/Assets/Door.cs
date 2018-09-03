@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Door : InteractiveObject {
 
+	public int id;
 	public states state;
 	public enum states
 	{
@@ -13,10 +14,22 @@ public class Door : InteractiveObject {
 	public GameObject closed;
 	public GameObject opened;
 
-	public void OnOpen() {
+	void Start()
+	{
 		
-		state = states.OPENED;
-		closed.SetActive (false);
-		opened.SetActive (true);
+	}
+	public void SetState(states state)
+	{
+		this.state = state;
+		switch (state) {
+		case states.CLOSED:
+			closed.SetActive (true);
+			opened.SetActive (false);
+			break;
+		case states.OPENED:
+			closed.SetActive (false);
+			opened.SetActive (true);
+			break;
+		}
 	}
 }
