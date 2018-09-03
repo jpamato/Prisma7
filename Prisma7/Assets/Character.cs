@@ -43,17 +43,19 @@ public class Character : MonoBehaviour {
 	}
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
-		print ("OnCharacterHitInteractiveObject " + io);
 		if (state != states.PLAYING)
 			return;
+		
 		Door door = io.GetComponent<Door> ();
-		if (door == null)
+
+		if (door == null || door.state == Door.states.UNAVAILABLE)
 			return;
+		
 		if (door.state == Door.states.CLOSED) {
 			state = states.OPENING_FRUIT_NINJA;
 			selectedInteractiveObject = io;
 			Vector3 newPos = io.transform.localPosition;
-			newPos.z -= 2;
+			newPos.z -= 3;
 			OnFloorClicked (newPos);
 		} else {			
 			selectedInteractiveObject = io;

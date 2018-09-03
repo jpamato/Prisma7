@@ -7,8 +7,13 @@ public class DoorsManager : MonoBehaviour {
 	public List<Door> doors;
 
 	void Start () {
-		foreach (Door door in doors)
-			door.SetState (Door.states.CLOSED);
+		int diamondLevel = Data.Instance.levelsData.actualDiamondLevel;
+		foreach (Door door in doors) {
+			if(diamondLevel>=door.diamondLevel)
+				door.SetState (Door.states.CLOSED);
+			else
+				door.SetState (Door.states.UNAVAILABLE);
+		}
 		foreach (int doorID in Data.Instance.userData.doorsPlayed) {
 			GetDoorByID (doorID).SetState (Door.states.OPENED);				
 		}
