@@ -21,7 +21,9 @@ public class ZoneGrey2Color : MonoBehaviour {
 			float h, s, v;
 			Color.RGBToHSV (c, out h, out s, out v);
 			//r.material.SetColor(colorName,Color.HSVToRGB (h, 0f, v));*/
-			r.material.SetColor(colorName,Color.black);
+			//print (r.gameObject.name+" texture: " + r.material.mainTexture.name);
+
+			r.material.SetColor(colorName,new Color(0.25f,0.25f,0.25f));
 		}
 	}
 	
