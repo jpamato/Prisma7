@@ -16,10 +16,10 @@ public class Fruit : MonoBehaviour {
 	public float speedH;
 	public Vector2 speed;
 
-	public void Init(Vector2 speed) {
+	public virtual void Init(Vector2 speed, int direction) {
 		this.speed = speed;
 		speedV = (Random.Range (200, 400)/20) * speed.y;
-		speedH = Random.Range (-100, 100) * speed.x;
+		speedH = Random.Range (0, 150*direction) * speed.x;
 	}
 
 	public void OnClicked()

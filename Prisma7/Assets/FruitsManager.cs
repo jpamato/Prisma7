@@ -5,8 +5,12 @@ using UnityEngine;
 public class FruitsManager : MonoBehaviour {
 
 	public Vector2 speed;
+
 	public Fruit genericFruit;
 	public Fruit badFruit;
+
+	public Fruit genericFruit2;
+	public Fruit badFruit2;
 
 	public Transform target;
 
@@ -31,10 +35,24 @@ public class FruitsManager : MonoBehaviour {
 		if (Random.Range (0, 10) < 3)
 			return;
 		
-		Fruit fruit = genericFruit;
+		Fruit fruit = genericFruit2;
 		if (Random.Range (0, 10) < 3)
-			fruit = badFruit;
-		
+			AddBad();
+		else
+			AddGood ();
+	}
+	void AddGood()
+	{
+		Fruit fruit = genericFruit;
+		if (Data.Instance.levelsData.actualDiamondLevel == 1 && Random.Range (0, 10) < 5)
+			fruit = genericFruit2;
+		AddFruit (fruit);
+	}
+	void AddBad()
+	{
+		Fruit fruit = badFruit;
+		if (Data.Instance.levelsData.actualDiamondLevel == 1 && Random.Range (0, 10) < 5)
+			fruit = badFruit2;
 		AddFruit (fruit);
 	}
 	void AddFruit(Fruit newFruit)
@@ -42,7 +60,12 @@ public class FruitsManager : MonoBehaviour {
 		Fruit fruit = Instantiate (newFruit);
 		fruit.transform.SetParent (target);
 		fruit.transform.localScale = new Vector2 (0.5f, 0.5f);
-		fruit.transform.localPosition = Vector3.zero;
-		fruit.Init (speed);
+
+		int dir = 1;
+		if (Random.Range (0, 10) < 5)
+			dir = -1;
+		fruit.Init (speed, dir);
+
+		fruit.transform.localPosition = new Vector3(Random.Range(0,300*-dir),0,0);
 	}
 }

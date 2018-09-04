@@ -14,7 +14,7 @@ public class UserData : MonoBehaviour {
 	public void SaveLastPosition()
 	{
 		Vector3 pos = Game.Instance.character.transform.localPosition;
-		pos.z -= 1.5f;
+		pos.z -= 1f;
 		lastPosition = pos;
 	}
 }

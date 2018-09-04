@@ -53,12 +53,12 @@ public class Character : MonoBehaviour {
 		if (door == null || door.state == Door.states.UNAVAILABLE)
 			return;
 		
-		if (door.state == Door.states.CLOSED) {
-			state = states.OPENING_FRUIT_NINJA;
+		if (door.state == Door.states.CLOSED) {			
 			selectedInteractiveObject = io;
 			Vector3 newPos = io.transform.localPosition;
-			newPos.z -= 3;
+			newPos.z -= 1.5f;
 			OnFloorClicked (newPos);
+			state = states.OPENING_FRUIT_NINJA;
 		} else {			
 			selectedInteractiveObject = io;
 			Door d = selectedInteractiveObject as Door;
@@ -79,6 +79,8 @@ public class Character : MonoBehaviour {
 		
 		if (state == states.ENTERING_DOOR)
 			return;
+		else if (state == states.OPENING_FRUIT_NINJA)
+			state = states.PLAYING;
 		
 		target.transform.position = pos;
 		LookAtTarget (target);
