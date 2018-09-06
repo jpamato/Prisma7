@@ -561,25 +561,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gemas:
-  - sprite: {fileID: 21300000, guid: cc237a164f16696488dda586febc875d, type: 3}
+  - sprite: {fileID: 21300000, guid: bf50868043cb976439c494f9fb6fcac3, type: 3}
     size: 3
-  - sprite: {fileID: 21300000, guid: a251c1556f94c0442a995b26d23e7c3a, type: 3}
+  - sprite: {fileID: 21300000, guid: 0f52837c1de394e4d939aa95f26db439, type: 3}
     size: 3
-  - sprite: {fileID: 21300000, guid: d0ebd5c0a19e92c48957e992bb02aa5f, type: 3}
+  - sprite: {fileID: 21300000, guid: 599097ee099acd54792d4a4ace84f103, type: 3}
     size: 2
-  - sprite: {fileID: 21300000, guid: acdd82065fa9850459c4942fe392b239, type: 3}
+  - sprite: {fileID: 21300000, guid: 54fb27533e4f09a4b96797e244fe6a38, type: 3}
     size: 2
-  - sprite: {fileID: 21300000, guid: b8b4b634a2feab94aada27cf03d42b79, type: 3}
+  - sprite: {fileID: 21300000, guid: a535b76c5c5d0fe42914a753f1eb93b4, type: 3}
     size: 1
-  - sprite: {fileID: 21300000, guid: ff1adb3b9c7b5874da141395a77ae417, type: 3}
-    size: 1
-  - sprite: {fileID: 21300000, guid: 036da022ae27df944a4ba8ed3d66afe5, type: 3}
+  - sprite: {fileID: 21300000, guid: 6d9c521b5fdb3e0488d112da3d4ae2e5, type: 3}
     size: 0
   combinatoriasLevels:
   - valores: e8030000f40100006400000019000000
     combinaciones: 5
     resultado: 2650
-  currentLevel: 0
+  - valores: 140000000a0000000500000001000000
+    combinaciones: 3
+    resultado: 55
+  currentLevel: 1
 --- !u!114 &114033517676773230
 MonoBehaviour:
   m_ObjectHideFlags: 1

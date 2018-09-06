@@ -21,18 +21,23 @@ public class CombinatoriasGame : MateGame {
 	public int burbujasDone;
 	public int sumaCentral;
 
-	CombinatoriasData.Level cLevelData;
+	public CombinatoriasData.Level cLevelData;
 
 	public List<GameObject> gemasCentral;
 
+	public AudioClip combiOK,combiDone;
+	AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {	
+		audioSource = GetComponent<AudioSource> ();
 		Data.Instance.inputManager.raycastUI = true;
 		levelBarStep = 1f / times2FullBar;
 		Events.OnTimeOver += TimeOver;
 		Events.DroppedUI += DroppedUI;
 		Events.OnDropingOut += OnDropingOut;
-		Invoke ("Init", 5);
+		//Invoke ("Init", 0.1f);
+		Init();
 	}
 
 	void Init(){
@@ -60,7 +65,7 @@ public class CombinatoriasGame : MateGame {
 		
 	}
 
-	void SetCombiLevel(){
+	void SetCombiLevel(){		
 		int cLevel = Data.Instance.combinatoriasData.currentLevel;
 		cLevelData = Data.Instance.combinatoriasData.combinatoriasLevels[cLevel];
 		int[] vals = cLevelData.valores.Clone() as int[];
@@ -88,7 +93,7 @@ public class CombinatoriasGame : MateGame {
 			gis.text.text = ""+vals [i];
 			gis.val = vals [i];
 		}
-
+		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
 		cs.texto.text = "Encierra dentro de los anillos de poder "+cLevelData.combinaciones+" combinaciones que sumen";
 		cs.valor.text = ""+cLevelData.resultado;
@@ -161,11 +166,14 @@ public class CombinatoriasGame : MateGame {
 		burbujas [burbujasDone].done.SetActive (true);
 		burbujasDone++;
 		sumaCentral = 0;
+		audioSource.PlayOneShot (combiOK);
 		if (burbujasDone >= cLevelData.combinaciones)
-			FiguraComplete ();
+			Invoke ("FiguraComplete", 1.0f);
 	}
 
 	void FiguraComplete(){
+		audioSource.PlayOneShot (combiDone);
+		Data.Instance.ui.HideTimer ();
 		//Events.FiguraComplete (figura.go.name);
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
