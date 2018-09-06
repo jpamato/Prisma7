@@ -102,9 +102,9 @@ public class FigurasGame : MateGame {
 					Invoke ("StopFigurWrongPS", 1f);
 				}
 
-				if (done) {
-					audioSource.PlayOneShot (figurasDone);
+				if (done) {					
 					state = states.ENDED;
+					Data.Instance.ui.ClockSfx (false);
 					Invoke ("FiguraComplete", 1.1f);
 				}
 
@@ -123,6 +123,8 @@ public class FigurasGame : MateGame {
 	}
 
 	void FiguraComplete(){
+		audioSource.PlayOneShot (figurasDone);
+		Data.Instance.ui.HideTimer ();
 		Events.FiguraComplete (figura.go.name);
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
@@ -196,6 +198,7 @@ public class FigurasGame : MateGame {
 		runasButtons.Clear ();
 		Destroy (figuraGO);
 		figura.ClearRunas ();
+		Data.Instance.ui.HideTimer ();
 		Invoke ("BackToWorld", 3);
 		//Invoke ("Init", 3);
 	}
