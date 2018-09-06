@@ -25,4 +25,11 @@ public class UI : MonoBehaviour {
 		timer.gameObject.SetActive (true);
 		clockSource.Play ();
 	}
+
+	public void ClockSfx(bool play){
+		if (play)
+			clockSource.Play ();
+		else
+			clockSource.Stop ();
+	}
 }
