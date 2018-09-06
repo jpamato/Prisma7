@@ -9,12 +9,20 @@ public class UI : MonoBehaviour {
 	public ColorBar colorBar;
 	public Prisma prisma;
 
+	AudioSource clockSource;
+
+	public void Start(){
+		clockSource = timer.gameObject.GetComponent<AudioSource> ();
+	}
+
 	public void HideTimer()
 	{
 		timer.gameObject.SetActive (false);
+		clockSource.Stop ();
 	}
 	public void StartTimer()
 	{
 		timer.gameObject.SetActive (true);
+		clockSource.Play ();
 	}
 }

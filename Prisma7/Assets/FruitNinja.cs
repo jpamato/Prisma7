@@ -13,11 +13,8 @@ public class FruitNinja : MonoBehaviour {
 	public float duration;
 	public AudioClip ninjaOK, ninjaWrong,ninjaDone;
 
-	AudioSource clockSource;
-
 	void Start () {
 		fruitsManager.gameObject.SetActive (false);
-		clockSource = Data.Instance.ui.timer.gameObject.GetComponent<AudioSource> ();
 		Events.OpenFruitNinja += OpenFruitNinja;
 		Events.OnFruitNinjaClickedBubble += OnFruitNinjaClickedBubble;
 	}
@@ -38,8 +35,8 @@ public class FruitNinja : MonoBehaviour {
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
-		clockSource.Play ();
 	}
+
 	void OnFruitNinjaClickedBubble(Fruit.types type)
 	{		
 		switch (type) {
@@ -71,7 +68,7 @@ public class FruitNinja : MonoBehaviour {
 		//Invoke ("CloseManager", 2);
 		Game.Instance.ChangeMode (Game.modes.WORLD);
 		Events.CloseFruitNinja (win);
-		clockSource.Stop ();
+
 		if(win)
 			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENING);
 	}

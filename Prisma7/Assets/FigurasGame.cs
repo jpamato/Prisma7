@@ -21,8 +21,12 @@ public class FigurasGame : MateGame {
 	public int partidaGames;
 	int gamesPlayeds;
 
+	public AudioClip figuraOK, figuraWrong,figurasDone;
+	AudioSource audioSource;
+
 	// Use this for initialization
 	void Start () {
+		audioSource = GetComponent<AudioSource> ();
 		Data.Instance.inputManager.raycastWorld = true;	
 		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
@@ -52,7 +56,7 @@ public class FigurasGame : MateGame {
 		InitTimer ();
 		//consigna.SetActive (false);
 		consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
-		runasTween.SetTween(new Vector3(-4f,3f,1f),0.05f);
+		runasTween.SetTween(new Vector3(-4f,4.6f,1f),0.05f);
 		state = states.PLAYING;
 	}
 
@@ -76,6 +80,7 @@ public class FigurasGame : MateGame {
 					if(r==null)
 						r = t.GetComponentInChildren<Renderer> ();
 					//r.material.color = figurOKColor;
+					audioSource.PlayOneShot (figuraOK);
 					r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
 					figurOKPS1.SetActive (true);
 					figurOKPS2.SetActive (true);
@@ -86,6 +91,7 @@ public class FigurasGame : MateGame {
 					figurOKPS2.transform.position = t.position;
 					Invoke ("StopFiguraOKPS", 1f);
 				} else {
+					audioSource.PlayOneShot (figuraWrong);
 					TimePenalty ();
 					figurWrongPS1.SetActive (true);
 					figurWrongPS2.SetActive (true);
@@ -97,6 +103,7 @@ public class FigurasGame : MateGame {
 				}
 
 				if (done) {
+					audioSource.PlayOneShot (figurasDone);
 					state = states.ENDED;
 					Invoke ("FiguraComplete", 1.1f);
 				}
