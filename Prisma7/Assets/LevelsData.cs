@@ -37,6 +37,14 @@ public class LevelsData : MonoBehaviour {
 		Data.Instance.ui.prisma.Reset ();
 	}
 
+	public DiamondLevel GetActualLevel(){
+		return diamondLevels [actualDiamondLevel];
+	}
+
+	public DiamondLevel GetInProgressLevel(){
+		return diamondLevels [actualDiamondLevel+1];
+	}
+
 	[Serializable]
 	public class DiamondLevel{
 		public int levelNumber;
