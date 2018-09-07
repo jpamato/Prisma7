@@ -147,8 +147,14 @@ public class CombinatoriasGame : MateGame {
 					repetido = false;
 				}
 
-				if (repetido)
+				if (repetido) {
+					for (int k = centralContent.childCount-1; k >-1 ; k--) 
+						Destroy(centralContent.GetChild (k).gameObject);
+					burbujas [i].done.SetActive (false);
+					burbujas [i].done.SetActive (true);
+					sumaCentral = 0;
 					return;
+				}
 			}
 		}
 
@@ -157,6 +163,8 @@ public class CombinatoriasGame : MateGame {
 			t.SetParent(burbujas[burbujasDone].content.transform);
 			t.localPosition = Vector3.zero;
 			t.localScale = new Vector3 (0.4f, 0.4f, 0.4f);
+			GemaItem gi = t.gameObject.GetComponent<GemaItem> ();
+			gi.image.color = Data.Instance.levelsData.GetInProgressLevel ().color;
 			burbujas [burbujasDone].combinacion.Add (t.GetComponent<GemaItem> ().val);
 			burbujas [burbujasDone].combinacion.Sort ();
 		}
@@ -185,7 +193,7 @@ public class CombinatoriasGame : MateGame {
 		if (Data.Instance.levelsData.actualLevelPercent >= 1f) {
 			colorDoneSign.SetActive (true);
 			Events.OnColorComplete ();
-			Data.Instance.figurasData.ResetFiguresDone ();
+			//Data.Instance.figurasData.ResetFiguresDone ();
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
