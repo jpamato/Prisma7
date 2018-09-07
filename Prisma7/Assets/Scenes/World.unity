@@ -846,6 +846,25 @@ Prefab:
       propertyPath: m_Name
       value: Area1
       objectReference: {fileID: 0}
+    - target: {fileID: 1535429621223890, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421902095095896, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: greyTexture
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: greyTexture
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887529258718252, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: greyTexture
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
   m_IsPrefabAsset: 0
@@ -980,6 +999,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1495048919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1476455700872272, guid: 3278ec99be89e6945b4874d11e84cdf9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254890189}
+--- !u!114 &1495048921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1495048919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9787357140f5fc488a81af4afb7c211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondLevel: 1
+  colorName: 
+  greyTexture: 1
 --- !u!1 &1511990226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1293,3 +1331,22 @@ Transform:
   m_Father: {fileID: 1190284376}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1956670498 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1835162081898636, guid: 3278ec99be89e6945b4874d11e84cdf9,
+    type: 2}
+  m_PrefabInternal: {fileID: 1254890189}
+--- !u!114 &1956670500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1956670498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9787357140f5fc488a81af4afb7c211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  diamondLevel: 2
+  colorName: 
+  greyTexture: 1

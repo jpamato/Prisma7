@@ -7,6 +7,10 @@ public class ZoneGrey2Color : MonoBehaviour {
 	public int diamondLevel;
 	public string colorName;
 
+	public bool greyTexture;
+
+	string greyMark = "_gris";
+
 	// Use this for initialization
 	void Start () {
 		if (Data.Instance.levelsData.actualDiamondLevel < diamondLevel)
@@ -22,8 +26,18 @@ public class ZoneGrey2Color : MonoBehaviour {
 			Color.RGBToHSV (c, out h, out s, out v);
 			//r.material.SetColor(colorName,Color.HSVToRGB (h, 0f, v));*/
 			//print (r.gameObject.name+" texture: " + r.material.mainTexture.name);
+			if(colorName!="")
+				r.material.SetColor(colorName,Color.white);
 
-			r.material.SetColor(colorName,new Color(0.25f,0.25f,0.25f));
+			if(greyTexture){
+				string actualName = r.material.mainTexture.name;
+				//print (actualName + greyMark);
+				if (!actualName.Contains ("_gris")) {
+					Texture2D tex = (Texture2D)Resources.Load ("Textures/" + actualName + greyMark, typeof(Texture2D));
+					//print (tex);
+					r.material.mainTexture = tex;
+				}
+			}
 		}
 	}
 	
