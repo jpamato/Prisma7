@@ -9,6 +9,8 @@ public class ZoneGrey2Color : MonoBehaviour {
 
 	public bool greyTexture;
 
+	public Color tintColor;
+
 	string greyMark = "_gris";
 
 	// Use this for initialization
@@ -27,7 +29,7 @@ public class ZoneGrey2Color : MonoBehaviour {
 			//r.material.SetColor(colorName,Color.HSVToRGB (h, 0f, v));*/
 			//print (r.gameObject.name+" texture: " + r.material.mainTexture.name);
 			if(colorName!="")
-				r.material.SetColor(colorName,Color.white);
+				r.material.SetColor(colorName,tintColor);
 
 			if(greyTexture){
 				string actualName = r.material.mainTexture.name;

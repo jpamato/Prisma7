@@ -865,6 +865,106 @@ Prefab:
       propertyPath: greyTexture
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114935296444602138, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114935296444602138, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114935296444602138, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114935296444602138, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114777000774478720, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114777000774478720, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114777000774478720, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114777000774478720, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421902095095896, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421902095095896, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421902095095896, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421902095095896, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887529258718252, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887529258718252, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887529258718252, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114887529258718252, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: tintColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
   m_IsPrefabAsset: 0
@@ -1018,6 +1118,7 @@ MonoBehaviour:
   diamondLevel: 1
   colorName: 
   greyTexture: 1
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1511990226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1350,3 +1451,4 @@ MonoBehaviour:
   diamondLevel: 2
   colorName: 
   greyTexture: 1
+  tintColor: {r: 1, g: 1, b: 1, a: 1}
