@@ -24709,7 +24709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &432324057
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31960,7 +31960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backgrounds:
   - {fileID: 1022765761}
-  - {fileID: 1022765760}
+  - {fileID: 1022765761}
 --- !u!114 &1022765763
 MonoBehaviour:
   m_ObjectHideFlags: 0

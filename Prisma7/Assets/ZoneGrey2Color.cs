@@ -22,8 +22,8 @@ public class ZoneGrey2Color : MonoBehaviour {
 	void SetGrey(){
 		Renderer[] renderers = GetComponentsInChildren<Renderer>();
 		foreach (Renderer r in renderers) {	
-			/*print (r.gameObject.name);
-			Color c = r.material.GetColor (colorName);
+			//print (r.gameObject.name);
+			/*Color c = r.material.GetColor (colorName);
 			float h, s, v;
 			Color.RGBToHSV (c, out h, out s, out v);
 			//r.material.SetColor(colorName,Color.HSVToRGB (h, 0f, v));*/

@@ -989,6 +989,11 @@ Prefab:
       propertyPath: m_LocalPosition.z
       value: -2.44
       objectReference: {fileID: 0}
+    - target: {fileID: 114252286006557066, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: greyTexture
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
   m_IsPrefabAsset: 0
