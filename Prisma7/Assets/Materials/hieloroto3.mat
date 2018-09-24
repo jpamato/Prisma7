@@ -4,7 +4,7 @@
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: hieloroto3
   m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
@@ -75,4 +75,4 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 0.5707547, b: 0.8850705, a: 0}
     - _EmissionColor: {r: 0, g: 0.014311401, b: 0.16037738, a: 0}
-    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 0.34901962}
+    - _TintColor: {r: 0.53099996, g: 0.53099996, b: 0.53099996, a: 0.5294118}
