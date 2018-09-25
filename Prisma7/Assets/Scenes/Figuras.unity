@@ -9730,6 +9730,7 @@ Transform:
   - {fileID: 1778925200}
   - {fileID: 1716045237}
   - {fileID: 742975092}
+  - {fileID: 874666535}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27008,7 +27009,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.9
+      scalar: 0.1
       minScalar: 0.4
       maxCurve:
         serializedVersion: 2
@@ -27499,8 +27500,8 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 3
-      scalar: -0.55
-      minScalar: -0.18
+      scalar: 0
+      minScalar: 0.16
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -31588,6 +31589,11 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 841586895}
   m_CullTransparentMesh: 0
+--- !u!4 &874666535 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b,
+    type: 2}
+  m_PrefabInternal: {fileID: 2071498928}
 --- !u!1 &890090942
 GameObject:
   m_ObjectHideFlags: 0
@@ -33172,8 +33178,8 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.4
-      minScalar: 0.8
+      scalar: 0.3
+      minScalar: 0.4
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -34049,12 +34055,12 @@ ParticleSystem:
           outWeight: 0.10837438
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 0.29194626
-          outSlope: 0.29194626
+          value: 0.8120804
+          inSlope: -0.532584
+          outSlope: -0.532584
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.2068966
+          inWeight: 0.15121949
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -34361,7 +34367,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 1, g: 1, b: 1, a: 0.59607846}
         key1: {r: 1, g: 0.8, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
@@ -34377,7 +34383,7 @@ ParticleSystem:
         ctime5: 0
         ctime6: 0
         ctime7: 0
-        atime0: 22552
+        atime0: 0
         atime1: 49730
         atime2: 65535
         atime3: 0
@@ -43055,7 +43061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2053876998
 Transform:
   m_ObjectHideFlags: 0
@@ -43211,6 +43217,48 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &2071498928
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 66339903}
+    m_Modifications:
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4006340172739848, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2c45b0717b356ac4ebfe13b1b2483e0b, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &2086714476
 GameObject:
   m_ObjectHideFlags: 0
