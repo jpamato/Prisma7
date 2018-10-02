@@ -167,6 +167,7 @@ public class CombinatoriasGame : MateGame {
 			gi.image.color = Data.Instance.levelsData.GetInProgressLevel ().color;
 			burbujas [burbujasDone].combinacion.Add (t.GetComponent<GemaItem> ().val);
 			burbujas [burbujasDone].combinacion.Sort ();
+			burbujas [burbujasDone].WinEffect.SetActive (true);
 		}
 
 
@@ -183,6 +184,7 @@ public class CombinatoriasGame : MateGame {
 		audioSource.PlayOneShot (combiDone);
 		Data.Instance.ui.HideTimer ();
 		//Events.FiguraComplete (figura.go.name);
+		Events.OnMathGameComplete ();
 		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);

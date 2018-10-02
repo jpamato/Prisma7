@@ -9,6 +9,8 @@ public class Burbuja : MonoBehaviour {
 
 	public List<int> combinacion;
 
+	public GameObject WinEffect;
+
 	// Use this for initialization
 	void Start () {
 		done.SetActive (false);
