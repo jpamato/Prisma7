@@ -13,6 +13,7 @@ public class Data : MonoBehaviour
     static Data mInstance = null;
 	public FigurasData figurasData;
 	public CombinatoriasData combinatoriasData;
+	public PocionesData pocionesData;
 	public LevelsData levelsData;
 	public InputManager inputManager;
 	public UserData userData;
@@ -70,6 +71,7 @@ public class Data : MonoBehaviour
 		figurasData = GetComponent<FigurasData> ();
 		levelsData = GetComponent<LevelsData> ();
 		combinatoriasData = GetComponent<CombinatoriasData> ();
+		pocionesData = GetComponent<PocionesData> ();
 		inputManager = GetComponent<InputManager> ();
 		Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
