@@ -50,6 +50,7 @@ public class ColorBar : MonoBehaviour {
 			newVal = val;
 			animateBar = true;
 		} else {
+			animateBar = false;
 			image.fillAmount = val;
 		}
 	}

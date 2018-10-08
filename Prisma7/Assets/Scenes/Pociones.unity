@@ -5243,7 +5243,7 @@ MonoBehaviour:
   loseSign: {fileID: 1696698050}
   consigna: {fileID: 585751050}
   times2FullBar: 6
-  totalTime: 40
+  totalTime: 60
   actualTime: 0
   state: 0
   partidaGames: 2
