@@ -5221,8 +5221,8 @@ MonoBehaviour:
     combinaciones: 0
     resultado: 0
   gemasCentral: []
-  combiOK: {fileID: 8300000, guid: 9e2d647a69c8ed749a9cc9b77137d4db, type: 3}
-  combiDone: {fileID: 8300000, guid: ecdadb4a1f990eb4494bd9f41f985ee4, type: 3}
+  combiOK: {fileID: 8300000, guid: 23762e9c973314a41ae85375496f44b8, type: 3}
+  combiDone: {fileID: 8300000, guid: babb60db9dc37024c96787cdd6702489, type: 3}
 --- !u!1 &73983772
 GameObject:
   m_ObjectHideFlags: 0

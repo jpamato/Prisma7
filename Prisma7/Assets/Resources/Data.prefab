@@ -1091,7 +1091,7 @@ MonoBehaviour:
   - {fileID: 1942756674995048}
   - {fileID: 1082978468489964}
   - {fileID: 1960746522454848}
-  animSpeedStep: 0.005
+  animSpeedStep: 0.002
 --- !u!114 &114485381752848230
 MonoBehaviour:
   m_ObjectHideFlags: 1
