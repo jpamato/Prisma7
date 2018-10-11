@@ -62,17 +62,30 @@ public static class Utils {
 	}
 
 	public static void Shuffle<T>(T[] array){
-		System.Random _random = new System.Random();
+		System.Random _random = new System.Random ();
 		int n = array.Length;
-		for (int i = 0; i < n; i++)
-		{
+		for (int i = 0; i < n; i++) {
 			// Use Next on random instance with an argument.
 			// ... The argument is an exclusive bound.
 			//     So we will not go past the end of the array.
-			int r = i + _random.Next(n - i);
-			T t = array[r];
-			array[r] = array[i];
-			array[i] = t;
+			int r = i + _random.Next (n - i);
+			T t = array [r];
+			array [r] = array [i];
+			array [i] = t;
 		}
 	}
+
+	static string int2Hex(int c) {
+			string hex = c.ToString("X2");
+			return hex.Length == 1 ? "0" + hex : hex;
+	}
+
+	public static string rgb2Hex(float r, float g, float b) {
+		return rgb2Hex ((int)(r*255), (int)(g*255), (int)(b*255));
+	}
+
+	public static string rgb2Hex(int r, int g, int b) {
+			return "#" + int2Hex(r) + int2Hex(g) + int2Hex(b);
+	}
+
 }

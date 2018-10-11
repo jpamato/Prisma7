@@ -999,22 +999,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientes:
-  - name: "escamas de pira\xF1a"
-    sprite: {fileID: 21300000, guid: 992331adf516a9846a106ff1e09a56ab, type: 3}
-  - name: ojo de lagarto
-    sprite: {fileID: 21300000, guid: d368f38772570b545b03a42ad90137c4, type: 3}
-  - name: ala de murcielago
-    sprite: {fileID: 21300000, guid: 171a8ec3a8e5d0f4a916009ba77de5da, type: 3}
-  - name: "pata de ara\xF1a"
-    sprite: {fileID: 21300000, guid: c1537850419aee545b2d99e7818886ab, type: 3}
-  - name: pata de rana
-    sprite: {fileID: 21300000, guid: ed18740f34a1a9a4a9d26a7f6297bb38, type: 3}
-  - name: "gotas de sangre de drag\xF3n"
-    sprite: {fileID: 21300000, guid: d2a9b1a0a8ebeb441826e429d8245258, type: 3}
-  - name: lengua de serpiente
-    sprite: {fileID: 21300000, guid: 996ff184e3cc90e488818b3b3c482991, type: 3}
-  - name: "tent\xE1culo de pulpo"
-    sprite: {fileID: 21300000, guid: 7e57fc69ee715944e9ecfcffb64d35ec, type: 3}
+  - name: ojo de boa
+    sprite: {fileID: 21300000, guid: daa29a1c48522a0418f07ec4902078e6, type: 3}
+  - name: colmillo
+    sprite: {fileID: 21300000, guid: bc56078af827c4b478a0dbacfd42c313, type: 3}
+  - name: hoja viva
+    sprite: {fileID: 21300000, guid: efe24e2cafb39d34088e60fdd7945ed7, type: 3}
+  - name: hoja muerta
+    sprite: {fileID: 21300000, guid: 085932c0410ed2343ad17dd59c09b2c6, type: 3}
+  - name: "flor m\xE1gica"
+    sprite: {fileID: 21300000, guid: 799b62a2661947e4c94aa41628ce8d34, type: 3}
+  - name: lengua de cobra
+    sprite: {fileID: 21300000, guid: 988449a88fa1f4247ae319199e9bdae0, type: 3}
   pocionesLevels:
   - valores:
     - val: 4
