@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37312123, g: 0.38074112, b: 0.35872862, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312144, g: 0.38074106, b: 0.3587286, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -250,6 +250,15 @@ Prefab:
     - target: {fileID: 1596789190002910, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
       propertyPath: m_Name
       value: Area1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314069711894340, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114502619339458892, guid: 3278ec99be89e6945b4874d11e84cdf9,
+        type: 2}
+      propertyPath: minigame
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
@@ -823,6 +832,8 @@ MonoBehaviour:
   ninjaOK: {fileID: 8300000, guid: 9e2d647a69c8ed749a9cc9b77137d4db, type: 3}
   ninjaWrong: {fileID: 8300000, guid: c913455203bf9b24f9ff334e71178d36, type: 3}
   ninjaDone: {fileID: 8300000, guid: ecdadb4a1f990eb4494bd9f41f985ee4, type: 3}
+  rompehielo: {fileID: 8300000, guid: 39881fdd9e372e84eb4692466321a529, type: 3}
+  glass: {fileID: 8300000, guid: 51ecc9c369133db4e9692a917bb985cc, type: 3}
 --- !u!114 &915442834
 MonoBehaviour:
   m_ObjectHideFlags: 0
