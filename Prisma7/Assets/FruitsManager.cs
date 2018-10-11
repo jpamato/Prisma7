@@ -12,6 +12,15 @@ public class FruitsManager : MonoBehaviour {
 	public Fruit genericFruit2;
 	public Fruit badFruit2;
 
+	public Fruit genericFruit3;
+	public Fruit badFruit3;
+
+	public Fruit genericFruit4;
+	public Fruit badFruit4;
+
+	public Fruit genericFruit5;
+	public Fruit badFruit5;
+
 	public Transform target;
 
 	[HideInInspector]
@@ -44,15 +53,28 @@ public class FruitsManager : MonoBehaviour {
 	void AddGood()
 	{
 		Fruit fruit = genericFruit;
-		if (Data.Instance.levelsData.actualDiamondLevel == 1 && Random.Range (0, 10) < 5)
+		if (Data.Instance.levelsData.actualDiamondLevel > 3 && Random.Range (0, 10) < 5) 
+			fruit = genericFruit5;
+		if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
+			fruit = genericFruit4;
+		if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
+			fruit = genericFruit3;
+		if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
 			fruit = genericFruit2;
 		AddFruit (fruit);
 	}
 	void AddBad()
 	{
 		Fruit fruit = badFruit;
-		if (Data.Instance.levelsData.actualDiamondLevel == 1 && Random.Range (0, 10) < 5)
+		if (Data.Instance.levelsData.actualDiamondLevel > 3 && Random.Range (0, 10) < 5) 
+			fruit = badFruit5;
+		if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
+			fruit = badFruit4;
+		if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
+			fruit = badFruit3;
+		if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
 			fruit = badFruit2;
+
 		AddFruit (fruit);
 	}
 	void AddFruit(Fruit newFruit)
@@ -65,7 +87,5 @@ public class FruitsManager : MonoBehaviour {
 		if (Random.Range (0, 10) < 5)
 			dir = -1;
 		fruit.Init (speed, dir);
-
-		fruit.transform.localPosition = new Vector3(Random.Range(0,300*-dir),0,0);
 	}
 }

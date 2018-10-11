@@ -44,11 +44,13 @@ public class Door : InteractiveObject {
 			break;
 		}
 	}
-	float lastValue;
+	int lastValue = 0;
 	public void SetProgress(float value)
 	{
 		int v = (int)((1f - value) * 10);
-		print("textures_hielo = " + v);
+		if (lastValue >= v)
+			return;
+		lastValue = v;
 		hieloMesh.material.mainTexture = textures_hielo[v];
 
 		if(v != 0)
