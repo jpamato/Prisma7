@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Door : InteractiveObject {
-
+	public ParticleSystem damageSystem;
+	public MeshRenderer hieloMesh;
+	public Texture2D[] textures_hielo;
 	public int id;
 	public int diamondLevel;
 	public Data.minigamesScenes minigame;
@@ -28,7 +30,9 @@ public class Door : InteractiveObject {
 		this.state = state;
 		switch (state) {
 		case states.CLOSED:
+			SetProgress (1);
 			closed.SetActive (true);
+			damageSystem.Stop ();
 			break;
 		case states.OPENING:
 			opening.SetActive (true);
@@ -39,5 +43,15 @@ public class Door : InteractiveObject {
 			opened.SetActive (true);
 			break;
 		}
+	}
+	float lastValue;
+	public void SetProgress(float value)
+	{
+		int v = (int)((1f - value) * 10);
+		print("textures_hielo = " + v);
+		hieloMesh.material.mainTexture = textures_hielo[v];
+
+		if(v != 0)
+			damageSystem.Play ();
 	}
 }

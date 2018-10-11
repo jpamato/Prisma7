@@ -35,6 +35,7 @@ public class FruitNinja : MonoBehaviour {
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
+		interactiveObject.GetComponent<Door> ().SetProgress (1);
 	}
 
 	void OnFruitNinjaClickedBubble(Fruit.types type)
@@ -55,7 +56,9 @@ public class FruitNinja : MonoBehaviour {
 			points = totalPoints;
 			Done (true);
 		}			
-		Data.Instance.ui.progressBar.SetValue (1-(float)points/(float)totalPoints);
+		float v = 1 - (float)points / (float)totalPoints;
+		Data.Instance.ui.progressBar.SetValue (v);
+		interactiveObject.GetComponent<Door> ().SetProgress (v);
 	}
 	void Done(bool win)
 	{
