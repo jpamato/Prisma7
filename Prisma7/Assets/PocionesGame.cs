@@ -13,6 +13,8 @@ public class PocionesGame : MateGame {
 	public Transform inventarioContent;
 	public Transform centralContent;
 	public GameObject receta;
+	public ParticleSystem ingredientFx;
+	public Animator caldero;
 
 	public PocionesData.Level pLevelData;
 
@@ -33,6 +35,7 @@ public class PocionesGame : MateGame {
 		Events.OnDropingOut += OnDropingOut;
 		slots = new List<GameObject> ();
 		//Invoke ("Init", 0.1f);
+		caldero.Play("idle");
 		Init();
 	}
 
@@ -103,10 +106,13 @@ public class PocionesGame : MateGame {
 				//gis.text.text = ingredientes[i].name;
 				gis.id = valores [i].id;
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
+				cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+"\n";
 			} else {
-				rp.texto.text += ingredientes [i].name+": <color=black><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
+				Color c = Data.Instance.levelsData.GetNextLevel ().color;
+				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
+				cs.texto.text += "<color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b>"+valores [i].val+"</b></color> "+ingredientes [i].name+"\n";
 			}
-			cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+"\n";
+
 		}
 	}
 
@@ -119,7 +125,8 @@ public class PocionesGame : MateGame {
 			if (i < pLevelData.slots) {								
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
 			} else {
-				rp.texto.text += ingredientes [i].name+": <color=black><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
+				Color c = Data.Instance.levelsData.GetNextLevel ().color;
+				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
 			}
 		}
 	}
@@ -138,6 +145,9 @@ public class PocionesGame : MateGame {
 		}
 		if (done)
 			PocionComplete ();
+		else
+			PocionFail ();
+
 	}
 
 	void OnDropingOut(){
@@ -145,13 +155,20 @@ public class PocionesGame : MateGame {
 	}
 
 	void DroppedUI(GameObject dragged){
+		ingredientFx.Play ();
 		IngredienteItem ii = dragged.GetComponent<IngredienteItem> ();
 		PocionesData.Valores v = valoresParciales.Find (x => x.id == ii.id);
 		v.val++;
 		UpdateReceta (false);
 	}
 
+	void PocionFail(){
+		Debug.Log ("fail");
+		caldero.Play("lose");
+	}
+
 	void PocionComplete(){
+		caldero.Play("win");
 		audioSource.PlayOneShot (combiDone);
 		Data.Instance.ui.HideTimer ();
 		//Events.FiguraComplete (figura.go.name);

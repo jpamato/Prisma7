@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Combinatorias.unity
     guid: a34da653a0454534a9231daebeaeaa52
+  - enabled: 1
+    path: Assets/Scenes/Pociones.unity
+    guid: dbd18287abcf5a04fa2c7b4ed4f78b97
   m_configObjects: {}

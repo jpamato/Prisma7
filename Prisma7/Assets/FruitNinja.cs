@@ -11,7 +11,7 @@ public class FruitNinja : MonoBehaviour {
 	bool playing;
 	float timer = 0;
 	public float duration;
-	public AudioClip ninjaOK, ninjaWrong,ninjaDone;
+	public AudioClip ninjaOK, ninjaWrong,ninjaDone, rompehielo, glass;
 
 	void Start () {
 		fruitsManager.gameObject.SetActive (false);
@@ -35,6 +35,7 @@ public class FruitNinja : MonoBehaviour {
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
+		interactiveObject.GetComponent<Door> ().SetProgress (1);
 	}
 
 	void OnFruitNinjaClickedBubble(Fruit.types type)
@@ -42,6 +43,7 @@ public class FruitNinja : MonoBehaviour {
 		switch (type) {
 		case Fruit.types.GENERIC:
 			fruitsManager.audioSource.PlayOneShot (ninjaOK);
+			fruitsManager.audioSource.PlayOneShot (rompehielo);
 			points += 1;
 			break;
 		case Fruit.types.BAD:
@@ -55,7 +57,9 @@ public class FruitNinja : MonoBehaviour {
 			points = totalPoints;
 			Done (true);
 		}			
-		Data.Instance.ui.progressBar.SetValue (1-(float)points/(float)totalPoints);
+		float v = 1 - (float)points / (float)totalPoints;
+		Data.Instance.ui.progressBar.SetValue (v);
+		interactiveObject.GetComponent<Door> ().SetProgress (v);
 	}
 	void Done(bool win)
 	{
@@ -71,6 +75,8 @@ public class FruitNinja : MonoBehaviour {
 
 		if(win)
 			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENING);
+
+		fruitsManager.audioSource.PlayOneShot (glass);
 	}
 
 	void CloseManager(){

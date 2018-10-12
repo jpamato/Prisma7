@@ -41,6 +41,10 @@ public class LevelsData : MonoBehaviour {
 		return diamondLevels [actualDiamondLevel];
 	}
 
+	public DiamondLevel GetNextLevel(){
+		return diamondLevels [actualDiamondLevel+1];
+	}
+
 	public DiamondLevel GetInProgressLevel(){
 		return diamondLevels [actualDiamondLevel+1];
 	}
