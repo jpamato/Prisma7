@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FruitLevel3 : Fruit {
-	
+public class FruitLevel4 : Fruit {
+
 	public float speedX;
 	public float speedY;
 	int dir = 1;
@@ -27,7 +27,7 @@ public class FruitLevel3 : Fruit {
 		pos.y = speedY;
 		pos.x += speedX * Time.deltaTime * dir;
 		transform.localPosition = pos;
-		if (pos.x > 605 || pos.x < -605)
+		if (pos.x > 805 || pos.x < -805)
 			Destroy (this.gameObject);
 	}
 }

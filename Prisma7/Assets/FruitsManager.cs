@@ -55,11 +55,11 @@ public class FruitsManager : MonoBehaviour {
 		Fruit fruit = genericFruit;
 		if (Data.Instance.levelsData.actualDiamondLevel > 3 && Random.Range (0, 10) < 5) 
 			fruit = genericFruit5;
-		if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
 			fruit = genericFruit4;
-		if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
 			fruit = genericFruit3;
-		if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
 			fruit = genericFruit2;
 		AddFruit (fruit);
 	}
@@ -68,11 +68,11 @@ public class FruitsManager : MonoBehaviour {
 		Fruit fruit = badFruit;
 		if (Data.Instance.levelsData.actualDiamondLevel > 3 && Random.Range (0, 10) < 5) 
 			fruit = badFruit5;
-		if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 2 && Random.Range (0, 10) < 5) 
 			fruit = badFruit4;
-		if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 1 && Random.Range (0, 10) < 5) 
 			fruit = badFruit3;
-		if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
+		else if (Data.Instance.levelsData.actualDiamondLevel > 0 && Random.Range (0, 10) < 5) 
 			fruit = badFruit2;
 
 		AddFruit (fruit);

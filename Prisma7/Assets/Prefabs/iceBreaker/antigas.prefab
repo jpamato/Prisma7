@@ -71,7 +71,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 224584182132420052}
-  - component: {fileID: 114580013355797694}
+  - component: {fileID: 114620828939759214}
   m_Layer: 5
   m_Name: antigas
   m_TagString: Untagged
@@ -86,7 +86,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676965395408688}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.170956, y: -3.4299922, z: 0.35}
+  m_LocalPosition: {x: -284.2, y: -3.4299922, z: 0.35}
   m_LocalScale: {x: 0.6999999, y: 0.6999999, z: 0.6999999}
   m_Children: []
   m_Father: {fileID: 224757969969202114}
@@ -115,14 +115,14 @@ Animation:
   m_GameObject: {fileID: 1447810241198124}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 1ef5f22e47d7f5e41a581b1885720cde, type: 2}
+  m_Animation: {fileID: 7400000, guid: b7b3aac54bac5b04b9fc51ec3ddf8055, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 1ef5f22e47d7f5e41a581b1885720cde, type: 2}
+  - {fileID: 7400000, guid: b7b3aac54bac5b04b9fc51ec3ddf8055, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
---- !u!114 &114580013355797694
+--- !u!114 &114620828939759214
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1688416228728088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5c9a6ec8527f54842abba3f281bb8561, type: 3}
+  m_Script: {fileID: 11500000, guid: fbb6895a7e3b2124d944801bb22440fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 111515037240243042}
@@ -156,7 +156,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 114580013355797694}
+        - m_Target: {fileID: 114620828939759214}
           m_MethodName: OnClicked
           m_Mode: 1
           m_Arguments:
@@ -189,7 +189,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1fff7b57ffa47164985757aee20baf6b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32341eec22ce8494aaf9b10aa184eb4e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4809,7 +4809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000091552734, y: -0.000011444092}
+  m_AnchoredPosition: {x: -271.02917, y: -0.000011444092}
   m_SizeDelta: {x: 300, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224584182132420052
@@ -4828,7 +4828,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.3699646, y: 5.2099915}
+  m_AnchoredPosition: {x: 0, y: 5.2099915}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224757969969202114
