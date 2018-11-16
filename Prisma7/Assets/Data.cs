@@ -14,6 +14,7 @@ public class Data : MonoBehaviour
 	public FigurasData figurasData;
 	public CombinatoriasData combinatoriasData;
 	public PocionesData pocionesData;
+	public GrillaData grillaData;
 	public LevelsData levelsData;
 	public InputManager inputManager;
 	public UserData userData;
@@ -73,6 +74,7 @@ public class Data : MonoBehaviour
 		levelsData = GetComponent<LevelsData> ();
 		combinatoriasData = GetComponent<CombinatoriasData> ();
 		pocionesData = GetComponent<PocionesData> ();
+		grillaData = GetComponent<GrillaData> ();
 		inputManager = GetComponent<InputManager> ();
 		Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
