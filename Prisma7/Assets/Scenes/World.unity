@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37312123, g: 0.38074112, b: 0.35872862, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312144, g: 0.38074106, b: 0.3587286, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -259,6 +259,10 @@ Prefab:
         type: 2}
       propertyPath: minigame
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1207729809055524, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3278ec99be89e6945b4874d11e84cdf9, type: 2}
