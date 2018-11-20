@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GrillaGame : MateGame {
 
@@ -15,7 +16,18 @@ public class GrillaGame : MateGame {
 	public AudioClip combiOK,combiDone;
 	AudioSource audioSource;
 
-	public bool[][] grid;
+	public int[,] grid;
+	public int gemasActivas;
+	public int columnas;
+	public int filas;
+
+	public List<Rect> rects;
+
+	[Serializable]
+	public class Rect{
+		public Vector2 topLeft;
+		public Vector2 bottomRight;
+	}
 
 	// Use this for initialization
 	void Start () {	
@@ -74,6 +86,8 @@ public class GrillaGame : MateGame {
 			gg.id = new Vector2 (i % gLevelData.size.x, Mathf.Floor (i / gLevelData.size.y));
 		}
 
+		grid = new int[(int)gLevelData.size.x,(int)gLevelData.size.y];
+		//grid = new bool[4][];
 	}
 
 	void StopFigurWrongPS(){
@@ -85,11 +99,89 @@ public class GrillaGame : MateGame {
 	}
 
 	void OnGrillaClick(Vector2 id, bool active){
-		grid [(int)id.x][(int)id.y] = active;
+			grid [(int)id.x,(int)id.y] = active?1:0;
+			CheckGrid ();
+	}
 
-		/*for (int x = 0; x < grid.Length; x++) {
+	void CheckGrid(){
+		rects.Clear ();
+		for (int x = 0; x < grid.GetLength(0); x++) {
+			for (int y = 0; y < grid.GetLength(1); y++) {
+				if (grid [x, y] == 1) {
+					Debug.Log ("ACA");
+					FindRectEnd (x, y);
+				}
+			}
+		}
 
-		}*/
+
+		for (int x = 0; x < grid.GetLength(0); x++) {
+			for (int y = 0; y < grid.GetLength(1); y++) {
+				if (grid [x, y] > 0)
+					grid [x, y] = 1;
+			}
+		}
+	}
+
+	void FindRectEnd(int x, int y){
+		Rect r = new Rect ();
+		r.topLeft = new Vector2 (x, y);
+		bool flagEndx = false;
+		bool flagEndy = false;
+		int ii = x;
+		int jj = y;
+		Debug.Log (grid.GetLength (0) + " - " + grid.GetLength (1));
+		for (int i = x; i < grid.GetLength(0); i++) {
+			Debug.Log (i + ":" + y+"="+grid [i, y]);
+			if (grid [i, y] == 0) {
+				flagEndx = true;
+				ii=i;
+				break;
+			} else {
+				//grid [i, y] = 1;
+				ii=i;
+			}
+			if (!flagEndy) {
+				for (int j = y; j < grid.GetLength (1); j++) {
+					Debug.Log (i + ":" + j + "=" + grid [i, j]);
+					if (grid [i, j] == 0) {
+						flagEndy = true;
+						jj = j;
+						break;
+					} else {
+						//grid [i, j] = 1;
+						jj = j;
+					}	
+				}
+			} else {
+				for (int j = y; j < jj; j++) {
+					if (grid [i, j] == 0) {
+						jj = j;
+						break;
+					}
+				}
+			}
+		}
+		float right, bottom;
+		if (flagEndx)
+			right = ii-1;
+		else
+			right = ii;
+			
+		if (flagEndy)
+			bottom = jj-1;
+		else
+			bottom = jj;
+
+
+		for (int i = x; i < right+1; i++) {
+			for (int j = y; j < bottom+1; j++) {
+				grid [i, j] = 5;
+			}
+		}
+
+		r.bottomRight = new Vector2 (right, bottom);
+		rects.Add (r);
 	}
 
 	void GrillaComplete(){
