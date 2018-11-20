@@ -78,7 +78,7 @@ public class PocionesGame : MateGame {
 
 		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
-		cs.texto.text = "Para un buen color lograr,\nestos elementos balancear\n";
+		cs.texto.text = "Para un buen color lograr,\nestos elementos balancear:\n";
 
 		receta.SetActive (true);
 		RecetaPociones rp = receta.GetComponent<RecetaPociones> ();
