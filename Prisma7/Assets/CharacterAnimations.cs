@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class CharacterAnimations : MonoBehaviour {
 
-	public Animation anim;
+	public Animation anim_he;
+	public Animation anim_she;
+
+	Animation anim;
+
 	public AudioClip walkSfx;
 
 	public states state;
@@ -19,6 +23,15 @@ public class CharacterAnimations : MonoBehaviour {
 	}
 	void Start()
 	{
+		if (Data.Instance.userData.sex == UserData.sexs.HE) {
+			anim = anim_he;
+			anim_she.gameObject.SetActive (false);
+			anim_he.gameObject.SetActive (true);
+		} else {
+			anim = anim_she;
+			anim_he.gameObject.SetActive (false);
+			anim_she.gameObject.SetActive (true);
+		}
 		asource = GetComponent<AudioSource> ();
 		Idle ();
 	}

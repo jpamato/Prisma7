@@ -10,7 +10,8 @@ public class Game : MonoBehaviour {
 	public enum modes
 	{
 		WORLD,
-		FRUIT_NINJA
+		FRUIT_NINJA,
+		FREEZED
 	}
 	static Game mInstance = null;
 

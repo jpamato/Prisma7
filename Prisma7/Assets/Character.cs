@@ -8,7 +8,8 @@ public class Character : MonoBehaviour {
 	public enum states{
 		PLAYING,
 		OPENING_FRUIT_NINJA,
-		ENTERING_DOOR
+		ENTERING_DOOR,
+		CHANGING_LEVEL
 	}
 	public GameObject target;
 
@@ -45,10 +46,22 @@ public class Character : MonoBehaviour {
 	}
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
-		if (state != states.PLAYING)
+		if (state != states.PLAYING || state == states.CHANGING_LEVEL)
 			return;
+
+		PortalLevel portalLevel = io.GetComponent<PortalLevel> ();
+		if (portalLevel != null) {
+			selectedInteractiveObject = io;
+			anim.Idle ();
+			state = states.CHANGING_LEVEL;
+			portalLevel.ChekToCross ();
+			return;
+		}
 		
 		Door door = io.GetComponent<Door> ();
+
+
+
 
 		if (door == null || door.state == Door.states.UNAVAILABLE)
 			return;
@@ -76,7 +89,9 @@ public class Character : MonoBehaviour {
 		Data.Instance.LoadScene (nextScene);
 	}
 	void OnFloorClicked (Vector3 pos) {
-		
+
+		if ( state == states.CHANGING_LEVEL)
+			return;
 		if (state == states.ENTERING_DOOR)
 			return;
 		else if (state == states.OPENING_FRUIT_NINJA)
@@ -98,6 +113,8 @@ public class Character : MonoBehaviour {
 	}
 	void OnCharacterStopWalking()
 	{
+		if ( state == states.CHANGING_LEVEL)
+			return;
 		if (selectedInteractiveObject != null) {
 			if (state == states.OPENING_FRUIT_NINJA) {
 				LookAtTarget (selectedInteractiveObject.transform.gameObject);

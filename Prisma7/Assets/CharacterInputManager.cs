@@ -9,7 +9,7 @@ public class CharacterInputManager : MonoBehaviour {
 	float delay = 0.1f;
 	void Update()
 	{
-		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
+		if (Game.Instance.mode == Game.modes.FREEZED || Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
 		
 		if (Input.GetMouseButton(0)){
@@ -17,7 +17,6 @@ public class CharacterInputManager : MonoBehaviour {
 				return;
 
 			lastTimeClicked = Time.time + delay;
-			print ("lat:" + lastTimeClicked);
 
 			Vector3 mousePos = Input.mousePosition;
 			Ray mouseRay = cam.ScreenPointToRay(mousePos);
