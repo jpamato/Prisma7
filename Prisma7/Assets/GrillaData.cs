@@ -15,6 +15,14 @@ public class GrillaData : MonoBehaviour {
 		public int columnas;
 		public int filas;
 		public Vector2 size;
+		public LevelType levelType;
+	}
+
+	public enum LevelType
+	{
+		tipo1=1,
+		tipo2=2,
+		tipo3=3
 	}
 
 	// Use this for initialization

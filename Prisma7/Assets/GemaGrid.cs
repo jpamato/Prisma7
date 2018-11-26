@@ -19,11 +19,18 @@ public class GemaGrid : MonoBehaviour {
 			
 		button.onClick.AddListener (OnClick);
 		image.color = inactiveColor;
+
+		Events.OnMathGameComplete += OnMathGameComplete;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
+	}
+
+	void OnMathGameComplete(){
+		if (active)
+			image.color = Data.Instance.levelsData.GetNextLevel ().color;
 	}
 
 	void OnClick(){

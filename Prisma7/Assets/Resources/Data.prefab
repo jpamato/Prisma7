@@ -960,6 +960,13 @@ MonoBehaviour:
     columnas: 3
     filas: 0
     size: {x: 8, y: 8}
+    levelType: 1
+  - consigna: "Carga 8 gemas en la grilla m\xE1gica usando 4 columnas"
+    area: 8
+    columnas: 4
+    filas: 0
+    size: {x: 8, y: 8}
+    levelType: 1
   currentLevel: 0
 --- !u!114 &114426490453790886
 MonoBehaviour:

@@ -8,6 +8,8 @@ public class GrillaGame : MateGame {
 	public GameObject gemaGrid;
 	public RectTransform gridContent;
 
+	public Tween consignaTween;
+
 	public int partidaGames;
 	int gamesPlayeds;
 
@@ -35,7 +37,7 @@ public class GrillaGame : MateGame {
 		Data.Instance.inputManager.raycastUI = true;
 		levelBarStep = 1f / times2FullBar;
 		Events.OnGridClick += OnGrillaClick;
-		//Events.OnTimeOver += TimeOver;
+		Events.OnTimeOver += TimeOver;
 
 		//Invoke ("Init", 0.1f);
 		Init();
@@ -50,6 +52,8 @@ public class GrillaGame : MateGame {
 
 		SetBarColor ();
 		InitTimer ();
+
+		//consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
 
 		state = states.PLAYING;
 	}
@@ -72,6 +76,9 @@ public class GrillaGame : MateGame {
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
 		cs.texto.text = gLevelData.consigna;
 		//cs.valor.text = ""+cLevelData.resultado;
+
+		foreach (Transform child in gridContent)
+			Destroy (child.gameObject);
 
 		RectTransform rt = gemaGrid.GetComponent<RectTransform> ();
 		gridContent.sizeDelta = new Vector2 (gLevelData.size.x * rt.sizeDelta.x, gLevelData.size.y * rt.sizeDelta.y);
@@ -108,7 +115,6 @@ public class GrillaGame : MateGame {
 		for (int x = 0; x < grid.GetLength(0); x++) {
 			for (int y = 0; y < grid.GetLength(1); y++) {
 				if (grid [x, y] == 1) {
-					Debug.Log ("ACA");
 					FindRectEnd (x, y);
 				}
 			}
@@ -121,6 +127,21 @@ public class GrillaGame : MateGame {
 					grid [x, y] = 1;
 			}
 		}
+
+		foreach (Rect r in rects) {
+			int width = (int)((r.bottomRight.x+1) - r.topLeft.x);
+			int height = (int)((r.bottomRight.y+1) - r.topLeft.y);
+			int area = width * height;
+
+			if (area == gLevelData.area) {
+				if (gLevelData.columnas < 1 || width == gLevelData.columnas) {
+					if (gLevelData.filas < 1 || height == gLevelData.filas) {
+						GrillaComplete ();
+					}
+				}
+			}
+
+		}
 	}
 
 	void FindRectEnd(int x, int y){
@@ -130,9 +151,9 @@ public class GrillaGame : MateGame {
 		bool flagEndy = false;
 		int ii = x;
 		int jj = y;
-		Debug.Log (grid.GetLength (0) + " - " + grid.GetLength (1));
+		//Debug.Log (grid.GetLength (0) + " - " + grid.GetLength (1));
 		for (int i = x; i < grid.GetLength(0); i++) {
-			Debug.Log (i + ":" + y+"="+grid [i, y]);
+			//Debug.Log (i + ":" + y+"="+grid [i, y]);
 			if (grid [i, y] == 0) {
 				flagEndx = true;
 				ii=i;
@@ -143,7 +164,7 @@ public class GrillaGame : MateGame {
 			}
 			if (!flagEndy) {
 				for (int j = y; j < grid.GetLength (1); j++) {
-					Debug.Log (i + ":" + j + "=" + grid [i, j]);
+					//Debug.Log (i + ":" + j + "=" + grid [i, j]);
 					if (grid [i, j] == 0) {
 						flagEndy = true;
 						jj = j;
@@ -193,11 +214,12 @@ public class GrillaGame : MateGame {
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 
+		Data.Instance.grillaData.currentLevel++;
+
 		//Destroy (figuraGO);
 		if (Data.Instance.levelsData.actualLevelPercent >= 1f) {
 			colorDoneSign.SetActive (true);
 			Events.OnColorComplete ();
-			//Data.Instance.figurasData.ResetFiguresDone ();
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
