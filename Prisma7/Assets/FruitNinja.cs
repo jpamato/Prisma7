@@ -6,7 +6,7 @@ public class FruitNinja : MonoBehaviour {
 
 	public FruitsManager fruitsManager;
 	InteractiveObject interactiveObject;
-	public int totalPoints;
+	int totalPoints;
 	int points;
 	bool playing;
 	float timer = 0;
@@ -25,6 +25,7 @@ public class FruitNinja : MonoBehaviour {
 	}
 	void OpenFruitNinja(InteractiveObject _interactiveObject)
 	{
+		totalPoints = 3 + (Data.Instance.levelsData.actualDiamondLevel * 2);
 		timer = 0;
 		Data.Instance.ui.StartTimer ();
 		playing = true;

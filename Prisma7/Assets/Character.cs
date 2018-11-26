@@ -51,11 +51,12 @@ public class Character : MonoBehaviour {
 
 		PortalLevel portalLevel = io.GetComponent<PortalLevel> ();
 		if (portalLevel != null) {
-			selectedInteractiveObject = io;
-			anim.Idle ();
-			state = states.CHANGING_LEVEL;
-			portalLevel.ChekToCross ();
-			return;
+			if (portalLevel.ChekToCross ()) {
+				selectedInteractiveObject = io;
+				anim.Idle ();
+				state = states.CHANGING_LEVEL;
+				return;
+			}
 		}
 		
 		Door door = io.GetComponent<Door> ();

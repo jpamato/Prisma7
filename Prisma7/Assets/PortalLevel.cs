@@ -24,8 +24,10 @@ public class PortalLevel : InteractiveObject {
 			anim.Play ("portal_unlocked");
 		}
 	}
-	public void ChekToCross()
+	public bool ChekToCross()
 	{
+		if (Data.Instance.levelsData.actualDiamondLevel <= id)
+			return false;
 		Game.Instance.mode = Game.modes.FREEZED;
 		if (state != states.OPENED) {
 			Data.Instance.userData.OpenPortal (id);
@@ -35,6 +37,7 @@ public class PortalLevel : InteractiveObject {
 		} else {
 			ChangeLevel ();
 		}
+		return true;
 	}
 	void ChangeLevel()
 	{
