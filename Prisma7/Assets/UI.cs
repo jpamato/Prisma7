@@ -9,12 +9,13 @@ public class UI : MonoBehaviour {
 	public ColorBar colorBar;
 	public Prisma prisma;
 
-	AudioSource clockSource;
+	public AudioSource clockSource;
 
-	public void Start(){
-		clockSource = timer.gameObject.GetComponent<AudioSource> ();
+	public void SetStatus(bool isOn)
+	{
+		timer.gameObject.SetActive (isOn);
+		progressBar.gameObject.SetActive (isOn);
 	}
-
 	public void HideTimer()
 	{
 		timer.gameObject.SetActive (false);

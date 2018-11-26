@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/World.unity
+    path: Assets/Scenes/CharacterSelector.unity
     guid: fd3c9ba9728e48e488a736ef98db86a4
+  - enabled: 1
+    path: Assets/Scenes/World.unity
+    guid: f7f4f467090384743bd332bfd7f7ad8a
   - enabled: 1
     path: Assets/Scenes/Figuras.unity
     guid: 3fb318975d818214f8dcee6108c7e39b
@@ -17,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pociones.unity
     guid: dbd18287abcf5a04fa2c7b4ed4f78b97
+  - enabled: 1
+    path: Assets/Scenes/World2.unity
+    guid: 9b69d9f86717c52478af002c8bd0b745
   m_configObjects: {}
