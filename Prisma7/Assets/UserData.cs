@@ -16,6 +16,7 @@ public class UserData : MonoBehaviour {
 
 	void Start()
 	{
+		
 		portalOpenedID = PlayerPrefs.GetInt ("portalOpenedID", 0);
 	}
 	public int GetPortalIDOpened()
