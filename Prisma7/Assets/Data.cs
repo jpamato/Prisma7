@@ -22,9 +22,10 @@ public class Data : MonoBehaviour
 
 	public enum minigamesScenes
 	{
-		Figuras,
-		Combinatorias,
-		Pociones
+		Figuras=0,
+		Combinatorias=1,
+		Pociones=2,
+		Grilla=3
 	}
 
 	public static Data Instance

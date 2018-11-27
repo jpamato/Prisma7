@@ -216,7 +216,7 @@ public class CombinatoriasGame : MateGame {
 
 		/*Destroy (figuraGO);
 		figura.ClearRunas ();*/
-
+		Data.Instance.ui.ClockSfx (false);
 		Invoke ("BackToWorld", 3);
 		//Invoke ("Init", 3);
 	}

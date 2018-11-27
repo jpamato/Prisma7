@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Character : MonoBehaviour {
 
@@ -76,7 +77,12 @@ public class Character : MonoBehaviour {
 		} else {			
 			selectedInteractiveObject = io;
 			Door d = selectedInteractiveObject as Door;
-			nextScene = d.minigame.ToString ();
+
+			int mgCount = Enum.GetNames (typeof(Data.minigamesScenes)).Length;
+
+			int random = UnityEngine.Random.Range (0, mgCount);
+
+			nextScene = ((Data.minigamesScenes)random).ToString ();
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 0.35f;
 			OnFloorClicked (newPos);

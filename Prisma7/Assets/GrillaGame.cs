@@ -234,7 +234,7 @@ public class GrillaGame : MateGame {
 	void TimeOver(){
 		state = states.ENDED;
 		loseSign.SetActive (true);
-
+		Data.Instance.ui.ClockSfx (false);
 		Invoke ("BackToWorld", 3);
 		//Invoke ("Init", 3);
 	}
