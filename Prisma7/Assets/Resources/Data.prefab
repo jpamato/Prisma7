@@ -1027,17 +1027,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientes:
-  - name: ojo de boa
+  - name: ojos de boa
     sprite: {fileID: 21300000, guid: daa29a1c48522a0418f07ec4902078e6, type: 3}
-  - name: colmillo
+  - name: colmillos
     sprite: {fileID: 21300000, guid: bc56078af827c4b478a0dbacfd42c313, type: 3}
-  - name: hoja viva
+  - name: hojas vivas
     sprite: {fileID: 21300000, guid: efe24e2cafb39d34088e60fdd7945ed7, type: 3}
-  - name: hoja muerta
+  - name: hojas muertas
     sprite: {fileID: 21300000, guid: 085932c0410ed2343ad17dd59c09b2c6, type: 3}
-  - name: "flor m\xE1gica"
+  - name: "flores m\xE1gicas"
     sprite: {fileID: 21300000, guid: 799b62a2661947e4c94aa41628ce8d34, type: 3}
-  - name: lengua de cobra
+  - name: lenguas de cobra
     sprite: {fileID: 21300000, guid: 988449a88fa1f4247ae319199e9bdae0, type: 3}
   pocionesLevels:
   - valores:
@@ -1526,6 +1526,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sex: 0
+  portalOpenedID: 0
   doorsPlayed: 
   lastPosition: {x: 0, y: 0, z: 0}
 --- !u!222 &222011015552993154

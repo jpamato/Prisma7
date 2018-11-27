@@ -77,7 +77,8 @@ public class PocionesGame : MateGame {
 		Utils.Shuffle (ingredientes);
 
 		consigna.SetActive (true);
-		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
+		ConsignaPociones cs = consigna.GetComponent<ConsignaPociones> ();
+		cs.ResetIcons ();
 		cs.texto.text = "Para un buen color lograr,\nestos elementos balancear:\n";
 
 		receta.SetActive (true);
@@ -107,6 +108,8 @@ public class PocionesGame : MateGame {
 				gis.id = valores [i].id;
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
 				cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+"\n";
+				cs.images [i].sprite = ingredientes [i].sprite;
+				cs.images [i].color = Color.white;
 			} else {
 				Color c = Data.Instance.levelsData.GetNextLevel ().color;
 				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
