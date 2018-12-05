@@ -9,6 +9,7 @@ public class MoveTo : MonoBehaviour {
 	bool isOn;
 
 	public void Init(Vector3 _destination) {
+		Events.OnCharacterChangeDirection ();
 		this.destination = _destination;
 		isOn = true;
 	}

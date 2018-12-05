@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 114130665364723832}
   - component: {fileID: 114997807924218512}
   - component: {fileID: 114381451832312966}
+  - component: {fileID: 114860178844752096}
   m_Layer: 0
   m_Name: Data
   m_TagString: Untagged
@@ -832,6 +833,7 @@ MonoBehaviour:
   levelsData: {fileID: 114130665364723832}
   inputManager: {fileID: 114485381752848230}
   userData: {fileID: 114997807924218512}
+  tipsManager: {fileID: 0}
   ui: {fileID: 114381451832312966}
   currentLevel: 
   currentLevelIndex: 0
@@ -1379,6 +1381,33 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114860178844752096
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1111523512907480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 928a53c46a49d3f4c9b26474dba3d13c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tipsContent:
+    saludo: 
+    apura: 
+    mago: 
+    color1: 
+    color2: 
+    portalBlocked: 
+    portalFinal: 
+    mover1: 
+    mover2: 
+    fruit: 
+    fruitWin: 
+    colorFinal: 
+  timeToSayWhenNotWalking: 14
+  timeToSayWhenNotWalkingCount: 0
+  saludoDone: 0
 --- !u!114 &114874569354660522
 MonoBehaviour:
   m_ObjectHideFlags: 1

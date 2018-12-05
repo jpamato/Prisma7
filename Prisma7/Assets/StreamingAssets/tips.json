@@ -1,0 +1,14 @@
+{
+	"saludo":"¡Saludos, aprendiz! Los Sabios Alquimistas me enviaron para guiarte en esta importante misión. Voy a ayudarte a llegar al Templo de la Luz.",
+	"apura":"Creo que deberíamos ir a investigar ese extraño portal que está por allá.",
+	"mago":"Por la cara que tenés me parece que viste al Mago de la Sombra. ¡Que miedo que me da!",
+	"color1":"¡Recuperaste el color azul! ¡Ahora ya podés entrar a los portales celestes!",
+	"color2":"¡Ya tenemos otro color!",
+	"portalBlocked":"Para entrar a este portal debés haber recuperado el color previo.",
+	"portalFinal":"Aún no tenés los dos colores del escudo de llaves. ¡Vamos a recuperarlos!",
+	"mover1":"Deberíamos explorar la zona.",
+	"mover2":"Eh... ¿no te estás aburriendo?",
+	"fruit":"Para entrar a este portal debés romper su hechizo, destruyendo las gemas perladas pero no las violetas. ¡Volvamos a intentarlo!",
+	"fruitWin":"¡Rompiste el hechizo!",
+	"colorFinal":"¡Rompiste el hechizo!"
+}

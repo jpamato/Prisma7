@@ -18,6 +18,7 @@ public class Data : MonoBehaviour
 	public LevelsData levelsData;
 	public InputManager inputManager;
 	public UserData userData;
+	public TipsManager tipsManager;
 	public UI ui;
 
 	public enum minigamesScenes
@@ -77,6 +78,7 @@ public class Data : MonoBehaviour
 		pocionesData = GetComponent<PocionesData> ();
 		grillaData = GetComponent<GrillaData> ();
 		inputManager = GetComponent<InputManager> ();
+		tipsManager = GetComponent<TipsManager> ();
 		Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
