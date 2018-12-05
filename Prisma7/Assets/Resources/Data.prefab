@@ -1041,43 +1041,13 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 799b62a2661947e4c94aa41628ce8d34, type: 3}
   - name: lenguas de cobra
     sprite: {fileID: 21300000, guid: 988449a88fa1f4247ae319199e9bdae0, type: 3}
+  poLevels: []
+  currentLevel: 000000000000000000000000
   pocionesLevels:
-  - valores:
-    - val: 4
-      id: 0
-    - val: 8
-      id: 1
-    - val: 12
-      id: 2
-    - val: 16
-      id: 3
-    - val: 20
-      id: 4
-    fraccion: 4
-    slots: 4
-  - valores:
-    - val: 3
-      id: 0
-    - val: 6
-      id: 1
-    - val: 9
-      id: 2
-    - val: 12
-      id: 3
-    fraccion: 3
-    slots: 3
-  - valores:
-    - val: 6
-      id: 0
-    - val: 12
-      id: 1
-    - val: 18
-      id: 2
-    - val: 24
-      id: 3
-    fraccion: 6
-    slots: 3
-  currentLevel: 0
+    basico: []
+    intermedio: []
+    avanzado: []
+  filename: pocionesLevels.json
 --- !u!114 &114475197475796132
 MonoBehaviour:
   m_ObjectHideFlags: 1
