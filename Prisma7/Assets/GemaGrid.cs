@@ -22,6 +22,10 @@ public class GemaGrid : MonoBehaviour {
 
 		Events.OnMathGameComplete += OnMathGameComplete;
 	}
+
+	void OnDestroy(){
+		Events.OnMathGameComplete -= OnMathGameComplete;
+	}
 	
 	// Update is called once per frame
 	void Update () {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class PocionesGame : MateGame {
 
@@ -23,7 +24,7 @@ public class PocionesGame : MateGame {
 
 	List<PocionesData.Ingrediente> ingredientes;
 	List<PocionesData.Valores> valores;
-	List<PocionesData.Valores> valoresParciales;
+	public List<PocionesData.Valores> valoresParciales;
 
 	// Use this for initialization
 	void Start () {	
@@ -55,6 +56,7 @@ public class PocionesGame : MateGame {
 	void OnDestroy(){
 		Events.OnTimeOver -= TimeOver;
 		Events.DroppedUI -= DroppedUI;
+		Events.OnDropingOut -= OnDropingOut;
 	}
 
 	// Update is called once per frame
@@ -63,12 +65,16 @@ public class PocionesGame : MateGame {
 	}
 
 	void SetCombiLevel(){		
-		int pLevel = Data.Instance.pocionesData.currentLevel;
-		pLevelData = Data.Instance.pocionesData.pocionesLevels[pLevel];
+		//int pLevel = Data.Instance.pocionesData.currentLevel;
+		pLevelData = Data.Instance.pocionesData.GetLevel();
 		valores = new List<PocionesData.Valores> ();
 		valoresParciales = new List<PocionesData.Valores> ();
-		foreach (PocionesData.Valores v in pLevelData.valores)
+		for (int i = 0; i < pLevelData.elementos.Length; i++) {
+			PocionesData.Valores v = new PocionesData.Valores ();
+			v.id = i;
+			v.val = pLevelData.elementos[i];
 			valores.Add (v);
+		}
 		ingredientes = new List<PocionesData.Ingrediente> ();
 		foreach(PocionesData.Ingrediente g in Data.Instance.pocionesData.ingredientes)
 			ingredientes.Add(g);
@@ -89,7 +95,8 @@ public class PocionesGame : MateGame {
 			PocionesData.Valores v = new PocionesData.Valores ();
 			v.id = valores [i].id;
 			valoresParciales.Add(v);
-			if (i < pLevelData.slots) {
+			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {
+				Debug.Log (valores [i].id);
 				GameObject slot = Instantiate (ingredienteSlot);
 				slot.transform.SetParent (inventarioContent);
 				slot.transform.localPosition = Vector3.zero;
@@ -106,14 +113,21 @@ public class PocionesGame : MateGame {
 				gis.image.sprite = ingredientes [i].sprite;
 				//gis.text.text = ingredientes[i].name;
 				gis.id = valores [i].id;
-				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
+				rp.texto.text += ingredientes [i].name + ": "+v.val+"\n";
 				cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+"\n";
 				cs.images [i].sprite = ingredientes [i].sprite;
 				cs.images [i].color = Color.white;
 			} else {
-				Color c = Data.Instance.levelsData.GetNextLevel ().color;
-				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
-				cs.texto.text += "<color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b>"+valores [i].val+"</b></color> "+ingredientes [i].name+"\n";
+				
+				if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
+					Color c = Data.Instance.levelsData.GetNextLevel ().color;
+					rp.texto.text += ingredientes [i].name + ": <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b><size=30>" + Math.Round(valores [i].val * pLevelData.factor) + "</size></b></color>\n";
+					cs.texto.text += "<color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + valores [i].val + "</b></color> " + ingredientes [i].name + "\n";
+				} else {				
+					cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+ "\n";
+				}
+				cs.images [i].sprite = ingredientes [i].sprite;
+				cs.images [i].color = Color.white;
 			}
 
 		}
@@ -125,11 +139,11 @@ public class PocionesGame : MateGame {
 		for (int i = 0; i < valores.Count; i++) {
 			if (reset)
 				valoresParciales [i].val = 0;
-			if (i < pLevelData.slots) {								
+			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
-			} else {
+			} else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {				
 				Color c = Data.Instance.levelsData.GetNextLevel ().color;
-				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(valores [i].val/pLevelData.fraccion)+"</size></b></color>\n";
+				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(Math.Round(valores [i].val*pLevelData.factor))+"</size></b></color>\n";
 			}
 		}
 	}
@@ -140,10 +154,13 @@ public class PocionesGame : MateGame {
 
 	public void Mezclar(){
 		bool done = true;
-		for (int i = 0; i < pLevelData.slots; i++) {
-			if (valoresParciales [i].val * pLevelData.fraccion != valores [i].val) {
-				i = valores.Count;
-				done = false;
+		for (int i = 0; i < valoresParciales.Count; i++) {
+			if (Array.Exists (pLevelData.respuestas_index, x => x == valoresParciales [i].id)) {
+				int index = Array.IndexOf (pLevelData.respuestas_index, valoresParciales [i].id);
+				if (valoresParciales [i].val != pLevelData.respuestas [index]) {
+					i = valoresParciales.Count;
+					done = false;
+				}
 			}
 		}
 		if (done)
@@ -191,7 +208,7 @@ public class PocionesGame : MateGame {
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
-			Data.Instance.pocionesData.currentLevel++;
+			Data.Instance.pocionesData.AddCurrentLevel ();
 			gamesPlayeds++;
 			if (gamesPlayeds >= partidaGames) 
 				Invoke ("BackToWorld", 3);

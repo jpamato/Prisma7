@@ -1,0 +1,56 @@
+{
+	[{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[0],
+		"factor":3,
+		"respuestas_index":[2],
+		"respuestas":[72]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[1],
+		"factor":0.25,
+		"respuestas_index":[2],
+		"respuestas":[6]},
+	
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[2],
+		"factor":0.33,
+		"respuestas_index":[0],
+		"respuestas":[4]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[2],
+		"factor":0.33,
+		"respuestas_index":[3],
+		"respuestas":[2]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[1],
+		"factor":10,
+		"respuestas_index":[0],
+		"respuestas":[120]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[1],
+		"factor":0.125,
+		"respuestas_index":[2],
+		"respuestas":[3]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[4],
+		"factor":5,
+		"respuestas_index":[0],
+		"respuestas":[60]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[0],
+		"factor":4,
+		"respuestas_index":[3],
+		"respuestas":[96]},
+
+		{"elementos":[12,8,24,6,10],
+		"pistas_elementos_index":[2],
+		"factor":3,
+		"respuestas_index":[0],
+		"respuestas":[36]}
+	]
+}
