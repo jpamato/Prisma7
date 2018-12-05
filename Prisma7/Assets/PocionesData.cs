@@ -8,7 +8,6 @@ using System.IO;
 public class PocionesData : MonoBehaviour {
 
 	public List<Ingrediente> ingredientes;
-	public List<Levl> poLevels;
 	public int[] currentLevel;
 
 	public PocionesLevels pocionesLevels;

@@ -1,0 +1,199 @@
+{
+	"basico":[
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":2750
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":2575
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":1950
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":3650
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":3750
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":2625
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":4175
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":3450
+		},
+
+		{
+			"valores":[1000,500,100,25],
+			"incluidos":[],
+			"combinaciones":1,
+			"resultado":1775
+		}
+	],
+
+	"intermedio":[
+	
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1243
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1050
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1034
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1461
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1346
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1502
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1327
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1009
+		},
+
+		{
+			"valores":[100,10,1],
+			"incluidos":[],
+			"combinaciones":2,
+			"resultado":1016
+		}
+	],
+
+	"avanzado":[
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,100,100,100,10,10],
+			"combinaciones":1,
+			"resultado":2450
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,100,100,10],
+			"combinaciones":1,
+			"resultado":4540
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,100,100,100,10,10,10,10],
+			"combinaciones":1,
+			"resultado":1700
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,1000,10,10,10],
+			"combinaciones":1,
+			"resultado":3500
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,1000,100],
+			"combinaciones":1,
+			"resultado":4320
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,100,100,10,10,10,10],
+			"combinaciones":1,
+			"resultado":3350
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,1000,100,100,100,100],
+			"combinaciones":1,
+			"resultado":4560
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,1000,10,10,10,10,10,10,10],
+			"combinaciones":1,
+			"resultado":4600
+		},
+
+		{
+			"valores":[1000,100,10],
+			"incluidos":[1000,1000,100,100,100,100,10,10,10,10,10,10],
+			"combinaciones":1,
+			"resultado":4000
+		}
+		
+	]
+}

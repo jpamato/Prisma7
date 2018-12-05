@@ -65,9 +65,8 @@ public class CombinatoriasGame : MateGame {
 		
 	}
 
-	void SetCombiLevel(){		
-		int cLevel = Data.Instance.combinatoriasData.currentLevel;
-		cLevelData = Data.Instance.combinatoriasData.combinatoriasLevels[cLevel];
+	void SetCombiLevel(){				
+		cLevelData = Data.Instance.combinatoriasData.GetLevel ();
 		int[] vals = cLevelData.valores.Clone() as int[];
 		System.Array.Sort (vals);
 		List<CombinatoriasData.Gema> gemas = new List<CombinatoriasData.Gema> ();
@@ -95,8 +94,26 @@ public class CombinatoriasGame : MateGame {
 		}
 		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
-		cs.texto.text = "Encierra dentro de los anillos de poder "+cLevelData.combinaciones+" combinaciones que sumen";
+		cs.texto.text = "Encierra dentro de los anillos de poder ";
+		if (cLevelData.combinaciones > 1)
+			cs.texto.text += cLevelData.combinaciones + " combinaciones que sumen";
+		else
+			cs.texto.text += cLevelData.combinaciones + " combinación que sume";
 		cs.valor.text = ""+cLevelData.resultado;
+
+		/*for (int i = 0; i < cLevelData.incluidos.Length; i++) {
+			GameObject go = Instantiate (dragged);
+			go.transform.SetParent (transform);
+			go.transform.localPosition = Vector3.zero;
+			go.transform.localScale = Vector3.one;
+			go.name = go.name + dropN;
+			dropN++;
+			GemaItem gi = go.GetComponent<GemaItem> ();
+			//gi.image.raycastTarget = true;
+			gi.GetComponent<Image> ().raycastTarget = true;
+			gi.text.enabled = false;
+			go.GetComponent<Draggable> ().dropable = true;
+		}*/
 	}
 
 	void OnDropingOut(){
