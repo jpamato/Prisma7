@@ -50,6 +50,22 @@ public class Data : MonoBehaviour
 	public int currentLevelIndex;
     public void LoadScene(string aLevelName)
     {
+		if (aLevelName == "World") {
+			switch (userData.actualWorld) {
+			case 1:
+				aLevelName = "World";
+				break;
+			case 2:
+				aLevelName = "World2";
+				break;
+			case 3:
+				aLevelName = "World3";
+				break;
+			default:
+				aLevelName = "World";
+				break;
+			}
+		}
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
 		currentLevelIndex = SceneManager.GetSceneByName (aLevelName).buildIndex;

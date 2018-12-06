@@ -13,10 +13,22 @@ public class UserData : MonoBehaviour {
 	public int portalOpenedID;
 	public List<int> doorsPlayed;
 	public Vector3 lastPosition;
+	public int actualWorld;
 
 	void Start()
 	{
 		portalOpenedID = PlayerPrefs.GetInt ("portalOpenedID", 0);
+		actualWorld = PlayerPrefs.GetInt ("OnChangeWorld");
+		Events.OnChangeWorld += OnChangeWorld;
+	}
+	void OnDestroy()
+	{
+		Events.OnChangeWorld -= OnChangeWorld;
+	}
+	void OnChangeWorld(int worldID)
+	{
+		actualWorld = worldID;
+		PlayerPrefs.SetInt ("OnChangeWorld", worldID);
 	}
 	public int GetPortalIDOpened()
 	{

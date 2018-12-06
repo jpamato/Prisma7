@@ -136,6 +136,7 @@ public class Character : MonoBehaviour {
 
 		selectedInteractiveObject = null;
 		if (state == states.ENTERING_DOOR) {
+			Data.Instance.userData.SaveLastPosition ();
 			StartCoroutine (EnterMinigame ());
 			return;
 		}		
