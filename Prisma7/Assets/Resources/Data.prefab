@@ -722,7 +722,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.5019608, b: 0, a: 1}
   - levelNumber: 6
     color: {r: 1, g: 0, b: 0, a: 1}
-  actualDiamondLevel: 0
+  actualDiamondLevel: 5
   actualLevelPercent: 0
 --- !u!114 &114154449463529568
 MonoBehaviour:

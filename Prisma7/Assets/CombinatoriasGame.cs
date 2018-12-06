@@ -91,6 +91,24 @@ public class CombinatoriasGame : MateGame {
 			gis.image.sprite = g.sprite;
 			gis.text.text = ""+vals [i];
 			gis.val = vals [i];
+
+			for (int j = 0; j < cLevelData.incluidos.Length; j++) {
+				if(vals[i]==cLevelData.incluidos[j]){
+					GameObject go = Instantiate (gemaItem);
+					go.transform.SetParent (centralContent);
+					go.transform.localPosition = Vector3.zero;
+					go.transform.localScale = Vector3.one;
+					//go.name = go.name + dropN;
+					//dropN++;
+					GemaItem git = go.GetComponent<GemaItem> ();
+					git.image.sprite = g.sprite;
+					git.val = vals [i];
+					git.GetComponent<Image> ().raycastTarget = false;
+					git.text.enabled = false;
+					go.GetComponent<Draggable> ().dropable = false;
+					sumaCentral += vals [i];
+				}
+			}
 		}
 		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
@@ -101,19 +119,6 @@ public class CombinatoriasGame : MateGame {
 			cs.texto.text += cLevelData.combinaciones + " combinación que sume";
 		cs.valor.text = ""+cLevelData.resultado;
 
-		/*for (int i = 0; i < cLevelData.incluidos.Length; i++) {
-			GameObject go = Instantiate (dragged);
-			go.transform.SetParent (transform);
-			go.transform.localPosition = Vector3.zero;
-			go.transform.localScale = Vector3.one;
-			go.name = go.name + dropN;
-			dropN++;
-			GemaItem gi = go.GetComponent<GemaItem> ();
-			//gi.image.raycastTarget = true;
-			gi.GetComponent<Image> ().raycastTarget = true;
-			gi.text.enabled = false;
-			go.GetComponent<Draggable> ().dropable = true;
-		}*/
 	}
 
 	void OnDropingOut(){
@@ -125,6 +130,8 @@ public class CombinatoriasGame : MateGame {
 		for (int i = 0; i < centralContent.childCount; i++) {
 			sumaCentral += centralContent.GetChild (i).GetComponent<GemaItem> ().val;
 		}
+		if (sumaCentral == cLevelData.resultado)
+			RingDone ();
 	}
 
 	void DroppedUI(GameObject dragged){
@@ -216,6 +223,7 @@ public class CombinatoriasGame : MateGame {
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
+			Data.Instance.combinatoriasData.AddCurrentLevel ();
 			gamesPlayeds++;
 			if (gamesPlayeds >= partidaGames) 
 				Invoke ("BackToWorld", 3);
