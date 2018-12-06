@@ -25,4 +25,6 @@ public static class Events {
 	public static System.Action OnDropingOut = delegate {	};
 
 	public static System.Action OnMap = delegate {	};
+	public static System.Action PortalUnavailable = delegate {	};
+	public static System.Action PortalFinalUnavailable = delegate {	};
 }

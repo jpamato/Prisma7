@@ -30,10 +30,6 @@ public class Game : MonoBehaviour {
 	{		
 		mode = modes.WORLD;
 		Data.Instance.ui.HideTimer ();
-		Invoke ("Saluda", 1.5f);
-	}
-	void Saluda()
-	{
 		Events.OnMap ();
 	}
 	public void ChangeMode(modes _mode)
