@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System;
 
 public class GrillaGame : MateGame {
@@ -24,6 +25,8 @@ public class GrillaGame : MateGame {
 	public int filas;
 
 	public List<Rect> rects;
+
+	public InputField respuesta;
 
 	[Serializable]
 	public class Rect{
@@ -69,8 +72,7 @@ public class GrillaGame : MateGame {
 	}
 
 	void SetGrillaLevel(){		
-		int cLevel = Data.Instance.grillaData.currentLevel;
-		gLevelData = Data.Instance.grillaData.grillaLevels[cLevel];
+		gLevelData = Data.Instance.grillaData.GetLevel ();
 
 		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
@@ -82,6 +84,24 @@ public class GrillaGame : MateGame {
 
 		RectTransform rt = gemaGrid.GetComponent<RectTransform> ();
 		gridContent.sizeDelta = new Vector2 (gLevelData.size.x * rt.sizeDelta.x, gLevelData.size.y * rt.sizeDelta.y);
+
+		respuesta.gameObject.SetActive (false);
+
+		int fromX,fromY,toX,toY;
+		fromX = fromY = toX = toY = -1;
+		if ((int)gLevelData.levelType > 1) {
+			fromX = (int)UnityEngine.Random.Range (0, gLevelData.size.x - gLevelData.filled.x);
+			fromY = (int)UnityEngine.Random.Range (0, gLevelData.size.y - gLevelData.filled.y);
+
+			toX = (int)(fromX + gLevelData.filled.x);
+			toY = (int)(fromY + gLevelData.filled.y);
+
+			if ((int)gLevelData.levelType == 2) 
+				respuesta.gameObject.SetActive (true);
+		}
+
+		grid = new int[(int)gLevelData.size.x,(int)gLevelData.size.y];
+		
 		for (int i = 0; i < gLevelData.size.x * gLevelData.size.y; i++) {
 			GameObject go = Instantiate (gemaGrid);
 			go.transform.SetParent (gridContent);
@@ -91,10 +111,21 @@ public class GrillaGame : MateGame {
 
 			GemaGrid gg = go.GetComponent<GemaGrid> ();
 			gg.id = new Vector2 (i % gLevelData.size.x, Mathf.Floor (i / gLevelData.size.y));
+
+			if ((int)gLevelData.levelType == 2) {
+				gg.SetInteractable (false);
+				if (gg.id.x >= fromX && gg.id.x < toX && gg.id.y >= fromY && gg.id.y < toY)
+					gg.SetActive (true);
+			} else if ((int)gLevelData.levelType == 3) {
+				if (gg.id.x >= fromX && gg.id.x < toX && gg.id.y >= fromY && gg.id.y < toY) {
+					grid [(int)gg.id.x,(int)gg.id.y] = 1;
+					gg.SetInteractable (false);
+					gg.SetActive (true);
+				}
+			}
 		}
 
-		grid = new int[(int)gLevelData.size.x,(int)gLevelData.size.y];
-		//grid = new bool[4][];
+		totalTime = gLevelData.time*3;
 	}
 
 	void StopFigurWrongPS(){
@@ -214,8 +245,6 @@ public class GrillaGame : MateGame {
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 
-		Data.Instance.grillaData.currentLevel++;
-
 		//Destroy (figuraGO);
 		if (Data.Instance.levelsData.actualLevelPercent >= 1f) {
 			colorDoneSign.SetActive (true);
@@ -223,6 +252,7 @@ public class GrillaGame : MateGame {
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
+			Data.Instance.grillaData.AddCurrentLevel ();
 			gamesPlayeds++;
 			if (gamesPlayeds >= partidaGames) 
 				Invoke ("BackToWorld", 3);
@@ -241,5 +271,10 @@ public class GrillaGame : MateGame {
 
 	void BackToWorld(){
 		Data.Instance.LoadScene ("World");
+	}
+
+	public void Respuesta(){
+		if(int.Parse(respuesta.text)==gLevelData.area)
+			GrillaComplete ();
 	}
 }

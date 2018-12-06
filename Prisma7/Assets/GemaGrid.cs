@@ -14,7 +14,7 @@ public class GemaGrid : MonoBehaviour {
 	bool active;
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		button = GetComponent<Button> ();
 			
 		button.onClick.AddListener (OnClick);
@@ -45,5 +45,22 @@ public class GemaGrid : MonoBehaviour {
 			image.color = inactiveColor;
 
 		Events.OnGridClick (id, active);
+	}
+
+	public void SetInteractable(bool enable){
+		button.interactable = enable;
+	}
+
+	public void SetActive(bool enable){
+		active = enable;
+		ColorBlock cb = button.colors;
+		if (active) {
+			image.color = activeColor;
+			cb.disabledColor = activeColor;
+		} else {
+			image.color = inactiveColor;
+			cb.disabledColor = inactiveColor;
+		}		
+		button.colors = cb;
 	}
 }

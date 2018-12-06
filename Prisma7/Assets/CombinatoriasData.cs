@@ -8,7 +8,6 @@ using System.IO;
 public class CombinatoriasData : MonoBehaviour {
 
 	public List<Gema> gemas;
-	public List<Level> combinatoriasLevels;
 	public CombinacionesLevels combinacionesLevels;
 	public int[] currentLevel;
 

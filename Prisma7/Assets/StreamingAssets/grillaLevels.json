@@ -1,0 +1,308 @@
+﻿{
+	"basico":[
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 18 gemas.",
+			"area":18,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":48,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":6,"y":8},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 30 gemas encendidas",
+			"area":30,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":6,"y":1},
+			"time":20,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 24 gemas.",
+			"area":24,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":60,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":10,"y":6},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 25 gemas encendidas",
+			"area":25,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":5,"y":1},
+			"time":20,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 40 gemas.",
+			"area":40,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":81,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":9,"y":9},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 40 gemas encendidas",
+			"area":40,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":10,"y":10},
+			"filled":{"x":10,"y":1},
+			"time":20,
+			"levelType":3
+		}
+	],
+
+	"intermedio":[
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 32 gemas.",
+			"area":32,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":63,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":7,"y":9},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 48 gemas encendidas",
+			"area":48,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":6,"y":1},
+			"time":20,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 64 gemas.",
+			"area":64,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":60,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":10,"y":6},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 90 gemas encendidas",
+			"area":90,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":9,"y":1},
+			"time":20,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 81 gemas.",
+			"area":81,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":20,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":55,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":11,"y":5},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 99 gemas encendidas",
+			"area":99,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":9,"y":1},
+			"time":30,
+			"levelType":3
+		}
+		
+	],
+
+	"avanzado":[	
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 90 gemas.",
+			"area":90,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":30,
+			"levelType":1
+		},
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":100,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":10,"y":10},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 99 gemas encendidas",
+			"area":99,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":9,"y":1},
+			"time":30,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 110 gemas.",
+			"area":110,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":30,
+			"levelType":1
+		},	
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":110,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":10,"y":11},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 108 gemas encendidas",
+			"area":108,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":9,"y":1},
+			"time":30,
+			"levelType":3
+		},
+
+		{
+			"consigna":"Las gemas solo se encienden si con ellas se forman rectángulos mágicos. Formá un rectángulo activando 99 gemas.",
+			"area":99,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":0,"y":0},
+			"time":30,
+			"levelType":1
+		},
+	
+
+		{
+			"consigna":"Sin contar una por una, ¿cuántas gemas están encendidas en la grilla mágica?",
+			"area":108,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":12,"y":9},
+			"time":20,
+			"levelType":2
+		},
+
+		{
+			"consigna":"Activá las gemas que se necesiten para que haya 40 gemas encendidas",
+			"area":110,
+			"columnas":0,
+			"filas":0,
+			"size":{"x":12,"y":12},
+			"filled":{"x":10,"y":1},
+			"time":30,
+			"levelType":3
+		}
+		
+	]
+}

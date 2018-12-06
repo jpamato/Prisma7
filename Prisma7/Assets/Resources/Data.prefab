@@ -654,15 +654,6 @@ MonoBehaviour:
     size: 1
   - sprite: {fileID: 21300000, guid: 6d9c521b5fdb3e0488d112da3d4ae2e5, type: 3}
     size: 0
-  combinatoriasLevels:
-  - valores: e8030000f40100006400000019000000
-    incluidos: 
-    combinaciones: 5
-    resultado: 2650
-  - valores: 140000000a0000000500000001000000
-    incluidos: 
-    combinaciones: 3
-    resultado: 55
   combinacionesLevels:
     basico: []
     intermedio: []
@@ -722,7 +713,7 @@ MonoBehaviour:
     color: {r: 1, g: 0.5019608, b: 0, a: 1}
   - levelNumber: 6
     color: {r: 1, g: 0, b: 0, a: 1}
-  actualDiamondLevel: 5
+  actualDiamondLevel: 0
   actualLevelPercent: 0
 --- !u!114 &114154449463529568
 MonoBehaviour:
@@ -964,20 +955,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8bcd0c8619c4846967a10482938983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  grillaLevelss: []
+  currentLevel: 000000000200000000000000
   grillaLevels:
-  - consigna: "Carga 9 gemas en la grilla m\xE1gica usando 3 columnas"
-    area: 9
-    columnas: 3
-    filas: 0
-    size: {x: 8, y: 8}
-    levelType: 1
-  - consigna: "Carga 8 gemas en la grilla m\xE1gica usando 4 columnas"
-    area: 8
-    columnas: 4
-    filas: 0
-    size: {x: 8, y: 8}
-    levelType: 1
-  currentLevel: 0
+    basico: []
+    intermedio: []
+    avanzado: []
+  filename: grillaLevels.json
 --- !u!114 &114426490453790886
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1537,6 +1521,7 @@ MonoBehaviour:
   portalOpenedID: 0
   doorsPlayed: 
   lastPosition: {x: 0, y: 0, z: 0}
+  actualWorld: 0
 --- !u!222 &222011015552993154
 CanvasRenderer:
   m_ObjectHideFlags: 1
