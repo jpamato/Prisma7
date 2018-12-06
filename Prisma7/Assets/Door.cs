@@ -21,8 +21,14 @@ public class Door : InteractiveObject {
 	public GameObject opened;
 	public GameObject opening;
 
+	public void Reset()
+	{
+		lastValue = 0;
+		hieloMesh.material.mainTexture = textures_hielo[lastValue];
+	}
 	public void SetState(states state)
 	{
+		
 		closed.SetActive (false);
 		opened.SetActive (false);
 		opening.SetActive (false);

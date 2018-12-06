@@ -26,8 +26,10 @@ public class PortalLevel : InteractiveObject {
 	}
 	public bool ChekToCross()
 	{
-		if (Data.Instance.levelsData.actualDiamondLevel <= id)
+		if (Data.Instance.levelsData.actualDiamondLevel <= id) {
+			Events.PortalFinalUnavailable ();
 			return false;
+		}
 		Game.Instance.mode = Game.modes.FREEZED;
 		if (state != states.OPENED) {
 			Data.Instance.userData.OpenPortal (id);
@@ -44,12 +46,15 @@ public class PortalLevel : InteractiveObject {
 		Data.Instance.userData.SaveSpecificLastPosition (destinationCoords);
 		switch (gotoLevel) {
 		case 1:
+			Events.OnChangeWorld (1);
 			Data.Instance.LoadScene ("World");
 			break;
 		case 2:
+			Events.OnChangeWorld (2);
 			Data.Instance.LoadScene ("World2");
 			break;
 		case 3:
+			Events.OnChangeWorld (3);
 			Data.Instance.LoadScene ("World3");
 			break;
 		}

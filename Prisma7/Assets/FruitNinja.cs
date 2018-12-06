@@ -36,6 +36,7 @@ public class FruitNinja : MonoBehaviour {
 		Game.Instance.ChangeMode (Game.modes.FRUIT_NINJA);
 		fruitsManager.gameObject.SetActive (true);
 		fruitsManager.Init ();
+		interactiveObject.GetComponent<Door> ().Reset ();
 		interactiveObject.GetComponent<Door> ().SetProgress (1);
 	}
 

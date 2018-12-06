@@ -1383,7 +1383,10 @@ MonoBehaviour:
     colorFinal: 
   timeToSayWhenNotWalking: 14
   timeToSayWhenNotWalkingCount: 0
+  timeToNotEnterPortal: 40
+  timeToNotEnterPortalCount: 0
   saludoDone: 0
+  fruitWinDone: 0
 --- !u!114 &114874569354660522
 MonoBehaviour:
   m_ObjectHideFlags: 1

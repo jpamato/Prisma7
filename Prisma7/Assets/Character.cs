@@ -65,8 +65,12 @@ public class Character : MonoBehaviour {
 
 
 
-		if (door == null || door.state == Door.states.UNAVAILABLE)
+		if (door == null) 
 			return;
+		if (door.state == Door.states.UNAVAILABLE) {
+			Events.PortalUnavailable ();
+			return;
+		}
 		
 		if (door.state == Door.states.CLOSED) {			
 			selectedInteractiveObject = io;
@@ -132,6 +136,7 @@ public class Character : MonoBehaviour {
 
 		selectedInteractiveObject = null;
 		if (state == states.ENTERING_DOOR) {
+			Data.Instance.userData.SaveLastPosition ();
 			StartCoroutine (EnterMinigame ());
 			return;
 		}		
