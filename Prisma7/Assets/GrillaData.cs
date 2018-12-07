@@ -66,9 +66,9 @@ public class GrillaData : MonoBehaviour {
 
 	public Level GetLevel(){
 		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 3) {
+		if (dlevel < 2) {
 			return grillaLevels.basico [currentLevel [0]];
-		} else if (dlevel < 5) {
+		} else if (dlevel < 4) {
 			return grillaLevels.intermedio [currentLevel [1]];
 		} else {
 			return grillaLevels.avanzado [currentLevel [2]];
@@ -77,12 +77,18 @@ public class GrillaData : MonoBehaviour {
 
 	public void AddCurrentLevel(){
 		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 3) {
+		if (dlevel < 2) {
 			currentLevel [0]++;
-		} else if (dlevel < 5) {
+			if (currentLevel [0] >= grillaLevels.basico.Length)
+				currentLevel [0] = 0;
+		} else if (dlevel < 4) {
 			currentLevel [1]++;
+			if (currentLevel [1] >= grillaLevels.intermedio.Length)
+				currentLevel [1] = 0;
 		} else {
 			currentLevel [2]++;
+			if (currentLevel [2] >= grillaLevels.avanzado.Length)
+				currentLevel [2] = 0;
 		}
 	}
 }
