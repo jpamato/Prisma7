@@ -24,8 +24,8 @@ public class GrillaData : MonoBehaviour {
 		public int area;
 		public int columnas;
 		public int filas;
-		public Vector2 size;
-		public Vector2 filled;
+		public int[] size;
+		public int[] filled;
 		public int time;
 		public LevelType levelType;
 	}

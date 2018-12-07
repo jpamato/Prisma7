@@ -83,26 +83,26 @@ public class GrillaGame : MateGame {
 			Destroy (child.gameObject);
 
 		RectTransform rt = gemaGrid.GetComponent<RectTransform> ();
-		gridContent.sizeDelta = new Vector2 (gLevelData.size.x * rt.sizeDelta.x, gLevelData.size.y * rt.sizeDelta.y);
+		gridContent.sizeDelta = new Vector2 (gLevelData.size[0] * rt.sizeDelta.x, gLevelData.size[1] * rt.sizeDelta.y);
 
 		respuesta.gameObject.SetActive (false);
 
 		int fromX,fromY,toX,toY;
 		fromX = fromY = toX = toY = -1;
 		if ((int)gLevelData.levelType > 1) {
-			fromX = (int)UnityEngine.Random.Range (0, gLevelData.size.x - gLevelData.filled.x);
-			fromY = (int)UnityEngine.Random.Range (0, gLevelData.size.y - gLevelData.filled.y);
+			fromX = UnityEngine.Random.Range (0, gLevelData.size[0] - gLevelData.filled[0]);
+			fromY = UnityEngine.Random.Range (0, gLevelData.size[1] - gLevelData.filled[1]);
 
-			toX = (int)(fromX + gLevelData.filled.x);
-			toY = (int)(fromY + gLevelData.filled.y);
+			toX = fromX + gLevelData.filled[0];
+			toY = fromY + gLevelData.filled[1];
 
 			if ((int)gLevelData.levelType == 2) 
 				respuesta.gameObject.SetActive (true);
 		}
 
-		grid = new int[(int)gLevelData.size.x,(int)gLevelData.size.y];
+		grid = new int[gLevelData.size[0],gLevelData.size[1]];
 		
-		for (int i = 0; i < gLevelData.size.x * gLevelData.size.y; i++) {
+		for (int i = 0; i < gLevelData.size[0] * gLevelData.size[1]; i++) {
 			GameObject go = Instantiate (gemaGrid);
 			go.transform.SetParent (gridContent);
 			go.transform.localPosition = Vector3.zero;
@@ -110,7 +110,7 @@ public class GrillaGame : MateGame {
 			go.transform.SetAsLastSibling();
 
 			GemaGrid gg = go.GetComponent<GemaGrid> ();
-			gg.id = new Vector2 (i % gLevelData.size.x, Mathf.Floor (i / gLevelData.size.y));
+			gg.id = new Vector2 (i % gLevelData.size[0], Mathf.Floor (i / gLevelData.size[1]));
 
 			if ((int)gLevelData.levelType == 2) {
 				gg.SetInteractable (false);
