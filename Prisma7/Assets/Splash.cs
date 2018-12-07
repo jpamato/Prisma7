@@ -6,6 +6,6 @@ public class Splash : MonoBehaviour {
 
 	public void SplashClicked()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene ("CharacterSelector");
+		Data.Instance.LoadScene ("CharacterSelector");
 	}
 }

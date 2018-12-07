@@ -20,6 +20,7 @@ public class Data : MonoBehaviour
 	public UserData userData;
 	public TipsManager tipsManager;
 	public UI ui;
+	public FadePanel fadePanel;
 
 	public enum minigamesScenes
 	{
@@ -68,10 +69,14 @@ public class Data : MonoBehaviour
 		}
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
+		fadePanel.SetOn ();
 		currentLevelIndex = SceneManager.GetSceneByName (aLevelName).buildIndex;
-        SceneManager.LoadScene(aLevelName);
+		Invoke ("Delayed", 1);
     }
-
+	void Delayed()
+	{		
+		SceneManager.LoadScene(currentLevel);
+	}
     void Awake()
     {
 		QualitySettings.vSyncCount = 1;

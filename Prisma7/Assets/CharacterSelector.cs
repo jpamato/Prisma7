@@ -14,8 +14,6 @@ public class CharacterSelector : MonoBehaviour {
 		else
 			Data.Instance.userData.sex = UserData.sexs.SHE;
 
-		Data.Instance.ui.SetStatus (true);
-
 		Data.Instance.LoadScene ("World");
 	}
 
