@@ -36,7 +36,7 @@ public class CombinatoriasData : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		string filepath = Path.Combine (Application.streamingAssetsPath + "/", filename);
 		StartCoroutine (LoadFile (filepath));
 	}

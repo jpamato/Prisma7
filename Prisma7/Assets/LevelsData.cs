@@ -11,6 +11,10 @@ public class LevelsData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+		actualDiamondLevel = PlayerPrefs.GetInt ("actualDiamondLevel");
+		actualLevelPercent = PlayerPrefs.GetFloat ("actualLevelPercent");
+
 		Events.OnColorComplete += OnColorComplete;
 	}
 
@@ -29,7 +33,13 @@ public class LevelsData : MonoBehaviour {
 			actualDiamondLevel = diamondLevels.Count - 1;
 		actualLevelPercent = 0;
 
+		PlayerPrefs.SetInt ("actualDiamondLevel", actualDiamondLevel);
 		Invoke ("ColorsReset", 1);
+	}
+
+	public void AddLevelPercent(float val){
+		actualLevelPercent += val;
+		PlayerPrefs.SetFloat ("actualLevelPercent", actualLevelPercent);
 	}
 
 	void ColorsReset(){

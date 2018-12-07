@@ -38,7 +38,7 @@ public class GrillaData : MonoBehaviour {
 	}
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
 		string filepath = Path.Combine (Application.streamingAssetsPath + "/", filename);
 		StartCoroutine (LoadFile (filepath));
 	}
@@ -61,6 +61,8 @@ public class GrillaData : MonoBehaviour {
 			text = System.IO.File.ReadAllText(filePath);
 
 		grillaLevels = JsonUtility.FromJson<GrillaLevels>(text);
+
+		Debug.Log ("GL: " + grillaLevels.basico.Length);
 
 	}
 

@@ -127,7 +127,8 @@ public class FigurasGame : MateGame {
 		Data.Instance.ui.HideTimer ();
 		//Events.FiguraComplete (figura.go.name);
 		Events.OnMathGameComplete ();
-		Data.Instance.levelsData.actualLevelPercent += levelBarStep;
+		//Data.Instance.levelsData.actualLevelPercent += levelBarStep;
+		Data.Instance.levelsData.AddLevelPercent (levelBarStep);
 		//colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		Data.Instance.ui.colorBar.SetValue (Data.Instance.levelsData.actualLevelPercent);
 		foreach (GameObject go in runasButtons)

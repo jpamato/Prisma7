@@ -28,6 +28,7 @@ public class UserData : MonoBehaviour {
 	void OnChangeWorld(int worldID)
 	{
 		actualWorld = worldID;
+		doorsPlayed.Clear ();
 		PlayerPrefs.SetInt ("OnChangeWorld", worldID);
 	}
 	public int GetPortalIDOpened()

@@ -104,6 +104,8 @@ public class Data : MonoBehaviour
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
 
+		//PlayerPrefs.DeleteAll ();
+
     }
     void Update()
     {

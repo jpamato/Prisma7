@@ -813,6 +813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1928856624525672}
   anim: {fileID: 95642146276163340}
+  bar: {fileID: 0}
 --- !u!114 &114075760492350600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1136,7 +1137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d8bcd0c8619c4846967a10482938983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLevel: 000000000200000000000000
+  currentLevel: 000000000000000000000000
   grillaLevels:
     basico: []
     intermedio: []
