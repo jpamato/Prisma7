@@ -10,7 +10,6 @@ public class PetTexts : MonoBehaviour {
 
 
 	void Start () {
-		Reset ();
 		Events.OnPetSay += OnPetSay;
 	}
 	void OnDestroy () {
@@ -19,6 +18,7 @@ public class PetTexts : MonoBehaviour {
 
 	void OnPetSay (string text)
 	{
+		print ("OnPetSay " + text);
 		CancelInvoke ();
 		panel.SetActive (true);
 		field.text = text;
@@ -27,6 +27,7 @@ public class PetTexts : MonoBehaviour {
 	}
 	void Reset()
 	{
+		field.text = "";
 		panel.SetActive (false);
 	}
 }

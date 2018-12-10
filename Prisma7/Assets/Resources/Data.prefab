@@ -1548,19 +1548,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 928a53c46a49d3f4c9b26474dba3d13c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loadData: 0
   tipsContent:
-    saludo: 
-    apura: 
-    mago: 
-    color1: 
-    color2: 
-    portalBlocked: 
-    portalFinal: 
-    mover1: 
-    mover2: 
-    fruit: 
-    fruitWin: 
-    colorFinal: 
+    saludo: "\xA1Saludos, aprendiz! Los Sabios Alquimistas me enviaron para guiarte
+      en esta importante misi\xF3n. Voy a ayudarte a llegar al Templo de la Luz."
+    apura: "Creo que deber\xEDamos ir a investigar ese extra\xF1o portal que est\xE1
+      por all\xE1."
+    mago: "Por la cara que ten\xE9s me parece que viste al Mago de la Sombra. \xA1Que
+      miedo que me da!"
+    color1: "\xA1Recuperaste el color azul! \xA1Ahora ya pod\xE9s entrar a los portales
+      celestes!"
+    color2: "\xA1Ya tenemos otro color!"
+    portalBlocked: "Para entrar a este portal deb\xE9s haber recuperado el color previo."
+    portalFinal: "A\xFAn no ten\xE9s los dos colores del escudo de llaves. \xA1Vamos
+      a recuperarlos!"
+    mover1: "Deber\xEDamos explorar la zona."
+    mover2: "Eh... \xBFno te est\xE1s aburriendo?"
+    fruit: "Para entrar a este portal deb\xE9s romper su hechizo, destruyendo las
+      gemas perladas pero no las violetas. \xA1Volvamos a intentarlo!"
+    fruitWin: "\xA1Rompiste el hechizo!"
+    colorFinal: "\xA1Rompiste el hechizo!"
   timeToSayWhenNotWalking: 14
   timeToSayWhenNotWalkingCount: 0
   timeToNotEnterPortal: 40

@@ -6,6 +6,7 @@ using System.IO;
 
 public class TipsManager : MonoBehaviour {
 
+	public bool loadData;
 	public TipsContent tipsContent;
 
 	public float timeToSayWhenNotWalking = 10;
@@ -24,7 +25,9 @@ public class TipsManager : MonoBehaviour {
 		saludoDone = CheckIfDone ("saludoDone");
 		fruitWinDone = CheckIfDone ("fruitWinDone");
 
-		LoadGameData ();
+		if(loadData)
+			LoadGameData ();
+		
 		Events.OnMap += OnMap;
 		Events.PortalUnavailable += PortalUnavailable;
 		Events.PortalFinalUnavailable += PortalFinalUnavailable;
@@ -127,8 +130,6 @@ public class TipsManager : MonoBehaviour {
 	private void LoadGameData()
 	{
 		string filePath = Application.streamingAssetsPath + "/tips.json";
-
-		print (filePath);
 
 		if (File.Exists (filePath)) {
 			string dataAsJson = File.ReadAllText (filePath);
