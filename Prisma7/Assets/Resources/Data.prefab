@@ -1461,6 +1461,8 @@ MonoBehaviour:
     enabled: 1
   - go: {fileID: 1433994642584956, guid: 68bcffb889b0a1348a11d066f625e973, type: 2}
     enabled: 1
+  - go: {fileID: 1150219581431134, guid: c2d63485acd96d14b965784661d1b675, type: 2}
+    enabled: 1
   figuras:
   - go: {fileID: 1875657867419506, guid: 48e2a6940bce328458979f4e5c3d2f03, type: 2}
     runas:
@@ -1510,6 +1512,45 @@ MonoBehaviour:
     - go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 2}
       enabled: 0
     done: 0
+  currentLevel: 000000000000000000000000
+  figurasLevels:
+    basico:
+    - figura:
+        go: {fileID: 1875657867419506, guid: 203f1f854038f8a4e85c8a49b4b531c1, type: 2}
+        runas:
+        - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
+          enabled: 0
+        done: 0
+      opciones:
+      - {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 2}
+      - {fileID: 1150219581431134, guid: c2d63485acd96d14b965784661d1b675, type: 2}
+      time: 0
+      done: 0
+    - figura:
+        go: {fileID: 1045911619014730, guid: 10f4555a0fe1d5d4596f92faceceea2d, type: 2}
+        runas:
+        - go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 2}
+          enabled: 0
+        done: 0
+      opciones:
+      - {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 2}
+      - {fileID: 1188766808447460, guid: fd0cb0ddfcaa5334c896650af9a3005c, type: 2}
+      time: 0
+      done: 0
+    - figura:
+        go: {fileID: 1549074387681838, guid: 4876cbafa4d353349bc8f98c2c227a4a, type: 2}
+        runas:
+        - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
+          enabled: 0
+        done: 0
+      opciones:
+      - {fileID: 1433994642584956, guid: 68bcffb889b0a1348a11d066f625e973, type: 2}
+      - {fileID: 1150219581431134, guid: c2d63485acd96d14b965784661d1b675, type: 2}
+      time: 0
+      done: 0
+    intermedio: []
+    avanzado: []
+  filename: figurasLevels.json
 --- !u!114 &114857144919304550
 MonoBehaviour:
   m_ObjectHideFlags: 1

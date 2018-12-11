@@ -37,13 +37,6 @@ public class PocionesData : MonoBehaviour {
 	}
 
 	[Serializable]
-	public class Levl{
-		public List<Valores> valores;
-		public int fraccion;
-		public int slots;
-	}
-
-	[Serializable]
 	public class Valores{
 		public int val;
 		public int id;

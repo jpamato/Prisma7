@@ -62,8 +62,6 @@ public class GrillaData : MonoBehaviour {
 
 		grillaLevels = JsonUtility.FromJson<GrillaLevels>(text);
 
-		Debug.Log ("GL: " + grillaLevels.basico.Length);
-
 	}
 
 	public Level GetLevel(){

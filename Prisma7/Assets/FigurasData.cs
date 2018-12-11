@@ -8,6 +8,10 @@ public class FigurasData : MonoBehaviour {
 	public List<Runa> runas;
 	public List<Figura> figuras;
 
+	public int[] currentLevel;
+	public FigurasLevels figurasLevels;
+	public string filename = "figurasLevels.json";
+
 	// Use this for initialization
 	void Start () {
 		
@@ -18,6 +22,20 @@ public class FigurasData : MonoBehaviour {
 		
 	}
 
+	[Serializable]
+	public class FigurasLevels{
+		public Level[] basico;
+		public Level[] intermedio;
+		public Level[] avanzado;
+	}
+
+	[Serializable]
+	public class Level{
+		public Figura figura;
+		public List<GameObject> opciones;
+		public int time;
+		public bool done;
+	}
 
 	[Serializable]
 	public class Runa{
@@ -52,8 +70,40 @@ public class FigurasData : MonoBehaviour {
 		return runas [UnityEngine.Random.Range (0,runas.Count)];
 	}
 
+	public Runa GetRuna(string s){
+		return runas.Find(x => x.go.name == s);
+	}
+
 	public void ResetFiguresDone(){
 		foreach (Figura f in figuras)
 			f.done = false;
+	}
+
+	public Level GetLevel(){
+		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
+		if (dlevel < 2) {
+			return figurasLevels.basico [currentLevel [0]];
+		} else if (dlevel < 4) {
+			return figurasLevels.intermedio [currentLevel [1]];
+		} else {
+			return figurasLevels.avanzado [currentLevel [2]];
+		}
+	}
+
+	public void AddCurrentLevel(){
+		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
+		if (dlevel < 2) {
+			currentLevel [0]++;
+			if (currentLevel [0] >= figurasLevels.basico.Length)
+				currentLevel [0] = 0;
+		} else if (dlevel < 4) {
+			currentLevel [1]++;
+			if (currentLevel [1] >= figurasLevels.intermedio.Length)
+				currentLevel [1] = 0;
+		} else {
+			currentLevel [2]++;
+			if (currentLevel [2] >= figurasLevels.avanzado.Length)
+				currentLevel [2] = 0;
+		}
 	}
 }

@@ -9708,6 +9708,14 @@ MonoBehaviour:
     go: {fileID: 0}
     runas: []
     done: 0
+  fLevelData:
+    figura:
+      go: {fileID: 0}
+      runas: []
+      done: 0
+    opciones: []
+    time: 0
+    done: 0
   runasTween: {fileID: 13622180}
   consignaTween: {fileID: 585751052}
   partidaGames: 3

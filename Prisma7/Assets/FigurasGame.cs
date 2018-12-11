@@ -14,6 +14,7 @@ public class FigurasGame : MateGame {
 	Dictionary<string, bool> enabledButtons;
 
 	public FigurasData.Figura figura;
+	public FigurasData.Level fLevelData;
 
 	public Tween runasTween;
 	public Tween consignaTween;
@@ -53,7 +54,8 @@ public class FigurasGame : MateGame {
 			}
 		}
 		SetBarColor ();
-		InitTimer ();
+		if(fLevelData.time>0)
+			InitTimer ();
 		//consigna.SetActive (false);
 		consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
 		runasTween.SetTween(new Vector3(-4f,4.6f,1f),0.05f);
@@ -142,6 +144,7 @@ public class FigurasGame : MateGame {
 			Invoke ("BackToWorld", 3);
 		} else {
 			doneSign.SetActive (true);
+			Data.Instance.figurasData.AddCurrentLevel ();
 			gamesPlayeds++;
 			if (gamesPlayeds >= partidaGames) 
 				Invoke ("BackToWorld", 3);
@@ -153,7 +156,7 @@ public class FigurasGame : MateGame {
 	}
 
 	void SetFigura(){
-		for (int i = 0; i < Data.Instance.figurasData.figuras.Count; i++) {			
+		/*for (int i = 0; i < Data.Instance.figurasData.figuras.Count; i++) {			
 			if (!Data.Instance.figurasData.figuras [i].done) {
 				figura = Data.Instance.figurasData.figuras [i];
 				figuraGO = Instantiate (figura.go);
@@ -162,12 +165,20 @@ public class FigurasGame : MateGame {
 				figuraGO.transform.localRotation = Quaternion.identity;
 				i = Data.Instance.figurasData.figuras.Count;
 			}
-		}
+		}*/
+
+		fLevelData = Data.Instance.figurasData.GetLevel ();
+		figura = fLevelData.figura;
+		figuraGO = Instantiate (figura.go);
+		figuraGO.transform.SetParent(gameObject.transform.Find("Figura"));
+		figuraGO.transform.localPosition = Vector3.zero;
+		figuraGO.transform.localRotation = Quaternion.identity;
+
 		SetButtons ();
 	}
 
 	void SetButtons(){
-		for (int i = 0; i < 5; i++) {
+		/*for (int i = 0; i < 5; i++) {
 			if (i < figura.runas.Count) {
 				runasButtons.Add (figura.runas [i].go);
 			} else {
@@ -179,7 +190,16 @@ public class FigurasGame : MateGame {
 				}
 
 			}				
+		}*/
+
+		for (int i = 0; i < figura.runas.Count; i++)
+			runasButtons.Add (figura.runas [i].go);
+
+		for (int i = 0; i < fLevelData.opciones.Count; i++){
+			FigurasData.Runa r = Data.Instance.figurasData.GetRuna (fLevelData.opciones [i].name);
+			runasButtons.Add (r.go);
 		}
+
 		Utils.Shuffle (runasButtons);
 
 		for(int i=0;i<runasButtons.Count;i++){
