@@ -1540,7 +1540,7 @@ MonoBehaviour:
     - figura:
         go: {fileID: 1549074387681838, guid: 4876cbafa4d353349bc8f98c2c227a4a, type: 2}
         runas:
-        - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 2}
+        - go: {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 2}
           enabled: 0
         done: 0
       opciones:
