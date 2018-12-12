@@ -14,7 +14,10 @@ public class FigurasData : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		foreach (Runa r in runas) {
+			string s = PlayerPrefs.GetString (r.go.name);
+			r.enabled = s == "done"?true:false;
+		}
 	}
 	
 	// Update is called once per frame
@@ -104,6 +107,18 @@ public class FigurasData : MonoBehaviour {
 			currentLevel [2]++;
 			if (currentLevel [2] >= figurasLevels.avanzado.Length)
 				currentLevel [2] = 0;
+		}
+	}
+
+	public void EnableRuna(string name){
+		Runa r = runas.Find (x => x.go.name == name);
+		if (r == null)
+			return;
+
+		if (!r.enabled) {
+			r.enabled = true;
+			PlayerPrefs.SetString (name, "done");
+			Events.OnRunaFound ();
 		}
 	}
 }
