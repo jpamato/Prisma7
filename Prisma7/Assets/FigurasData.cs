@@ -117,6 +117,7 @@ public class FigurasData : MonoBehaviour {
 
 		if (!r.enabled) {
 			r.enabled = true;
+			Debug.Log (name);
 			PlayerPrefs.SetString (name, "done");
 			Events.OnRunaFound ();
 		}
