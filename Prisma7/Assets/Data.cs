@@ -104,19 +104,10 @@ public class Data : MonoBehaviour
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
 
-		//PlayerPrefs.DeleteAll ();
+    }
+    
+	public void Reset(){
+		PlayerPrefs.DeleteAll ();
+	}
 
-    }
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            //Application.Quit();
-			SceneManager.LoadScene(0);
-		}else if(Input.GetKeyDown(KeyCode.Alpha2))
-		{
-			//Application.Quit();
-			SceneManager.LoadScene(1);
-		}
-    }
 }
