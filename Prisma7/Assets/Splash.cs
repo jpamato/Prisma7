@@ -8,4 +8,9 @@ public class Splash : MonoBehaviour {
 	{
 		Data.Instance.LoadScene ("CharacterSelector");
 	}
+
+	public void Reiniciar(){
+		Data.Instance.Reset ();
+		Application.Quit ();
+	}
 }
