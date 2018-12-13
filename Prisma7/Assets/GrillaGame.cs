@@ -28,7 +28,7 @@ public class GrillaGame : MateGame {
 
 	public InputField respuesta;
 
-	public Animation brujo;
+	public Animator brujo;
 
 	[Serializable]
 	public class Rect{
@@ -60,7 +60,7 @@ public class GrillaGame : MateGame {
 
 		//consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
 
-		//brujo.Play ("idle");
+		brujo.Play ("idle");
 		state = states.PLAYING;
 	}
 
