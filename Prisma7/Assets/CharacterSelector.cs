@@ -9,6 +9,7 @@ public class CharacterSelector : MonoBehaviour {
 	}
 	public void SelectCharacter(int id)
 	{
+		Events.ClickSfx ();
 		if(id==0)
 			Data.Instance.userData.sex = UserData.sexs.HE;
 		else

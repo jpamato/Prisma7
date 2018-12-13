@@ -32,4 +32,6 @@ public static class Events {
 	public static System.Action OnRunaFound = delegate {};
 
 	public static System.Action NotRuna = delegate {};
+
+	public static System.Action ClickSfx = delegate {};
 }
