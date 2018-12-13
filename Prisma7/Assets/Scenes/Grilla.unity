@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43916634, g: 0.4874403, b: 0.56768996, a: 1}
+  m_IndirectSpecularColor: {r: 0.43916667, g: 0.48744124, b: 0.56769073, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5022,7 +5022,7 @@ MonoBehaviour:
   filas: 0
   rects: []
   respuesta: {fileID: 348712437}
-  brujo: {fileID: 1750717500}
+  brujo: {fileID: 1397496192}
 --- !u!1 &125670977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1340434779199998, guid: b14cfc98d97877f44b657ac33b63836e,
@@ -15958,9 +15958,9 @@ RectTransform:
   m_Father: {fileID: 1455795455}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 320, y: -295}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -220, y: 5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &585751052
@@ -21870,6 +21870,29 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1257623382807236, guid: b14cfc98d97877f44b657ac33b63836e,
     type: 2}
   m_PrefabInternal: {fileID: 248725583}
+--- !u!1 &1397496190 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1932145090884212, guid: 780d293d981d59b48a3a05128b88abfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1885577042}
+--- !u!95 &1397496192
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1397496190}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2d9c3dbdac9ef5545832ca3df5b1701c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1410178693
 GameObject:
   m_ObjectHideFlags: 0
@@ -46557,11 +46580,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!111 &1750717500 stripped
-Animation:
-  m_CorrespondingSourceObject: {fileID: 111321123041943424, guid: 780d293d981d59b48a3a05128b88abfb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1885577042}
 --- !u!1 &1778925199
 GameObject:
   m_ObjectHideFlags: 0
@@ -46693,7 +46711,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4492232925916966, guid: 780d293d981d59b48a3a05128b88abfb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.22
       objectReference: {fileID: 0}
     - target: {fileID: 4492232925916966, guid: 780d293d981d59b48a3a05128b88abfb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -46723,7 +46741,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 111321123041943424, guid: 780d293d981d59b48a3a05128b88abfb, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 780d293d981d59b48a3a05128b88abfb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1894123597 stripped
