@@ -47,7 +47,8 @@ public class FigurasGame : MateGame {
 				Renderer r = go.GetComponent<Renderer> ();
 				if(r==null)
 					r = go.GetComponentInChildren<Renderer> ();
-				r.material.color = new Color (0.25F, 0.25F, 0.25F, 0.25f);
+				r.material.color = Color.black;
+				r.material.DisableKeyword ("_EMISSION");	
 				enabledButtons.Add (go.name, false);
 			} else {
 				enabledButtons.Add (go.name, true);
@@ -74,21 +75,21 @@ public class FigurasGame : MateGame {
 
 	void FigureSelect(GameObject hit){		
 		if (hit.tag == "Runa" && state == states.PLAYING) {
-			if (enabledButtons[hit.name]) {
+			if (enabledButtons [hit.name]) {
 				bool done = figura.CheckRuna (hit.name);
 				Transform t = figuraGO.transform.Find (hit.name);
 				if (t != null) {
 					Renderer r = t.GetComponent<Renderer> ();
-					if(r==null)
+					if (r == null)
 						r = t.GetComponentInChildren<Renderer> ();
 					//r.material.color = figurOKColor;
 					audioSource.PlayOneShot (figuraOK);
-					r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
+					r.material = figurOKMaterials [Data.Instance.levelsData.actualDiamondLevel];
 					figurOKPS1.SetActive (true);
 					figurOKPS2.SetActive (true);
 					Vector3 h1 = hit.gameObject.transform.position;
 					Vector3 h2 = figuraGO.transform.position;
-					figurOKPS1.transform.position = new Vector3(h1.x,h1.y+2,h1.z);
+					figurOKPS1.transform.position = new Vector3 (h1.x, h1.y + 2, h1.z);
 					//figurOKPS2.transform.position = new Vector3(h2.x,h2.y+2,h2.z);
 					figurOKPS2.transform.position = t.position;
 					Invoke ("StopFiguraOKPS", 1f);
@@ -99,8 +100,8 @@ public class FigurasGame : MateGame {
 					figurWrongPS2.SetActive (true);
 					Vector3 h1 = hit.gameObject.transform.position;
 					Vector3 h2 = figuraGO.transform.position;
-					figurWrongPS1.transform.position = new Vector3(h1.x,h1.y-5,h1.z);
-					figurWrongPS2.transform.position = new Vector3(h2.x,h2.y-5,h2.z);
+					figurWrongPS1.transform.position = new Vector3 (h1.x, h1.y - 5, h1.z);
+					figurWrongPS2.transform.position = new Vector3 (h2.x, h2.y - 5, h2.z);
 					Invoke ("StopFigurWrongPS", 1f);
 				}
 
@@ -110,6 +111,8 @@ public class FigurasGame : MateGame {
 					Invoke ("FiguraComplete", 1.1f);
 				}
 
+			} else {
+				Events.NotRuna ();
 			}
 		}
 	}

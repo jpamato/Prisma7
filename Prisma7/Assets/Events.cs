@@ -29,5 +29,7 @@ public static class Events {
 	public static System.Action PortalFinalUnavailable = delegate {	};
 	public static System.Action<int> OnChangeWorld = delegate {	};
 
-	public static System.Action OnRunaFound = delegate {	};
+	public static System.Action OnRunaFound = delegate {};
+
+	public static System.Action NotRuna = delegate {};
 }
