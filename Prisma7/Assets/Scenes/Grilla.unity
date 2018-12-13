@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43916667, g: 0.48744124, b: 0.56769073, a: 1}
+  m_IndirectSpecularColor: {r: 0.43916634, g: 0.4874403, b: 0.56768996, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5022,6 +5022,7 @@ MonoBehaviour:
   filas: 0
   rects: []
   respuesta: {fileID: 348712437}
+  brujo: {fileID: 1750717500}
 --- !u!1 &125670977 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1340434779199998, guid: b14cfc98d97877f44b657ac33b63836e,
@@ -46556,6 +46557,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!111 &1750717500 stripped
+Animation:
+  m_CorrespondingSourceObject: {fileID: 111321123041943424, guid: 780d293d981d59b48a3a05128b88abfb,
+    type: 2}
+  m_PrefabInternal: {fileID: 1885577042}
 --- !u!1 &1778925199
 GameObject:
   m_ObjectHideFlags: 0
