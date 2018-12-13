@@ -20,6 +20,9 @@ public class FigurasData : MonoBehaviour {
 				r.enabled = s == "done"?true:false;
 			//r.enabled = true;
 		}
+
+		figurasLevels.intermedio = figurasLevels.basico;
+		figurasLevels.avanzado = figurasLevels.basico;
 	}
 	
 	// Update is called once per frame

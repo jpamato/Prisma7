@@ -16,6 +16,7 @@ public class CombinatoriasGame : MateGame {
 	public GameObject gemaItem;
 	public GameObject gemaSlot;
 	public Transform inventarioContent;
+	public GameObject inventarioBG;
 	public Transform centralContent;
 	public List<Burbuja> burbujas;
 	public int burbujasDone;
@@ -248,6 +249,9 @@ public class CombinatoriasGame : MateGame {
 	}
 
 	void BackToWorld(){
+		consigna.SetActive (false);
+		inventarioBG.SetActive (false);
+		inventarioContent.gameObject.SetActive (false);
 		Data.Instance.LoadScene ("World");
 	}
 }

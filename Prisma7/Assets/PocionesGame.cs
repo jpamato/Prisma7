@@ -15,6 +15,7 @@ public class PocionesGame : MateGame {
 	public Transform centralContent;
 	public GameObject receta;
 	public ParticleSystem ingredientFx;
+	public AudioClip salpica;
 	public Animator caldero;
 
 	public PocionesData.Level pLevelData;
@@ -176,6 +177,7 @@ public class PocionesGame : MateGame {
 
 	void DroppedUI(GameObject dragged){
 		ingredientFx.Play ();
+		audioSource.PlayOneShot (salpica);
 		IngredienteItem ii = dragged.GetComponent<IngredienteItem> ();
 		PocionesData.Valores v = valoresParciales.Find (x => x.id == ii.id);
 		v.val++;
@@ -233,6 +235,8 @@ public class PocionesGame : MateGame {
 	}
 
 	void BackToWorld(){
+		consigna.SetActive(false);
+		receta.SetActive(false);
 		Data.Instance.LoadScene ("World");
 	}
 }

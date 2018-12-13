@@ -5207,6 +5207,7 @@ MonoBehaviour:
   gemaItem: {fileID: 1967946994396354, guid: 33335b17dcc311c42b784560cef74c8c, type: 2}
   gemaSlot: {fileID: 1962250167277278, guid: da2b25c58d0844046b956967cd9c78d7, type: 2}
   inventarioContent: {fileID: 558395342}
+  inventarioBG: {fileID: 530062088}
   centralContent: {fileID: 1020302686}
   burbujas:
   - {fileID: 1165384263}

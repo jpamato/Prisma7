@@ -278,6 +278,8 @@ public class GrillaGame : MateGame {
 	}
 
 	void BackToWorld(){
+		gridContent.gameObject.SetActive (false);
+		consigna.gameObject.SetActive (false);
 		Data.Instance.LoadScene ("World");
 	}
 

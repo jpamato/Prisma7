@@ -5063,6 +5063,7 @@ MonoBehaviour:
   gemaItem: {fileID: 1328086065886828, guid: 887c6ca82afea5747a0918809a2720e0, type: 2}
   gemaSlot: {fileID: 1676485821075494, guid: 1f99760bf6bb9b049bc20c39f61942a9, type: 2}
   inventarioContent: {fileID: 558395342}
+  inventarioBG: {fileID: 0}
   centralContent: {fileID: 0}
   burbujas:
   - {fileID: 0}
@@ -5111,6 +5112,7 @@ MonoBehaviour:
   centralContent: {fileID: 0}
   receta: {fileID: 856517381}
   ingredientFx: {fileID: 1129695124}
+  salpica: {fileID: 8300000, guid: 547788d96adaba3458e363c18976bfe7, type: 3}
   caldero: {fileID: 647572708}
   pLevelData:
     elementos: 

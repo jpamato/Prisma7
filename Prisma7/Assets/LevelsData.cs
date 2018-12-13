@@ -32,9 +32,10 @@ public class LevelsData : MonoBehaviour {
 		if (actualDiamondLevel >= diamondLevels.Count)
 			actualDiamondLevel = diamondLevels.Count - 1;
 		actualLevelPercent = 0;
+		PlayerPrefs.SetFloat ("actualLevelPercent", actualLevelPercent);
 
 		PlayerPrefs.SetInt ("actualDiamondLevel", actualDiamondLevel);
-		Invoke ("ColorsReset", 1);
+		Invoke ("ColorsReset", 4);
 	}
 
 	public void AddLevelPercent(float val){
