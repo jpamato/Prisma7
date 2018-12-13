@@ -695,8 +695,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 170f391a55f670b409d4ae1d8928a14e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bubbles: {fileID: 1019564565474680, guid: 17620525017327542b3863a3b4fe81e6, type: 2}
+  bubbles:
+  - {fileID: 1019564565474680, guid: 17620525017327542b3863a3b4fe81e6, type: 2}
+  - {fileID: 1252946897946318, guid: 908a42e053ac7ba4684b367931b538ce, type: 2}
+  - {fileID: 1890690259855180, guid: e4dff089f0e28c348a3a340f25030562, type: 2}
+  - {fileID: 1412258486088972, guid: 3d510a2f863db3b4386cec5b352daf12, type: 2}
   bomb: {fileID: 1173099647869668, guid: 2c7fe4f8d55fed748ba532d5c3583f2d, type: 2}
+  id: 0
 --- !u!1 &1693733639
 GameObject:
   m_ObjectHideFlags: 0
