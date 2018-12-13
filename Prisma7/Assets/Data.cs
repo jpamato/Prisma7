@@ -21,6 +21,7 @@ public class Data : MonoBehaviour
 	public TipsManager tipsManager;
 	public UI ui;
 	public FadePanel fadePanel;
+	public MusicManager musicManager;
 
 	public enum minigamesScenes
 	{
@@ -52,6 +53,9 @@ public class Data : MonoBehaviour
     public void LoadScene(string aLevelName)
     {
 		if (aLevelName == "World") {
+
+			musicManager.SetIngameMusic ();
+
 			switch (userData.actualWorld) {
 			case 1:
 				aLevelName = "World";
@@ -66,7 +70,8 @@ public class Data : MonoBehaviour
 				aLevelName = "World";
 				break;
 			}
-		}
+		} 
+
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
 		fadePanel.SetOn ();
@@ -100,6 +105,7 @@ public class Data : MonoBehaviour
 		grillaData = GetComponent<GrillaData> ();
 		inputManager = GetComponent<InputManager> ();
 		tipsManager = GetComponent<TipsManager> ();
+		musicManager = GetComponent<MusicManager> ();
 		Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;

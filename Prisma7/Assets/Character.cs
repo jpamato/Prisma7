@@ -97,6 +97,7 @@ public class Character : MonoBehaviour {
 	{
 		anim.Enter ();
 		yield return new WaitForSeconds (1.25f);
+		Data.Instance.musicManager.SetIngameMusic ();
 		Data.Instance.LoadScene (nextScene);
 	}
 	void OnFloorClicked (Vector3 pos) {

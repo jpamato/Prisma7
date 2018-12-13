@@ -240,6 +240,7 @@ public class GrillaGame : MateGame {
 	}
 
 	void GrillaComplete(){
+		brujo.Play ("angry");
 		audioSource.PlayOneShot (combiDone);
 		Data.Instance.ui.HideTimer ();
 		//Events.FiguraComplete (figura.go.name);
@@ -258,14 +259,17 @@ public class GrillaGame : MateGame {
 			doneSign.SetActive (true);
 			Data.Instance.grillaData.AddCurrentLevel ();
 			gamesPlayeds++;
-			if (gamesPlayeds >= partidaGames) 
+			if (gamesPlayeds >= partidaGames)
 				Invoke ("BackToWorld", 3);
-			else
+			else {
+				brujo.Play ("attack");
 				Invoke ("Init", 3);
+			}
 		}		
 	}
 
 	void TimeOver(){
+		brujo.Play ("celebrate");
 		state = states.ENDED;
 		loseSign.SetActive (true);
 		Data.Instance.ui.ClockSfx (false);
