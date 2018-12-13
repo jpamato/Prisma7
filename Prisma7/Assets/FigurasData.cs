@@ -16,7 +16,8 @@ public class FigurasData : MonoBehaviour {
 	void Start () {
 		foreach (Runa r in runas) {
 			string s = PlayerPrefs.GetString (r.go.name);
-			r.enabled = s == "done"?true:false;
+			//r.enabled = s == "done"?true:false;
+			r.enabled = true;
 		}
 	}
 	
