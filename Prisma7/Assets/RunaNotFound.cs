@@ -25,6 +25,7 @@ public class RunaNotFound : MonoBehaviour {
 	}
 
 	void NotRuna(){
+		Data.Instance.tipsManager.FaltaFigura ();
 		show = true;
 		flash = true;
 		image.enabled = flash;

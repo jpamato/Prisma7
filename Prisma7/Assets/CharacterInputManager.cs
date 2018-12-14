@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CharacterInputManager : MonoBehaviour {
 
@@ -11,8 +12,10 @@ public class CharacterInputManager : MonoBehaviour {
 	{
 		if (Game.Instance.mode == Game.modes.FREEZED || Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
-		
-		if (Input.GetMouseButton(0)){
+		if (EventSystem.current.IsPointerOverGameObject())
+		{
+
+		} else if (Input.GetMouseButton(0)){
 			if (lastTimeClicked != 0 && lastTimeClicked > Time.time)
 				return;
 

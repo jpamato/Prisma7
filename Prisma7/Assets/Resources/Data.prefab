@@ -444,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1672018598803108
 GameObject:
   m_ObjectHideFlags: 1
@@ -1723,12 +1723,17 @@ MonoBehaviour:
       gemas perladas pero no las violetas. \xA1Volvamos a intentarlo!"
     fruitWin: "\xA1Rompiste el hechizo!"
     colorFinal: "\xA1Rompiste el hechizo!"
+    faltaFigura: "Te falt\xF3 uno de los cuerpos m\xE1gicos necesarios para vencer
+      ese hechizo. Ten\xE9s que conseguirlo, \xA1pero en el Planeta Tierra!"
   timeToSayWhenNotWalking: 14
-  timeToSayWhenNotWalkingCount: 0
+  timeToSayWhenNotWalkingCount: 6.6543875
   timeToNotEnterPortal: 40
-  timeToNotEnterPortalCount: 0
-  saludoDone: 0
-  fruitWinDone: 0
+  timeToNotEnterPortalCount: 6.6543875
+  saludoDone: 1
+  fruitWinDone: 1
+  sawMago: 0
+  sawMagoFirstTime: 0
+  faltaFigura: 0
 --- !u!114 &114874569354660522
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2052,7 +2057,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1000
+  m_SortingOrder: 1010
   m_TargetDisplay: 0
 --- !u!224 &224055740849575326
 RectTransform:

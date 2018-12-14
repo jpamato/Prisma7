@@ -17,7 +17,9 @@ public class TipsManager : MonoBehaviour {
 
 	public bool saludoDone;
 	public bool fruitWinDone;
-
+	public bool sawMago;
+	public bool sawMagoFirstTime;
+	public bool faltaFigura;
 	int actualDiamondLevel;
 
 	void Start()
@@ -48,7 +50,7 @@ public class TipsManager : MonoBehaviour {
 	}
 	void Update()
 	{
-		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
+		if (Game.Instance != null && Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
 		timeToSayWhenNotWalkingCount += Time.deltaTime;
 		timeToNotEnterPortalCount += Time.deltaTime;
@@ -99,8 +101,27 @@ public class TipsManager : MonoBehaviour {
 	{
 		timeToSayWhenNotWalkingCount = 0;
 	}
+	public void SawMago()
+	{
+		if (sawMagoFirstTime)
+			return;
+		sawMagoFirstTime = true;
+		sawMago = true;
+	}
+	public void FaltaFigura()
+	{
+		faltaFigura = true;
+	}
 	void Delayed()
 	{
+		if (faltaFigura) {
+			Events.OnPetSay (tipsContent.faltaFigura);
+			faltaFigura = false;
+		} else
+		if (sawMago) {
+			Events.OnPetSay (tipsContent.mago);
+			sawMago = false;
+		} else
 		if (!saludoDone) {
 			Events.OnPetSay (tipsContent.saludo);
 			Save ("saludoDone");
@@ -155,5 +176,6 @@ public class TipsManager : MonoBehaviour {
 		public string fruit;
 		public string fruitWin;
 		public string colorFinal;
+		public string faltaFigura;
 	}
 }
