@@ -285,7 +285,16 @@ public class GrillaGame : MateGame {
 	}
 
 	public void Respuesta(){
-		if(int.Parse(respuesta.text)==gLevelData.area)
+		if (int.Parse (respuesta.text) == gLevelData.area) {
 			GrillaComplete ();
+		} else {
+			respuesta.image.color = Color.red;
+			Invoke ("ResetRespuesta", 2);
+		}
+	}
+
+	void ResetRespuesta(){
+		respuesta.image.color = Color.white;
+		respuesta.text = "";
 	}
 }
