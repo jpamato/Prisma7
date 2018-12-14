@@ -27,6 +27,7 @@ public class CombinatoriasGame : MateGame {
 	public List<GameObject> gemasCentral;
 
 	public AudioClip combiOK,combiDone;
+	public AudioClip dropIn;
 	AudioSource audioSource;
 
 	// Use this for initialization
@@ -123,10 +124,13 @@ public class CombinatoriasGame : MateGame {
 	}
 
 	void OnDropingOut(){
+		audioSource.pitch = 0.5f;
+		audioSource.PlayOneShot (dropIn);
 		Invoke ("ResetSuma",0.1f);
 	}
 
 	void ResetSuma(){
+		audioSource.pitch = 1;
 		sumaCentral = 0;
 		for (int i = 0; i < centralContent.childCount; i++) {
 			sumaCentral += centralContent.GetChild (i).GetComponent<GemaItem> ().val;
@@ -136,6 +140,7 @@ public class CombinatoriasGame : MateGame {
 	}
 
 	void DroppedUI(GameObject dragged){
+		audioSource.PlayOneShot (dropIn);
 		GemaItem gi = dragged.GetComponentInParent<GemaItem> ();
 		sumaCentral += gi.val;
 		if (sumaCentral == cLevelData.resultado)
