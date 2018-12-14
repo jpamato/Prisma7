@@ -49,6 +49,7 @@ public class GrillaGame : MateGame {
 	}
 
 	void Init(){
+		Data.Instance.tipsManager.SawMago ();
 		doneSign.SetActive (false);
 		loseSign.SetActive (false);
 
