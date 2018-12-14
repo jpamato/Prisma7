@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PortalLevel : InteractiveObject {
 
+	public bool isLastPortal;
 	public Animator anim;
 
 	public int id;
@@ -29,6 +30,14 @@ public class PortalLevel : InteractiveObject {
 	}
 	public bool ChekToCross()
 	{
+		if (isLastPortal)
+		{
+			if (Data.Instance.levelsData.actualDiamondLevel == 6 && !Data.Instance.levelsData.showOutro) {
+				Data.Instance.levelsData.showOutro = true;
+				Data.Instance.LoadScene ("cutscenes");
+			}
+			return false;
+		}
 		if (Data.Instance.levelsData.actualDiamondLevel <= id) {
 			Events.PortalFinalUnavailable ();
 			return false;
