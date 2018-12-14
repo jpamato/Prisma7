@@ -116,4 +116,11 @@ public class Data : MonoBehaviour
 		PlayerPrefs.DeleteAll ();
 	}
 
+	public void CaptureScreen(){
+		if(currentLevel=="CaptureQR")
+			LoadScene ("World");
+		else
+			LoadScene ("CaptureQR");
+	}
+
 }
