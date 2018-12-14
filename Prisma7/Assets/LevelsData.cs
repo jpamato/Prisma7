@@ -9,11 +9,16 @@ public class LevelsData : MonoBehaviour {
 	public int actualDiamondLevel;
 	public float actualLevelPercent;//0-1
 
+	bool allLevelsComplete;
+
 	// Use this for initialization
 	void Start () {
 
 		actualDiamondLevel = PlayerPrefs.GetInt ("actualDiamondLevel");
 		actualLevelPercent = PlayerPrefs.GetFloat ("actualLevelPercent");
+
+		if(actualDiamondLevel >= diamondLevels.Count)
+			allLevelsComplete = true;
 
 		Events.OnColorComplete += OnColorComplete;
 	}
@@ -29,8 +34,13 @@ public class LevelsData : MonoBehaviour {
 
 	void OnColorComplete(){
 		actualDiamondLevel++;
-		if (actualDiamondLevel >= diamondLevels.Count)
+		if (actualDiamondLevel >= diamondLevels.Count) {
 			actualDiamondLevel = diamondLevels.Count - 1;
+			if (!allLevelsComplete) {
+				Events.AllLevelsComplete ();
+			}
+		}
+
 		actualLevelPercent = 0;
 		PlayerPrefs.SetFloat ("actualLevelPercent", actualLevelPercent);
 
