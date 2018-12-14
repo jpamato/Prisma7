@@ -48,6 +48,8 @@ public class TipsManager : MonoBehaviour {
 	}
 	void Update()
 	{
+		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
+			return;
 		timeToSayWhenNotWalkingCount += Time.deltaTime;
 		timeToNotEnterPortalCount += Time.deltaTime;
 		if (timeToNotEnterPortalCount > timeToNotEnterPortal) {
@@ -68,6 +70,7 @@ public class TipsManager : MonoBehaviour {
 			Events.OnPetSay (tipsContent.fruitWin);
 			Save ("fruitWinDone");
 		}
+		timeToSayWhenNotWalkingCount = 0;
 		timeToNotEnterPortalCount = 0;
 	}
 	void OpenFruitNinja(InteractiveObject io)

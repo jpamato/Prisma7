@@ -17,8 +17,8 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
-		//Mousse Button
+		if (Game.Instance.mode == Game.modes.FRUIT_NINJA)
+			return;
 		if (Input.GetMouseButtonDown (0)) {
 			if (raycastWorld) {
 				Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
