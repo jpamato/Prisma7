@@ -7,7 +7,7 @@ public class Splash : MonoBehaviour {
 	public void SplashClicked()
 	{
 		Events.ClickSfx ();
-		Data.Instance.LoadScene ("CharacterSelector");
+		Data.Instance.LoadScene ("cutscenes");
 	}
 
 	public void Reiniciar(){
