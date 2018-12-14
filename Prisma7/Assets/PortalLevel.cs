@@ -10,6 +10,8 @@ public class PortalLevel : InteractiveObject {
 	public int gotoLevel;
 	public Vector3 destinationCoords;
 
+	AudioSource audiosource;
+
 	public states state;
 	public enum states
 	{
@@ -19,6 +21,7 @@ public class PortalLevel : InteractiveObject {
 
 
 	void Start () {
+		audiosource = GetComponent<AudioSource> ();
 		if (Data.Instance.levelsData.actualDiamondLevel >= 2 && Data.Instance.userData.GetPortalIDOpened() >= id) {
 			state = states.OPENED;
 			anim.Play ("portal_unlocked");
@@ -35,6 +38,7 @@ public class PortalLevel : InteractiveObject {
 			Data.Instance.userData.OpenPortal (id);
 			state = states.OPENED;
 			anim.Play ("portal_open");
+			audiosource.Play ();
 			Invoke ("ChangeLevel", 5);
 		} else {
 			ChangeLevel ();
