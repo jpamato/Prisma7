@@ -9,16 +9,20 @@ public class GemaGrid : MonoBehaviour {
 	public Color activeColor;
 	public Color inactiveColor;
 	public Vector2 id;
+	AudioSource audiosource;
 
 	Button button;
 	bool active;
 
 	// Use this for initialization
 	void Awake () {
+		
 		button = GetComponent<Button> ();
 			
 		button.onClick.AddListener (OnClick);
 		image.color = inactiveColor;
+
+		audiosource = GetComponent<AudioSource> ();
 
 		Events.OnMathGameComplete += OnMathGameComplete;
 	}
@@ -39,9 +43,10 @@ public class GemaGrid : MonoBehaviour {
 
 	void OnClick(){
 		active = !active;
-		if (active)
+		if (active) {
 			image.color = activeColor;
-		else
+			audiosource.Play ();
+		}else
 			image.color = inactiveColor;
 
 		Events.OnGridClick (id, active);
