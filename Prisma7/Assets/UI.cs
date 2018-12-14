@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UI : MonoBehaviour {
 
@@ -8,6 +9,9 @@ public class UI : MonoBehaviour {
 	public ProgressBar progressBar;
 	public ColorBar colorBar;
 	public Prisma prisma;
+
+	public Image captureBtn;
+	public Sprite capture,captureBack;
 
 	public AudioSource clockSource;
 
@@ -32,5 +36,18 @@ public class UI : MonoBehaviour {
 			clockSource.Play ();
 		else
 			clockSource.Stop ();
+	}
+
+
+	public void ShowCapture(bool back){
+		captureBtn.gameObject.SetActive (true);
+		if(back)
+			captureBtn.sprite = captureBack;
+		else
+			captureBtn.sprite = capture;
+	} 
+
+	public void HideCapture(){ 
+		captureBtn.gameObject.SetActive (false);
 	}
 }

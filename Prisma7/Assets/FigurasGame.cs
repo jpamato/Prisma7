@@ -27,6 +27,7 @@ public class FigurasGame : MateGame {
 
 	// Use this for initialization
 	void Start () {
+		Data.Instance.ui.HideCapture ();
 		audioSource = GetComponent<AudioSource> ();
 		Data.Instance.inputManager.raycastWorld = true;	
 		levelBarStep = 1f / times2FullBar;

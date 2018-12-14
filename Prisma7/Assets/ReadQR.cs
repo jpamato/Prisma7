@@ -12,7 +12,13 @@ public class ReadQR : MonoBehaviour {
 	private WebCamTexture camTexture;
 	//private Rect screenRect;
 
+	public AudioClip photo;
+	AudioSource source;
+
 	void Start() {		
+		Data.Instance.ui.ShowCapture (true);
+		source = GetComponent<AudioSource> ();
+
 		//screenRect = new Rect(0, 0, Screen.width, Screen.height);
 		//rawimage.rectTransform.sizeDelta = new Vector2(Screen.width, Screen.height);
 		camTexture = new WebCamTexture();
@@ -22,10 +28,17 @@ public class ReadQR : MonoBehaviour {
 		if (camTexture != null) {
 			camTexture.Play();
 		}
+
+		Events.OnRunaFound += OnRunaFound;
 	}
 
 	void OnDestroy(){
+		Events.OnRunaFound -= OnRunaFound;
 		camTexture.Stop ();
+	}
+
+	void OnRunaFound(){
+		source.PlayOneShot (photo);
 	}
 
 	void OnGUI () {

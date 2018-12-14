@@ -29,6 +29,7 @@ public class Game : MonoBehaviour {
 	void Start()
 	{		
 		Data.Instance.ui.SetStatus (true);
+		Data.Instance.ui.ShowCapture(false);
 		mode = modes.WORLD;
 		Data.Instance.ui.HideTimer ();
 		Events.OnMap ();

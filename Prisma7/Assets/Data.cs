@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Data : MonoBehaviour
 {
@@ -54,6 +55,7 @@ public class Data : MonoBehaviour
     {
 		if (aLevelName == "World") {
 
+
 			musicManager.SetIngameMusic ();
 
 			switch (userData.actualWorld) {
@@ -70,7 +72,7 @@ public class Data : MonoBehaviour
 				aLevelName = "World";
 				break;
 			}
-		} 
+		}
 
         this.currentLevel = aLevelName;
         Time.timeScale = 1;
@@ -79,7 +81,7 @@ public class Data : MonoBehaviour
 		Invoke ("Delayed", 1);
     }
 	void Delayed()
-	{		
+	{	
 		SceneManager.LoadScene(currentLevel);
 	}
     void Awake()
@@ -117,6 +119,7 @@ public class Data : MonoBehaviour
 	}
 
 	public void CaptureScreen(){
+		Events.ClickSfx ();
 		if(currentLevel=="CaptureQR")
 			LoadScene ("World");
 		else

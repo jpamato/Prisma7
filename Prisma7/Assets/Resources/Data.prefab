@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1650839757756508
 GameObject:
   m_ObjectHideFlags: 1
@@ -1334,6 +1334,9 @@ MonoBehaviour:
   progressBar: {fileID: 114360124674467398}
   colorBar: {fileID: 114483670734593378}
   prisma: {fileID: 114426490453790886}
+  captureBtn: {fileID: 114085641034909690}
+  capture: {fileID: 21300000, guid: d9eaff6d4b70498458b546f9b096a02b, type: 3}
+  captureBack: {fileID: 21300000, guid: 3dfbd7c3f0b18e744af42f3aba8200be, type: 3}
   clockSource: {fileID: 82106791408602788}
 --- !u!114 &114393928013152928
 MonoBehaviour:
@@ -2333,7 +2336,7 @@ RectTransform:
   - {fileID: 224931223506793738}
   - {fileID: 224756450700940800}
   m_Father: {fileID: 224839616322546958}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2431,11 +2434,11 @@ RectTransform:
   m_Children:
   - {fileID: 224176032128528016}
   m_Father: {fileID: 224839616322546958}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -8.3, y: 5.8}
+  m_AnchoredPosition: {x: -8.299988, y: 5.799988}
   m_SizeDelta: {x: 85, y: 72}
   m_Pivot: {x: 1, y: 0}
 --- !u!224 &224519349117387656
@@ -2671,8 +2674,8 @@ RectTransform:
   m_Children:
   - {fileID: 224055740849575326}
   - {fileID: 224605846820850162}
-  - {fileID: 224350745903058424}
   - {fileID: 224491733786865314}
+  - {fileID: 224350745903058424}
   m_Father: {fileID: 4782984183057282}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

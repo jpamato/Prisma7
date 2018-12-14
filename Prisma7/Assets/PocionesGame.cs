@@ -29,6 +29,7 @@ public class PocionesGame : MateGame {
 
 	// Use this for initialization
 	void Start () {	
+		Data.Instance.ui.HideCapture ();
 		audioSource = GetComponent<AudioSource> ();
 		Data.Instance.inputManager.raycastUI = true;
 		levelBarStep = 1f / times2FullBar;
