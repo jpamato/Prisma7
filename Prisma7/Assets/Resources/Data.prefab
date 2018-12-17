@@ -1044,6 +1044,7 @@ MonoBehaviour:
     color: {r: 1, g: 0, b: 0, a: 1}
   actualDiamondLevel: 0
   actualLevelPercent: 0
+  showOutro: 0
 --- !u!114 &114140404253201890
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1727,6 +1728,8 @@ MonoBehaviour:
     enabled: 1
   - go: {fileID: 1834548840658312, guid: a289d56c78cfaf843b45da582b650291, type: 2}
     enabled: 1
+  - go: {fileID: 1408149391732362, guid: de95613081156fb4e81aba2e6e047f0a, type: 2}
+    enabled: 0
   figuras:
   - go: {fileID: 1875657867419506, guid: 48e2a6940bce328458979f4e5c3d2f03, type: 2}
     runas:

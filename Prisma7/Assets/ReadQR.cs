@@ -15,6 +15,8 @@ public class ReadQR : MonoBehaviour {
 	public AudioClip photo;
 	AudioSource source;
 
+	public Button captureBtn;
+
 	bool check;
 
 	void Start() {
@@ -41,6 +43,9 @@ public class ReadQR : MonoBehaviour {
 	}
 
 	void OnRunaFound(){
+		check = false;
+		captureBtn.image.color = captureBtn.colors.normalColor;
+		captureBtn.gameObject.SetActive (false);
 		source.PlayOneShot (photo);
 	}
 
@@ -60,18 +65,19 @@ public class ReadQR : MonoBehaviour {
 			}
 		} catch(Exception ex) { Debug.LogWarning (ex.Message); }*/
 
-		/*Texture2D myQR = generateQR("cubo");
+		/*Texture2D myQR = generateQR("Piramide");
 		if (GUI.Button (new Rect (300, 300, 256, 256), myQR, GUIStyle.none)) {
-			exportQR ("Esfera", myQR);
+			exportQR ("Piramide", myQR);
 		}
-		Texture2D myQR2 = generateQR("piramide");
+		Texture2D myQR2 = generateQR("Cubo");
 		if (GUI.Button (new Rect (600, 300, 256, 256), myQR2, GUIStyle.none)) {
-			exportQR ("Hedra", myQR2);
+			exportQR ("Cubo", myQR2);
 		}*/
 	}
 
-	public void FindQR(){
+	public void FindQR(){		
 		check = true;
+		captureBtn.image.color = captureBtn.colors.pressedColor;
 		Debug.Log ("FindQR");
 		Invoke ("StopFind", 5);
 	}
@@ -79,6 +85,7 @@ public class ReadQR : MonoBehaviour {
 	void StopFind(){
 		Debug.Log ("Stop FindQR");
 		check = false;
+		captureBtn.image.color = captureBtn.colors.normalColor;
 	}
 
 	void Update(){

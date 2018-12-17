@@ -16,6 +16,7 @@ public class OnQRFound : MonoBehaviour {
 	}
 
 	void OnRunaFound(){
+		Data.Instance.ui.HideCapture ();
 		sign.SetActive (true);
 	}
 	

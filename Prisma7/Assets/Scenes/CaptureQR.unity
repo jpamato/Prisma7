@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rawimage: {fileID: 192233973}
   photo: {fileID: 8300000, guid: b35064df070bf95478a0f11b10ea872b, type: 3}
+  captureBtn: {fileID: 314351331}
 --- !u!81 &87609012
 AudioListener:
   m_ObjectHideFlags: 0
@@ -371,9 +372,9 @@ MonoBehaviour:
   m_Texture: {fileID: 0}
   m_UVRect:
     serializedVersion: 2
-    x: 1
+    x: 0
     y: 0
-    width: -1
+    width: 1
     height: 1
 --- !u!222 &192233974
 CanvasRenderer:
@@ -570,9 +571,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.29803923}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_PressedColor: {r: 1, g: 0, b: 0, a: 0.5019608}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
