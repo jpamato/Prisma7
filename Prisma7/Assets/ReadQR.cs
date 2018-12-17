@@ -15,7 +15,10 @@ public class ReadQR : MonoBehaviour {
 	public AudioClip photo;
 	AudioSource source;
 
-	void Start() {		
+	bool check;
+
+	void Start() {
+		Data.Instance.ui.SetStatus (false);
 		Data.Instance.ui.ShowCapture (true);
 		source = GetComponent<AudioSource> ();
 
@@ -44,9 +47,9 @@ public class ReadQR : MonoBehaviour {
 	void OnGUI () {
 		// drawing the camera on screen
 		//GUI.DrawTexture (screenRect, camTexture, ScaleMode.ScaleToFit);
-		rawimage.texture = camTexture;
+		//rawimage.texture = camTexture;
 		// do the reading — you might want to attempt to read less often than you draw on the screen for performance sake
-		try {
+	/*	try {
 			IBarcodeReader barcodeReader = new BarcodeReader ();
 			// decode the current frame
 			var result = barcodeReader.Decode(camTexture.GetPixels32(), camTexture.width , camTexture.height);
@@ -55,7 +58,7 @@ public class ReadQR : MonoBehaviour {
 				Data.Instance.ui.SetStatus(false);
 				Data.Instance.figurasData.EnableRuna(result.Text);
 			}
-		} catch(Exception ex) { Debug.LogWarning (ex.Message); }
+		} catch(Exception ex) { Debug.LogWarning (ex.Message); }*/
 
 		/*Texture2D myQR = generateQR("cubo");
 		if (GUI.Button (new Rect (300, 300, 256, 256), myQR, GUIStyle.none)) {
@@ -65,6 +68,35 @@ public class ReadQR : MonoBehaviour {
 		if (GUI.Button (new Rect (600, 300, 256, 256), myQR2, GUIStyle.none)) {
 			exportQR ("Hedra", myQR2);
 		}*/
+	}
+
+	public void FindQR(){
+		check = true;
+		Debug.Log ("FindQR");
+		Invoke ("StopFind", 5);
+	}
+
+	void StopFind(){
+		Debug.Log ("Stop FindQR");
+		check = false;
+	}
+
+	void Update(){
+		rawimage.texture = camTexture;
+		if (check) {
+			try {
+				IBarcodeReader barcodeReader = new BarcodeReader ();
+				// decode the current frame
+				var result = barcodeReader.Decode (camTexture.GetPixels32 (), camTexture.width, camTexture.height);
+				if (result != null) {
+					//Debug.Log("DECODED TEXT FROM QR: " + result.Text);
+					Data.Instance.ui.SetStatus (false);
+					Data.Instance.figurasData.EnableRuna (result.Text);
+				}
+			} catch (Exception ex) {
+				Debug.LogWarning (ex.Message);
+			}
+		}
 	}
 
 	private static Color32[] Encode(string textForEncoding, int width, int height) {
@@ -90,7 +122,5 @@ public class ReadQR : MonoBehaviour {
 		Debug.Log ("aca");
 		byte[] bytes = tex.EncodeToPNG();
 		System.IO.File.WriteAllBytes (Application.dataPath + "\\QR\\" + filename+".png", bytes);
-
-
 	}
 }
