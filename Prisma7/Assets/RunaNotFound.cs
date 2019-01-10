@@ -9,6 +9,7 @@ public class RunaNotFound : MonoBehaviour {
 	public int frame2Flash;
 
 	Image image;
+	Color color;
 	bool show;
 	bool flash;
 
@@ -17,6 +18,7 @@ public class RunaNotFound : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		image = GetComponent<Image> ();
+		color = image.color;
 		Events.NotRuna += NotRuna;
 	}
 
@@ -36,11 +38,13 @@ public class RunaNotFound : MonoBehaviour {
 		if (show) {
 			if (Time.frameCount % frame2Flash == 0) {
 				flash = !flash;
-				image.enabled = flash;
+				float alpha = flash ? 1f : 0;
+				image.color = new Color(color.r,color.g,color.b,alpha);
 				if (!flash) {
 					count++;
 					if (count > times) {
 						show = false;
+						image.enabled = flash;
 						count = 0;
 					}
 				}

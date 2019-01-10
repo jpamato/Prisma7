@@ -61,6 +61,7 @@ public class FigurasGame : MateGame {
 		//consigna.SetActive (false);
 		consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
 		runasTween.SetTween(new Vector3(-4f,4.6f,1f),0.05f);
+		Data.Instance.ui.ShowBack (true);
 		state = states.PLAYING;
 	}
 
@@ -177,6 +178,7 @@ public class FigurasGame : MateGame {
 		figuraGO.transform.SetParent(gameObject.transform.Find("Figura"));
 		figuraGO.transform.localPosition = Vector3.zero;
 		figuraGO.transform.localRotation = Quaternion.identity;
+		figuraGO.transform.parent.transform.localScale = new Vector3 (1.5f,1.5f,1.5f);
 
 		SetButtons ();
 	}
@@ -231,5 +233,9 @@ public class FigurasGame : MateGame {
 
 	void BackToWorld(){		
 		Data.Instance.LoadScene ("World");
+	}
+
+	public void CaptureScreen(){
+		Data.Instance.CaptureScreen ();
 	}
 }

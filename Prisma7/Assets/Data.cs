@@ -51,6 +51,7 @@ public class Data : MonoBehaviour
     }
     public string currentLevel;
 	public int currentLevelIndex;
+	string lastLevel = "World";
     public void LoadScene(string aLevelName)
     {
 		if (aLevelName == "World") {
@@ -73,8 +74,8 @@ public class Data : MonoBehaviour
 				break;
 			}
 		}
-
-        this.currentLevel = aLevelName;
+		lastLevel = currentLevel;
+        currentLevel = aLevelName;
         Time.timeScale = 1;
 		fadePanel.SetOn ();
 		currentLevelIndex = SceneManager.GetSceneByName (aLevelName).buildIndex;
@@ -116,6 +117,10 @@ public class Data : MonoBehaviour
     
 	public void Reset(){
 		PlayerPrefs.DeleteAll ();
+	}
+
+	public void Back(){
+		LoadScene (lastLevel);
 	}
 
 	public void CaptureScreen(){

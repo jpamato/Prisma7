@@ -21,6 +21,7 @@ public class ReadQR : MonoBehaviour {
 
 	void Start() {
 		Data.Instance.ui.SetStatus (false);
+		Data.Instance.ui.ShowBack(false);
 		Data.Instance.ui.ShowCapture (true);
 		source = GetComponent<AudioSource> ();
 

@@ -53,8 +53,8 @@ public class CombinatoriasGame : MateGame {
 
 
 		SetBarColor ();
-		InitTimer ();
-
+		//InitTimer ();
+		Data.Instance.ui.ShowBack (true);
 		state = states.PLAYING;
 	}
 

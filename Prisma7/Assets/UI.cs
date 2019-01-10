@@ -15,6 +15,8 @@ public class UI : MonoBehaviour {
 
 	public AudioSource clockSource;
 
+	public GameObject back;
+
 	public void SetStatus(bool isOn)
 	{
 		timer.gameObject.SetActive (isOn);
@@ -45,7 +47,9 @@ public class UI : MonoBehaviour {
 			captureBtn.sprite = captureBack;
 		else
 			captureBtn.sprite = capture;
-	} 
+	}
+
+	public void ShowBack(bool enable){ back.SetActive (enable);	} 
 
 	public void HideCapture(){ 
 		captureBtn.gameObject.SetActive (false);
