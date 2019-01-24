@@ -19748,7 +19748,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: 149}
+  m_AnchoredPosition: {x: -11, y: 137}
   m_SizeDelta: {x: 587.55, y: 83.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1626865706
@@ -19763,7 +19763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.99607843, g: 0.9662839, b: 0.3207372, a: 1}
+  m_Color: {r: 0.99607843, g: 0.98861945, b: 0.8357098, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -19772,7 +19772,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 7cccd2fb5d3cf204798c452657239cc4, type: 3}
-    m_FontSize: 45
+    m_FontSize: 38
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -19783,7 +19783,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Alquimistas de los Colores
+  m_Text: Alquimistas del Color
 --- !u!222 &1626865707
 CanvasRenderer:
   m_ObjectHideFlags: 0
