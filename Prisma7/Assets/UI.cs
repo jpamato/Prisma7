@@ -21,6 +21,7 @@ public class UI : MonoBehaviour {
 	{
 		timer.gameObject.SetActive (isOn);
 		progressBar.gameObject.SetActive (isOn);
+		GetComponent<AchievementsUI>(). SetStatus(isOn);
 	}
 	public void HideTimer()
 	{
@@ -31,6 +32,7 @@ public class UI : MonoBehaviour {
 	{
 		timer.gameObject.SetActive (true);
 		clockSource.Play ();
+		GetComponent<AchievementsUI>(). SetStatus(false);
 	}
 
 	public void ClockSfx(bool play){

@@ -54,5 +54,11 @@ public class UserData : MonoBehaviour {
 		PlayerPrefs.SetInt ("portalOpenedID", _portalOpenedID);
 		portalOpenedID = _portalOpenedID;
 	}
+	public void ResetDoors()
+	{
+		foreach (int num in doorsPlayed) {
+			doorsPlayed [num] = 0;
+		}
+	}
 }
 

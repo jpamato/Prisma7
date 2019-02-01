@@ -75,8 +75,10 @@ public class FruitNinja : MonoBehaviour {
 		Game.Instance.ChangeMode (Game.modes.WORLD);
 		Events.CloseFruitNinja (win);
 
-		if(win)
+		if (win) {
 			interactiveObject.GetComponent<Door> ().SetState (Door.states.OPENING);
+			AchievementsEvents.NewPointToAchievement (Achievement.types.FRUIT_NINJA_WIN);
+		}
 
 		fruitsManager.audioSource.PlayOneShot (glass);
 	}

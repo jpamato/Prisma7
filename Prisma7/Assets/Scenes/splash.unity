@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -367,6 +367,84 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!1 &725447225
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725447227}
+  - component: {fileID: 725447226}
+  m_Layer: 0
+  m_Name: AchievementsManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &725447226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725447225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 419847e9c4c9d2c4e82e8f4d84a113db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force_reset: 0
+  all:
+  - type: 0
+    image: {fileID: 0}
+    text: Rompiste tu primer portal
+    ready: 0
+    points: 0
+    pointsToBeReady: 1
+  - type: 0
+    image: {fileID: 0}
+    text: Rompiste3 portales
+    ready: 0
+    points: 0
+    pointsToBeReady: 3
+  - type: 1
+    image: {fileID: 0}
+    text: Terminaste la zona 1
+    ready: 0
+    points: 0
+    pointsToBeReady: 1
+  - type: 2
+    image: {fileID: 0}
+    text: Terminaste la zona 2
+    ready: 0
+    points: 0
+    pointsToBeReady: 1
+  - type: 3
+    image: {fileID: 0}
+    text: Terminaste la zona 3
+    ready: 0
+    points: 0
+    pointsToBeReady: 1
+  - type: 0
+    image: {fileID: 0}
+    text: Rompiste 10 portales
+    ready: 0
+    points: 0
+    pointsToBeReady: 10
+--- !u!4 &725447227
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 725447225}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 570, y: 29.75, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &756762917
 GameObject:
   m_ObjectHideFlags: 0
@@ -9785,6 +9863,52 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1001 &956719002
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 1079.0538
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 217.93744
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782984183057282, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1111523512907480, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 803d2a00da03d814abb2a7ad964a20dc, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1222626715
 GameObject:
   m_ObjectHideFlags: 0
