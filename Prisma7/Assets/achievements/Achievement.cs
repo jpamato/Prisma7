@@ -13,7 +13,11 @@ public class Achievement   {
         FRUIT_NINJA_WIN,
 		DONE_ZONE_1,
 		DONE_ZONE_2,
-		DONE_ZONE_3
+		DONE_ZONE_3,
+		FIGURAS,
+		COMBINATORIAS,
+		POCIONES,
+		GRILLA
     }
 
     public Image image;
