@@ -151,9 +151,10 @@ public class FigurasGame : MateGame {
 			doneSign.SetActive (true);
 			Data.Instance.figurasData.AddCurrentLevel ();
 			gamesPlayeds++;
-			if (gamesPlayeds >= partidaGames) 
+			if (gamesPlayeds >= partidaGames) {
+				AchievementsEvents.NewPointToAchievement (Achievement.types.FIGURAS);
 				Invoke ("BackToWorld", 3);
-			else
+			}else
 				Invoke ("Init", 3);
 		}
 

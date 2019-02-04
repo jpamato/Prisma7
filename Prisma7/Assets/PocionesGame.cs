@@ -214,9 +214,10 @@ public class PocionesGame : MateGame {
 			doneSign.SetActive (true);
 			Data.Instance.pocionesData.AddCurrentLevel ();
 			gamesPlayeds++;
-			if (gamesPlayeds >= partidaGames) 
+			if (gamesPlayeds >= partidaGames) {
+				AchievementsEvents.NewPointToAchievement (Achievement.types.POCIONES);
 				Invoke ("BackToWorld", 3);
-			else
+			}else
 				Invoke ("Init", 3);
 		}		
 	}

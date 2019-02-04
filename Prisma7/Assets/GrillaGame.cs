@@ -261,9 +261,10 @@ public class GrillaGame : MateGame {
 			doneSign.SetActive (true);
 			Data.Instance.grillaData.AddCurrentLevel ();
 			gamesPlayeds++;
-			if (gamesPlayeds >= partidaGames)
+			if (gamesPlayeds >= partidaGames) {
+				AchievementsEvents.NewPointToAchievement (Achievement.types.GRILLA);
 				Invoke ("BackToWorld", 3);
-			else {
+			}else {
 				brujo.Play ("attack");
 				Invoke ("Init", 3);
 			}

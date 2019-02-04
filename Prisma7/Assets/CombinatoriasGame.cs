@@ -233,9 +233,10 @@ public class CombinatoriasGame : MateGame {
 			doneSign.SetActive (true);
 			Data.Instance.combinatoriasData.AddCurrentLevel ();
 			gamesPlayeds++;
-			if (gamesPlayeds >= partidaGames) 
+			if (gamesPlayeds >= partidaGames) {
+				AchievementsEvents.NewPointToAchievement (Achievement.types.COMBINATORIAS);
 				Invoke ("BackToWorld", 3);
-			else
+			}else
 				Invoke ("Init", 3);
 		}		
 	}
