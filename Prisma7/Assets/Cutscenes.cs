@@ -9,13 +9,20 @@ public class Cutscenes : MonoBehaviour {
 
 	void Start () {
 		Data.Instance.ui.SetStatus (false);
+
 		if (Data.Instance.levelsData.showOutro) {
+			Events.OnVoice ("Outro/all");
 			intro.SetActive (false);
 			outro.SetActive (true);
 		} else {			
+			Events.OnVoice ("Intro/all");
 			intro.SetActive (true);
 			outro.SetActive (false);
 		}
+	}
+	void OnDestroy()
+	{
+		Events.OnVoice ("");
 	}
 	float timer;
 	void Update () {

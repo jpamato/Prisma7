@@ -50,6 +50,10 @@ public class TipsManager : MonoBehaviour {
 	}
 	void Update()
 	{
+		string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name;
+		if (sceneName != "World" && sceneName != "World2" && sceneName != "World3")
+			return;
+		
 		if (Game.Instance != null && Game.Instance.mode == Game.modes.FRUIT_NINJA)
 			return;
 		timeToSayWhenNotWalkingCount += Time.deltaTime;
@@ -177,5 +181,35 @@ public class TipsManager : MonoBehaviour {
 		public string fruitWin;
 		public string colorFinal;
 		public string faltaFigura;
+	}
+	public string GetNameByValue(string value)
+	{
+		if(tipsContent.saludo == value)
+			return "saludo";
+		if( tipsContent.apura == value)
+			return "apura";
+		if(tipsContent.mago == value)
+			return "mago";
+		if(tipsContent.color1 == value)
+			return "color1";
+		if(tipsContent.color2 == value)
+			return "color2";
+		if(tipsContent.portalBlocked == value)
+			return "portalBlocked";
+		if(tipsContent.portalFinal == value)
+			return "portalFinal";
+		if(tipsContent.mover1 == value)
+			return "mover1";
+		if(tipsContent.mover2 == value)
+			return "mover2";
+		if(tipsContent.fruit == value)
+			return "fruit";
+		if(tipsContent.fruitWin == value)
+			return "fruitWin";
+		if(tipsContent.colorFinal == value)
+			return "colorFinal";	
+		if(tipsContent.faltaFigura == value)
+			return "faltaFigura";
+		return "";
 	}
 }

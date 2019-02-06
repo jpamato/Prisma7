@@ -6,17 +6,7 @@ public class MusicManager : MonoBehaviour {
 
 	public AudioClip mainMusic, ingameMusic;
 
-	AudioSource source;
-
-	// Use this for initialization
-	void Start () {
-		source = GetComponent<AudioSource> ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public AudioSource source;
 
 	public void SetIngameMusic(){
 		source.clip = ingameMusic;

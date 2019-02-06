@@ -18,7 +18,6 @@ public class PetTexts : MonoBehaviour {
 
 	void OnPetSay (string text)
 	{
-		print ("OnPetSay " + text);
 		CancelInvoke ();
 		panel.SetActive (true);
 		field.text = text;
