@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -411,109 +411,109 @@ MonoBehaviour:
   all:
   - type: 0
     image: {fileID: 21300000, guid: 55a2e78254a04ab4a977401d37f1dfe2, type: 3}
-    text: Rompiste tu primer portal
+    text: Rompiste el hechizo de 1 portal.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 0
     image: {fileID: 21300000, guid: 083de979acc5d0840bbf1399a712c817, type: 3}
-    text: Rompiste 10 portales
+    text: Rompiste el hechizo de 10 portales.
     ready: 0
     points: 0
     pointsToBeReady: 10
   - type: 1
     image: {fileID: 21300000, guid: fe258c89db332d84a87d88ea4e4c33e3, type: 3}
-    text: Terminaste la zona 1
+    text: Exploraste la zona 1.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 2
     image: {fileID: 21300000, guid: 0937992b1d2014046b667931eb7a5d92, type: 3}
-    text: Terminaste la zona 2
+    text: Exploraste la zona 2.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 3
     image: {fileID: 21300000, guid: 4894065d8223b8e438a203b24cf29a5f, type: 3}
-    text: Terminaste la zona 3
+    text: Exploraste la zona 3.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 0
     image: {fileID: 21300000, guid: d6981fd3409d2d84891e4efcfab79dcf, type: 3}
-    text: Rompiste 50 portales
+    text: Rompiste el hechizo de 50 portales.
     ready: 0
     points: 0
     pointsToBeReady: 50
   - type: 4
     image: {fileID: 21300000, guid: 207ad8849a9245b4b85380f204a1611b, type: 3}
-    text: Ganaste el juego de las figuras
+    text: Dominaste la magia de las figuras.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 5
     image: {fileID: 21300000, guid: 2b3b87ba426776b4f813ce247bb1d595, type: 3}
-    text: Ganaste el juego de las combinatorias
+    text: Dominaste la magia de las combinatorias
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 6
     image: {fileID: 21300000, guid: 58d116a8f9cf04445a7d6ebf9e103b5c, type: 3}
-    text: Ganaste el juego de las pociones
+    text: Conquistaste la ciencia de las pociones.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 7
     image: {fileID: 21300000, guid: b2dbc94a9fcbcad4b88e8141d2e4b7bd, type: 3}
-    text: Ganaste el juego de la grilla
+    text: Derrotaste al Mago de la Sombra en el juego de la grilla.
     ready: 0
     points: 0
     pointsToBeReady: 1
   - type: 4
     image: {fileID: 21300000, guid: 4131a29c042a7db4eaff4f694f4c88d9, type: 3}
-    text: Ganaste 10 veces el juego de las figuras
+    text: Usaste 10 veces la magia de las figuras.
     ready: 0
     points: 0
     pointsToBeReady: 10
   - type: 5
     image: {fileID: 21300000, guid: 3f0942e78aa114248bfa1eaa9070e04f, type: 3}
-    text: Ganaste 10 veces el juego de las combinatorias
+    text: Usaste 10 veces la magia de las combinatorias
     ready: 0
     points: 0
     pointsToBeReady: 10
   - type: 6
     image: {fileID: 21300000, guid: ac4164eebcfc97b4ebbc2e34d3791f9b, type: 3}
-    text: Ganaste 10 veces el juego de las pociones
+    text: Usaste 10 veces la magia de las pociones
     ready: 0
     points: 0
     pointsToBeReady: 10
   - type: 7
     image: {fileID: 21300000, guid: 8c92c4c84486da84d9342532e0ce5170, type: 3}
-    text: Ganaste 10 veces el juego de la grilla
+    text: Ganaste 10 veces el juego de la grilla contra el Mago de la Sombra
     ready: 0
     points: 0
     pointsToBeReady: 10
   - type: 4
     image: {fileID: 21300000, guid: f039b6b1d8eb4814f941ea7c17351439, type: 3}
-    text: Ganaste 30 veces el juego de las figuras
+    text: Ganaste 30 veces el juego de las figuras.
     ready: 0
     points: 0
     pointsToBeReady: 30
   - type: 5
     image: {fileID: 21300000, guid: f3e109d7e32124f488f4cf3e4ebe74f3, type: 3}
-    text: Ganaste 30 veces el juego de las combinatorias
+    text: Usaste 30 veces la magia de las combinatorias.
     ready: 0
     points: 0
     pointsToBeReady: 30
   - type: 6
     image: {fileID: 21300000, guid: cfcd3562fcc0ca94e8ecd2df7960af86, type: 3}
-    text: Ganaste 30 veces el juego de las pociones
+    text: Usaste 30 veces la magia de las  pociones.
     ready: 0
     points: 0
     pointsToBeReady: 30
   - type: 7
     image: {fileID: 21300000, guid: d375c6ca8d0aea64393873ac87b97355, type: 3}
-    text: Ganaste 30 veces el juego de la grilla
+    text: Ganaste 30 veces el juego de la grilla contra el Mago de la Sombra.
     ready: 0
     points: 0
     pointsToBeReady: 30
@@ -5418,26 +5418,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &922045441 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1247588866452932, guid: f4595b50bb4f87542ba9d301931788da,
-    type: 3}
-  m_PrefabInstance: {fileID: 1688096000}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &922045444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 922045441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalFit: 0
-  m_VerticalFit: 2
 --- !u!1 &942933672
 GameObject:
   m_ObjectHideFlags: 0
@@ -20394,89 +20374,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1247166965767194, guid: f4595b50bb4f87542ba9d301931788da, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00004393764
+      objectReference: {fileID: 0}
+    - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
+        type: 3}
+      propertyPath: m_AnchorMin.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000007370597
-      objectReference: {fileID: 0}
-    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0.000061035
-      objectReference: {fileID: 0}
-    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224575052206959284, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.000076293945
-      objectReference: {fileID: 0}
-    - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -60
       objectReference: {fileID: 0}
     - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 224827153456682248, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224486176579207968, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
         type: 3}
@@ -20492,80 +20428,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224194746896048952, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114210601431546768, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114210601431546768, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_CellSize.x
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 114210601431546768, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_CellSize.y
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 13.348
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 476.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224951252511820688, guid: f4595b50bb4f87542ba9d301931788da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 223.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1319656025661906, guid: f4595b50bb4f87542ba9d301931788da, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1919829584645758, guid: f4595b50bb4f87542ba9d301931788da, type: 3}
       propertyPath: m_IsActive
