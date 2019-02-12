@@ -51,7 +51,7 @@ public class Data : MonoBehaviour
     }
     public string currentLevel;
 	public int currentLevelIndex;
-	string lastLevel = "World";
+	public string lastLevel = "World";
     public void LoadScene(string aLevelName)
     {
 		if (aLevelName == "World") {

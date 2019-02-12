@@ -20,7 +20,7 @@ public class Achievement   {
 		GRILLA
     }
 
-    public Image image;
+    public Sprite image;
 	public string text;
 
     public bool ready;

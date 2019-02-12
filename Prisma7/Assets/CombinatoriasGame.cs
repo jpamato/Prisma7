@@ -260,5 +260,6 @@ public class CombinatoriasGame : MateGame {
 		inventarioBG.SetActive (false);
 		inventarioContent.gameObject.SetActive (false);
 		Data.Instance.LoadScene ("World");
+		Events.OnMinigameDone ();
 	}
 }

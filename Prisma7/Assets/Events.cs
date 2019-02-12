@@ -36,4 +36,7 @@ public static class Events {
 	public static System.Action ClickSfx = delegate {};
 	public static System.Action<string> OnVoice = delegate {};
 	public static System.Action AllLevelsComplete = delegate {};
+
+	public static System.Action OnMinigameDone = delegate {};
+
 }

@@ -30,21 +30,39 @@ public class Character : MonoBehaviour {
 		Events.CloseFruitNinja += CloseFruitNinja;
 		Events.OnCharacterStopWalking += OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject += OnCharacterHitInteractiveObject;
-
+		//Events.OnMinigameDone += OnMinigameDone;
 		transform.localPosition = Data.Instance.userData.lastPosition;
+
+		if(Data.Instance.lastLevel == "Pociones" || 
+			Data.Instance.lastLevel == "Combinatorias" || 
+			Data.Instance.lastLevel == "Grilla" || 
+			Data.Instance.lastLevel == "Figuras" )
+		OnMinigameDone ();
 	}
 	void OnDestroy () {
 		Events.OnFloorClicked -= OnFloorClicked;
 		Events.CloseFruitNinja -= CloseFruitNinja;
 		Events.OnCharacterStopWalking -= OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject -= OnCharacterHitInteractiveObject;
+		//Events.OnMinigameDone -= OnMinigameDone;
 	}
 	void CloseFruitNinja(bool win)
 	{
 		state = states.PLAYING;
 		if (win)
-			anim.Cheer ();
+			anim.Cheer ();			
 	}
+	void OnMinigameDone()
+	{
+		Vector3 pos = transform.localPosition;
+		pos.z -= 1f;
+		transform.localPosition = pos;
+
+		Vector3 rot = transform.localEulerAngles;
+		rot.y = 180;
+		transform.localEulerAngles = rot;
+	}
+
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
 		if (state != states.PLAYING || state == states.CHANGING_LEVEL)

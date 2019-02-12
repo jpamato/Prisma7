@@ -240,5 +240,6 @@ public class PocionesGame : MateGame {
 		consigna.SetActive(false);
 		receta.SetActive(false);
 		Data.Instance.LoadScene ("World");
+		Events.OnMinigameDone ();
 	}
 }

@@ -33,7 +33,6 @@ public class Game : MonoBehaviour {
 		Data.Instance.ui.ShowBack(false);
 		mode = modes.WORLD;
 		Data.Instance.ui.HideTimer ();
-		Events.OnMap ();
 	}
 	public void ChangeMode(modes _mode)
 	{
