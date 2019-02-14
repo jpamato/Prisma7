@@ -284,6 +284,7 @@ public class GrillaGame : MateGame {
 		gridContent.gameObject.SetActive (false);
 		consigna.gameObject.SetActive (false);
 		Data.Instance.LoadScene ("World");
+		Events.OnMinigameDone ();
 	}
 
 	public void Respuesta(){

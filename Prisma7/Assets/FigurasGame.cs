@@ -234,6 +234,7 @@ public class FigurasGame : MateGame {
 
 	void BackToWorld(){		
 		Data.Instance.LoadScene ("World");
+		Events.OnMinigameDone ();
 	}
 
 	public void CaptureScreen(){

@@ -32,17 +32,6 @@ public class MateGame : MonoBehaviour {
 		ENDED
 	}
 
-	// Use this for initialization
-	void Start () {
-
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	public void SetBarColor(){		
 		//colorBar.SetValue(Data.Instance.levelsData.diamondLevels[Data.Instance.levelsData.actualDiamondLevel+1].color);
 	}
