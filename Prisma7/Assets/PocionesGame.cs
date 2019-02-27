@@ -26,6 +26,7 @@ public class PocionesGame : MateGame {
 	List<PocionesData.Ingrediente> ingredientes;
 	List<PocionesData.Valores> valores;
 	public List<PocionesData.Valores> valoresParciales;
+	public Color pocionesYellow;
 
 	// Use this for initialization
 	void Start () {	
@@ -123,6 +124,8 @@ public class PocionesGame : MateGame {
 				
 				if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
 					Color c = Data.Instance.levelsData.GetNextLevel ().color;
+					if (Data.Instance.levelsData.actualDiamondLevel == 3)
+						c = pocionesYellow;
 					rp.texto.text += ingredientes [i].name + ": <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b><size=30>" + Math.Round(valores [i].val * pLevelData.factor) + "</size></b></color>\n";
 					cs.texto.text += "<color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + valores [i].val + "</b></color> " + ingredientes [i].name + "\n";
 				} else {				
@@ -145,6 +148,8 @@ public class PocionesGame : MateGame {
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
 			} else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {				
 				Color c = Data.Instance.levelsData.GetNextLevel ().color;
+				if (Data.Instance.levelsData.actualDiamondLevel == 3)
+					c = pocionesYellow;
 				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(Math.Round(valores [i].val*pLevelData.factor))+"</size></b></color>\n";
 			}
 		}
