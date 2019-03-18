@@ -60,6 +60,7 @@ public class TipsManager : MonoBehaviour {
 		timeToNotEnterPortalCount += Time.deltaTime;
 		if (timeToNotEnterPortalCount > timeToNotEnterPortal) {
 			Events.OnPetSay (tipsContent.apura);
+			timeToNotEnterPortalCount = 0;
 		} else
 		if (timeToSayWhenNotWalkingCount > timeToSayWhenNotWalking) {
 			if(UnityEngine.Random.Range(0,10)<5)

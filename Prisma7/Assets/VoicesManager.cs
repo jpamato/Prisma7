@@ -23,7 +23,7 @@ public class VoicesManager : MonoBehaviour {
 	}
 	void OnVoice (string fileName) {
 		string file = "voices/" + fileName;
-		//Debug.Log ("OnVoice: " + file);
+		Debug.Log ("OnVoice: " + file);
 		AudioClip ac = Resources.Load<AudioClip> (file);
 		audioSource.clip = ac;
 		audioSource.Play ();

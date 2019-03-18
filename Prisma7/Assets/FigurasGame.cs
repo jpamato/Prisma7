@@ -178,7 +178,7 @@ public class FigurasGame : MateGame {
 		figuraGO = Instantiate (figura.go);
 		figuraGO.transform.SetParent(gameObject.transform.Find("Figura"));
 		figuraGO.transform.localPosition = Vector3.zero;
-		figuraGO.transform.localRotation = Quaternion.identity;
+		//figuraGO.transform.localRotation = Quaternion.identity;
 		figuraGO.transform.parent.transform.localScale = new Vector3 (1.5f,1.5f,1.5f);
 
 		SetButtons ();
