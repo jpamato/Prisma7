@@ -115,7 +115,7 @@ public class CombinatoriasGame : MateGame {
 		}
 		consigna.SetActive (true);
 		ConsignaCombinatoria cs = consigna.GetComponent<ConsignaCombinatoria> ();
-		cs.texto.text = "Encierra dentro de los anillos de poder ";
+		cs.texto.text = "Encerrá dentro de los anillos de poder ";
 		if (cLevelData.combinaciones > 1)
 			cs.texto.text += cLevelData.combinaciones + " combinaciones que sumen";
 		else
