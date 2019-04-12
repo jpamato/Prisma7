@@ -22,6 +22,7 @@ public class PortalLevel : InteractiveObject {
 
 
 	void Start () {
+        anim = GetComponent<Animator>();
 		audiosource = GetComponent<AudioSource> ();
 		if (Data.Instance.levelsData.actualDiamondLevel >= 2 && Data.Instance.userData.GetPortalIDOpened() >= id) {
 			state = states.OPENED;
