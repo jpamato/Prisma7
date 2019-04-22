@@ -70,28 +70,30 @@ public class PocionesData : MonoBehaviour {
 	}
 
 	public Level GetLevel(){
-		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 2) {
-			return pocionesLevels.basico [currentLevel [0]];
-		} else if (dlevel < 4) {
-			return pocionesLevels.intermedio [currentLevel [1]];
-		} else {
-			return pocionesLevels.avanzado [currentLevel [2]];
-		}
-	}
+		int dlevel = Data.Instance.userData.actualWorld;
+        if (dlevel == 1) {
+            return pocionesLevels.basico[currentLevel[0]];
+        } else if (dlevel == 2) {
+            return pocionesLevels.intermedio[currentLevel[1]];
+        } else if (dlevel == 2) {
+            return pocionesLevels.avanzado[currentLevel[2]];
+        } else {
+            return null;
+        }
+    }
 
 	public void AddCurrentLevel(){
-		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 2) {
+        int dlevel = Data.Instance.userData.actualWorld;
+        if (dlevel == 1) {
 			currentLevel [0]++;
 			if (currentLevel [0] >= pocionesLevels.basico.Length)
 				currentLevel [0] = 0;
-		} else if (dlevel < 4) {
+		} else if (dlevel == 2) {
 			currentLevel [1]++;
 			if (currentLevel [1] >= pocionesLevels.intermedio.Length)
 				currentLevel [1] = 0;
-		} else {
-			currentLevel [2]++;
+		}else if (dlevel == 3){
+            currentLevel [2]++;
 			if (currentLevel [2] >= pocionesLevels.avanzado.Length)
 				currentLevel [2] = 0;
 		}

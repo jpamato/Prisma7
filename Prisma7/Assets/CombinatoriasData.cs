@@ -63,28 +63,30 @@ public class CombinatoriasData : MonoBehaviour {
 	}
 
 	public Level GetLevel(){
-		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 2) {
+        int dlevel = Data.Instance.userData.actualWorld;
+        if (dlevel == 1) {
 			return combinacionesLevels.basico [currentLevel [0]];
-		} else if (dlevel < 4) {
+		} else if (dlevel == 2) {
 			return combinacionesLevels.intermedio [currentLevel [1]];
-		} else {
-			return combinacionesLevels.avanzado [currentLevel [2]];
-		}
-	}
+        } else if (dlevel == 3) {
+            return combinacionesLevels.avanzado [currentLevel [2]];
+        } else {
+            return null;
+        }
+    }
 
 	public void AddCurrentLevel(){
-		int dlevel = Data.Instance.levelsData.actualDiamondLevel;
-		if (dlevel < 2) {
+		int dlevel = Data.Instance.userData.actualWorld;
+		if (dlevel == 1) {
 			currentLevel [0]++;
 			if (currentLevel [0] >= combinacionesLevels.basico.Length)
 				currentLevel [0] = 0;
-		} else if (dlevel < 4) {
-			currentLevel [1]++;
+		} else if (dlevel == 2){
+            currentLevel [1]++;
 			if (currentLevel [1] >= combinacionesLevels.intermedio.Length)
 				currentLevel [1] = 0;
-		} else {
-			currentLevel [2]++;
+        } else if (dlevel == 3) {
+            currentLevel [2]++;
 			if (currentLevel [2] >= combinacionesLevels.avanzado.Length)
 				currentLevel [2] = 0;
 		}
