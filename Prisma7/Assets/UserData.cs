@@ -30,7 +30,8 @@ public class UserData : MonoBehaviour {
 		actualWorld = worldID;
 		doorsPlayed.Clear ();
 		PlayerPrefs.SetInt ("OnChangeWorld", worldID);
-	}
+        Events.SendData();
+    }
 	public int GetPortalIDOpened()
 	{
 		return PlayerPrefs.GetInt ("portalOpenedID", 0);

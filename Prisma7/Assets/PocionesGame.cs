@@ -224,8 +224,10 @@ public class PocionesGame : MateGame {
 				Invoke ("BackToWorld", 3);
 			}else
 				Invoke ("Init", 3);
-		}		
-	}
+		}
+
+        Events.SendData();
+    }
 
 	void TimeOver(){
 		state = states.ENDED;

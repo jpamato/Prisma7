@@ -54,7 +54,19 @@ public class LevelsData : MonoBehaviour {
 		PlayerPrefs.SetFloat ("actualLevelPercent", actualLevelPercent);
 	}
 
-	void ColorsReset(){
+    public void SetLevelPercent(float val){
+        actualLevelPercent = val;
+        PlayerPrefs.SetFloat("actualLevelPercent", actualLevelPercent);
+    }
+
+    public void SetDiamondLevel(int dLevel)
+    {
+        actualDiamondLevel = dLevel;
+        PlayerPrefs.SetInt("actualDiamondLevel", actualDiamondLevel);
+        Invoke("ColorsReset", 4);
+    }
+
+    void ColorsReset(){
 		Data.Instance.ui.colorBar.Reset ();
 		Data.Instance.ui.prisma.Reset ();
 	}

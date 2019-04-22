@@ -23,8 +23,9 @@ public class Data : MonoBehaviour
 	public UI ui;
 	public FadePanel fadePanel;
 	public MusicManager musicManager;
+    public UsersController usersDB;
 
-	public enum minigamesScenes
+    public enum minigamesScenes
 	{
 		Figuras=0,
 		Combinatorias=1,
@@ -73,13 +74,16 @@ public class Data : MonoBehaviour
 				aLevelName = "World";
 				break;
 			}
-		}
+
+            if (currentLevelIndex != userData.actualWorld){
+                currentLevelIndex = userData.actualWorld;
+            }
+        }
 		lastLevel = currentLevel;
         currentLevel = aLevelName;
         Time.timeScale = 1;
-		fadePanel.SetOn ();
-		currentLevelIndex = SceneManager.GetSceneByName (aLevelName).buildIndex;
-		Invoke ("Delayed", 1);
+		fadePanel.SetOn ();		
+        Invoke ("Delayed", 1);
     }
 	void Delayed()
 	{	
@@ -109,14 +113,16 @@ public class Data : MonoBehaviour
 		inputManager = GetComponent<InputManager> ();
 		tipsManager = GetComponent<TipsManager> ();
 		musicManager = GetComponent<MusicManager> ();
-		Scene actual = SceneManager.GetActiveScene ();
+        usersDB = GetComponent<UsersController>();
+        Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
     }
     
 	public void Reset(){
 		PlayerPrefs.DeleteAll ();
-	}
+        Application.Quit();
+    }
 
 	public void Back(){
 		LoadScene (lastLevel);

@@ -238,7 +238,8 @@ public class CombinatoriasGame : MateGame {
 				Invoke ("BackToWorld", 3);
 			}else
 				Invoke ("Init", 3);
-		}		
+		}
+        Events.SendData();
 	}
 
 	void TimeOver(){

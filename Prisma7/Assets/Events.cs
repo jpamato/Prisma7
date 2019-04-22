@@ -39,4 +39,6 @@ public static class Events {
 
 	public static System.Action OnMinigameDone = delegate {};
 
+    public static System.Action SendData = delegate { };
+
 }

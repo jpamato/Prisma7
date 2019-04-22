@@ -158,8 +158,9 @@ public class FigurasGame : MateGame {
 				Invoke ("Init", 3);
 		}
 
-		
-	}
+
+        Events.SendData();
+    }
 
 	void SetFigura(){
 		/*for (int i = 0; i < Data.Instance.figurasData.figuras.Count; i++) {			

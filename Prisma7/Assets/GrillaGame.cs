@@ -268,8 +268,10 @@ public class GrillaGame : MateGame {
 				brujo.Play ("attack");
 				Invoke ("Init", 3);
 			}
-		}		
-	}
+		}
+
+        Events.SendData();
+    }
 
 	void TimeOver(){
 		brujo.Play ("celebrate");

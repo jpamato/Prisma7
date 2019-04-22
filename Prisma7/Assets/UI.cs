@@ -16,11 +16,13 @@ public class UI : MonoBehaviour {
 	public AudioSource clockSource;
 
 	public GameObject back;
+    public GameObject logout;
 
-	public void SetStatus(bool isOn)
+    public void SetStatus(bool isOn)
 	{
 		timer.gameObject.SetActive (isOn);
 		progressBar.gameObject.SetActive (isOn);
+        logout.SetActive(isOn);
 		GetComponent<AchievementsUI>(). SetStatus(isOn);
 	}
 	public void HideTimer()
