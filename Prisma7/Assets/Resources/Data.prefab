@@ -897,7 +897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadData: 0
   tipsContent:
-    saludo: "\xA1Saludos, aprendiz! Los Sabios Alquimistas me enviaron para guiarte
+    saludo: "\xA1Saludos, aprendiz! La Uni\xF3n de Alquimistas me envi\xF3 para guiarte
       en esta importante misi\xF3n. Voy a ayudarte a llegar al Templo de la Luz."
     apura: "Creo que deber\xEDamos ir a investigar ese extra\xF1o portal que est\xE1
       por all\xE1."

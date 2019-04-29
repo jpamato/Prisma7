@@ -11,10 +11,16 @@ public class AchievementsUI : MonoBehaviour {
 	public Transform container;
 	public AchievementButton button;
 
+    public bool unviewed;
+    bool sistole;
+    public float factor = 1;
+    public Vector3 scale;
+
 	void Start () {
 		AchievementsEvents.OnReady += OnReady;
 		NewAchievement.SetActive (false);
 		panel.SetActive (false);
+        scale = achievementsButton.transform.localScale;
 	}
 	public void SetStatus(bool isOn)
 	{
@@ -26,9 +32,13 @@ public class AchievementsUI : MonoBehaviour {
 	void OnReady(Achievement ach)
 	{
 		NewAchievement.SetActive (true);
+        unviewed = true;
+
 	}
 	public void Open()
 	{
+        if (unviewed)
+            unviewed = false;
 		field.text = "Selecciona un logro para ver de qué se trata";
 		panel.SetActive (true);
 		NewAchievement.SetActive (false);
@@ -47,4 +57,22 @@ public class AchievementsUI : MonoBehaviour {
 	{
 		field.text = text;
 	}
+
+    private void Update() {
+        if (unviewed) {
+            if (sistole) {                
+                factor *= 0.99f;
+                if (factor < 0.85f)
+                    sistole = false;
+            } else {
+                factor *= 1.01f;
+                if (factor > 1.25f)
+                    sistole = true;
+            }
+            achievementsButton.transform.localScale = factor * scale;
+        } else {
+            factor = 1f;
+            achievementsButton.transform.localScale = scale;
+        }
+    }
 }
