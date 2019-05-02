@@ -613,7 +613,7 @@ MonoBehaviour:
     password: 
     diamondLevel: 0
     levelPercent: 0
-    currentLevelIndex: 0
+    currentLevelIndex: 1
   logged: 0
 --- !u!114 &114817009447118542
 MonoBehaviour:
@@ -1088,6 +1088,9 @@ MonoBehaviour:
   field: {fileID: 114715593074209552}
   container: {fileID: 224575052206959284}
   button: {fileID: 114368063086732488, guid: e823f087c12896b4e92511e7a0411da5, type: 3}
+  unviewed: 0
+  factor: 1
+  scale: {x: 0, y: 0, z: 0}
 --- !u!114 &2802324538580805206
 MonoBehaviour:
   m_ObjectHideFlags: 0

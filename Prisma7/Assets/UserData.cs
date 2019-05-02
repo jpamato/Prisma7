@@ -19,7 +19,9 @@ public class UserData : MonoBehaviour {
 	{
 		portalOpenedID = PlayerPrefs.GetInt ("portalOpenedID", 0);
 		actualWorld = PlayerPrefs.GetInt ("OnChangeWorld");
-		Events.OnChangeWorld += OnChangeWorld;
+        if (actualWorld <= 0)
+            actualWorld = 1;
+        Events.OnChangeWorld += OnChangeWorld;
 	}
 	void OnDestroy()
 	{

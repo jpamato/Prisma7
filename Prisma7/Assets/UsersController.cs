@@ -79,6 +79,8 @@ public class UsersController : MonoBehaviour {
                     PlayerPrefs.SetString("user", user.username);
                     PlayerPrefs.SetString("pass", user.password);
                     PlayerPrefs.SetInt("id", user.id);
+                    if (user.currentLevelIndex <= 0)
+                        user.currentLevelIndex = 1;
                     Data.Instance.userData.actualWorld = user.currentLevelIndex;
                     Data.Instance.levelsData.SetLevelPercent(user.levelPercent);
                     Data.Instance.levelsData.SetDiamondLevel(user.diamondLevel);
