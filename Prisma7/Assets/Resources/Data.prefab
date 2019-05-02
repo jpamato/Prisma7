@@ -942,7 +942,7 @@ MonoBehaviour:
   portalOpenedID: 0
   doorsPlayed: 
   lastPosition: {x: 0, y: 0, z: 0}
-  actualWorld: 0
+  actualWorld: 1
 --- !u!114 &114073732105930646
 MonoBehaviour:
   m_ObjectHideFlags: 0
