@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FruitLevel2 : Fruit {
 
-	void FixedUpdate()
+	void Update()
 	{
 		Vector2 pos = transform.localPosition;
 		speedV -= (speed.y) /3;
