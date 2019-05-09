@@ -17,7 +17,8 @@ public class PortalLevel : InteractiveObject {
 	public enum states
 	{
 		UNAVAILABLE,
-		OPENED
+		OPENED,
+        OPENING
 	}
 
 
@@ -43,21 +44,27 @@ public class PortalLevel : InteractiveObject {
 			Events.PortalFinalUnavailable ();
 			return false;
 		}
-		Game.Instance.mode = Game.modes.FREEZED;
-		if (state != states.OPENED) {
+        //Game.Instance.mode = Game.modes.FREEZED;
+        if (state == states.OPENING)
+            return true;
+        if (state != states.OPENED) {
+            state = states.OPENING;
 			Data.Instance.userData.OpenPortal (id);
-			state = states.OPENED;
 			anim.Play ("portal_open");
 			audiosource.Play ();
-			Invoke ("ChangeLevel", 5);
+			Invoke ("ChangeLevelDelayed", 5);
 		} else {
 			ChangeLevel ();
 		}
 		return true;
 	}
-	void ChangeLevel()
+    void ChangeLevelDelayed()
+    {
+        state = states.OPENED;
+    }
+    void ChangeLevel()
 	{
-		Data.Instance.userData.SaveSpecificLastPosition (destinationCoords);
+        Data.Instance.userData.SaveSpecificLastPosition (destinationCoords);
 		switch (gotoLevel) {
 		case 1:
 			Events.OnChangeWorld (1);

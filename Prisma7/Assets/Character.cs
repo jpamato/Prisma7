@@ -72,8 +72,8 @@ public class Character : MonoBehaviour {
 		if (portalLevel != null) {
 			if (portalLevel.ChekToCross ()) {
 				selectedInteractiveObject = io;
-				anim.Idle ();
-				state = states.CHANGING_LEVEL;
+				//anim.Idle ();
+				//state = states.CHANGING_LEVEL;
 				return;
 			}
 		}
