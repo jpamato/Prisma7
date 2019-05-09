@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Android;
 
 public class Splash : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Splash : MonoBehaviour
             startBtn.gameObject.SetActive(false);
             loginBtn.gameObject.SetActive(true);
         }
+
+        Permission.RequestUserPermission(Permission.Camera);
     }
 
     public void SplashClicked()

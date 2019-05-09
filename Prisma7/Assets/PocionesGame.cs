@@ -26,7 +26,7 @@ public class PocionesGame : MateGame {
 	List<PocionesData.Ingrediente> ingredientes;
 	List<PocionesData.Valores> valores;
 	public List<PocionesData.Valores> valoresParciales;
-	public Color pocionesYellow;
+	public List<Color> pocionesColors;
 
 	// Use this for initialization
 	void Start () {	
@@ -38,8 +38,9 @@ public class PocionesGame : MateGame {
 		Events.DroppedUI += DroppedUI;
 		Events.OnDropingOut += OnDropingOut;
 		slots = new List<GameObject> ();
-		//Invoke ("Init", 0.1f);
-		caldero.Play("idle");
+        Data.Instance.ui.HideTimer();
+        //Invoke ("Init", 0.1f);
+        caldero.Play("idle");
 		Init();
 	}
 
@@ -51,7 +52,7 @@ public class PocionesGame : MateGame {
 
 
 		SetBarColor ();
-		InitTimer ();
+		//InitTimer ();
 
 		state = states.PLAYING;
 	}
@@ -123,9 +124,9 @@ public class PocionesGame : MateGame {
 			} else {
 				
 				if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
-					Color c = Data.Instance.levelsData.GetNextLevel ().color;
-					if (Data.Instance.levelsData.actualDiamondLevel == 3)
-						c = pocionesYellow;
+                    Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];
+					/*if (Data.Instance.levelsData.actualDiamondLevel == 3)
+						c = pocionesColors;*/
 					rp.texto.text += ingredientes [i].name + ": <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b><size=30>" + Math.Round(valores [i].val * pLevelData.factor) + "</size></b></color>\n";
 					cs.texto.text += "<color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + valores [i].val + "</b></color> " + ingredientes [i].name + "\n";
 				} else {				
@@ -146,10 +147,8 @@ public class PocionesGame : MateGame {
 				valoresParciales [i].val = 0;
 			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {
 				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
-			} else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {				
-				Color c = Data.Instance.levelsData.GetNextLevel ().color;
-				if (Data.Instance.levelsData.actualDiamondLevel == 3)
-					c = pocionesYellow;
+			} else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
+                Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];                
 				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(Math.Round(valores [i].val*pLevelData.factor))+"</size></b></color>\n";
 			}
 		}

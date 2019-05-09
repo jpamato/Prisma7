@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Android;
 
 public class Data : MonoBehaviour
 {
@@ -129,11 +130,17 @@ public class Data : MonoBehaviour
 	}
 
 	public void CaptureScreen(){
-		Events.ClickSfx ();
-		if(currentLevel=="CaptureQR")
-			LoadScene ("World");
-		else
-			LoadScene ("CaptureQR");
+
+        if (Permission.HasUserAuthorizedPermission(Permission.Camera)) {
+            Events.ClickSfx();
+            if (currentLevel == "CaptureQR")
+                LoadScene("World");
+            else
+                LoadScene("CaptureQR");
+        } else {
+            Permission.RequestUserPermission(Permission.Camera);
+        }
+        
 	}
 
 }
