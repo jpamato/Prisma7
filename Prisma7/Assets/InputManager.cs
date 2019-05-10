@@ -26,7 +26,7 @@ public class InputManager : MonoBehaviour {
 
 				if (Physics.Raycast (ray, out hit)) {				
 					Events.OnMouseCollide (hit.transform.gameObject);
-					Debug.Log (hit.transform.name);
+					//Debug.Log (hit.transform.name);
 				}
 			}
 

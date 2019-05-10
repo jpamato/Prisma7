@@ -60,9 +60,11 @@ public class GrillaGame : MateGame {
 		SetBarColor ();
 		InitTimer ();
 
-		//consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
+        //consignaTween.SetTween(new Vector3(-9f,-1000f,0f),0.1f);
 
-		brujo.Play ("idle");
+        Data.Instance.ui.ShowBack(true);
+
+        brujo.Play ("idle");
 		state = states.PLAYING;
 	}
 

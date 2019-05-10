@@ -52,9 +52,11 @@ public class PocionesGame : MateGame {
 
 
 		SetBarColor ();
-		//InitTimer ();
+        //InitTimer ();
 
-		state = states.PLAYING;
+        Data.Instance.ui.ShowBack(true);
+
+        state = states.PLAYING;
 	}
 
 	void OnDestroy(){

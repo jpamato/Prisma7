@@ -15,9 +15,9 @@ public class DoorsManager : MonoBehaviour {
 			else
 				door.SetState (Door.states.UNAVAILABLE);
 		}
-		foreach (int doorID in Data.Instance.userData.doorsPlayed) {
+		/*foreach (int doorID in Data.Instance.userData.doorsPlayed) {
 			GetDoorByID (doorID).SetState (Door.states.OPENED);				
-		}
+		}*/
 	}
 	void OnDestroy () {
 		Events.OnChangeWorld -= OnChangeWorld;
