@@ -93,7 +93,7 @@ public class PocionesGame : MateGame {
 
 		receta.SetActive (true);
 		RecetaPociones rp = receta.GetComponent<RecetaPociones> ();
-		rp.texto.text = "SIGUIENTE PREPARACIÓN\n";
+		rp.texto.text = "Armá la siguiente preparación\n";
 
 		for (int i = 0; i < valores.Count; i++) {	
 			PocionesData.Valores v = new PocionesData.Valores ();
@@ -141,7 +141,7 @@ public class PocionesGame : MateGame {
 
 	void UpdateReceta(bool reset){
 		RecetaPociones rp = receta.GetComponent<RecetaPociones> ();
-		rp.texto.text = "SIGUIENTE PREPARACIÓN\n";
+		rp.texto.text = "Armá la siguiente preparación\n";
 		for (int i = 0; i < valores.Count; i++) {
 			if (reset)
 				valoresParciales [i].val = 0;
