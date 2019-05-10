@@ -24,8 +24,8 @@ public class FruitLevel4 : Fruit {
 	void Update()
 	{
 		Vector2 pos = transform.localPosition;
-		pos.y = speedY;
-		pos.x += speedX * Time.deltaTime * dir;
+		pos.y = speedY + (70 * Time.deltaTime);
+        pos.x += speedX * Time.deltaTime * dir;
 		transform.localPosition = pos;
 		if (pos.x > 805 || pos.x < -805)
 			Destroy (this.gameObject);

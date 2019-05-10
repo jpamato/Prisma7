@@ -9,9 +9,9 @@ public class FruitLevel2 : Fruit {
 		Vector2 pos = transform.localPosition;
 		speedV -= (speed.y) /3;
 
-		float deltaTime = 0.02f;
+        float deltaTime = Time.deltaTime;
 
-		pos.y += speedV * deltaTime;
+        pos.y += speedV * deltaTime;
 		pos.x += speedH * deltaTime;
 		transform.localPosition = pos;
 		if (pos.y < 0)

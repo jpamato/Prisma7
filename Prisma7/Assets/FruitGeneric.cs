@@ -9,7 +9,7 @@ public class FruitGeneric : Fruit {
 		Vector2 pos = transform.localPosition;
 		speedV -= (speed.y) /3;
 
-		float deltaTime = 0.02f;
+		float deltaTime = Time.deltaTime;
 
 		pos.y += speedV * deltaTime;
 		pos.x += speedH * deltaTime;
