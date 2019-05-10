@@ -24,7 +24,7 @@ public class FruitLevel3 : Fruit {
 	void Update()
 	{
 		Vector2 pos = transform.localPosition;
-		pos.y = speedY + (70 * Time.deltaTime);
+		pos.y = speedY;
         pos.x += speedX * Time.deltaTime * dir;
 		transform.localPosition = pos;
 		if (pos.x > 605 || pos.x < -605)

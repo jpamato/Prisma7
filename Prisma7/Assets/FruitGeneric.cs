@@ -13,6 +13,7 @@ public class FruitGeneric : Fruit {
 
 		pos.y += speedV * deltaTime;
 		pos.x += speedH * deltaTime;
+
 		transform.localPosition = pos;
 		if (pos.y < 0)
 			Destroy (this.gameObject);
