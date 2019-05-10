@@ -69,14 +69,27 @@ public class TipsManager : MonoBehaviour {
 				Events.OnPetSay (tipsContent.mover2);
 		}
 	}
-	void CloseFruitNinja(bool result)
+    bool fruitNinjaGood_played;
+    bool fruitNinjaBad_played;
+    void CloseFruitNinja(bool result)
 	{
-		if (!result)
-			Events.OnPetSay (tipsContent.fruit);
-		else if (!fruitWinDone) {
-			Events.OnPetSay (tipsContent.fruitWin);
-			Save ("fruitWinDone");
-		}
+        if (!result)
+        {
+            if (!fruitNinjaBad_played)
+            {
+                Events.OnPetSay(tipsContent.fruit);
+                fruitNinjaBad_played = true;
+            }
+        }
+        else if (!fruitWinDone)
+        {
+            if (!fruitNinjaGood_played)
+            {
+                Events.OnPetSay(tipsContent.fruitWin);
+                Save("fruitWinDone");
+                fruitNinjaGood_played = true;
+            }
+        }
 		timeToSayWhenNotWalkingCount = 0;
 		timeToNotEnterPortalCount = 0;
 	}

@@ -17,7 +17,7 @@ public class Fruit : MonoBehaviour {
 	public Vector2 speed;
 
 	public virtual void Init(Vector2 speed, int direction) {
-		this.speed = speed;
+		this.speed = speed/2;
 		speedV = (Random.Range (200, 400)/20) * speed.y;
 		speedH = Random.Range (0, 150*direction) * speed.x;
 		transform.localPosition = new Vector3(Random.Range(0,300*-direction),0,0);

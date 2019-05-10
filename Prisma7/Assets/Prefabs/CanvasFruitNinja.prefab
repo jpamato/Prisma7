@@ -186,7 +186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitsManager: {fileID: 114119149956599122}
-  duration: 20
+  duration: 30
   ninjaOK: {fileID: 8300000, guid: 9e2d647a69c8ed749a9cc9b77137d4db, type: 3}
   ninjaWrong: {fileID: 8300000, guid: c913455203bf9b24f9ff334e71178d36, type: 3}
   ninjaDone: {fileID: 8300000, guid: ecdadb4a1f990eb4494bd9f41f985ee4, type: 3}
