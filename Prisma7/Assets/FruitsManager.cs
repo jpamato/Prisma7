@@ -81,7 +81,7 @@ public class FruitsManager : MonoBehaviour {
 	{
 		Fruit fruit = Instantiate (newFruit);
 		fruit.transform.SetParent (target);
-		fruit.transform.localScale = new Vector2 (0.5f, 0.5f);
+		fruit.transform.localScale = new Vector2 (0.75f, 0.75f);
 
 		int dir = 1;
 		if (Random.Range (0, 10) < 5)
