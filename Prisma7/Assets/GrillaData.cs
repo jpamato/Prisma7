@@ -7,9 +7,16 @@ using System.IO;
 public class GrillaData : MonoBehaviour {
 
 	public int[] currentLevel;
-	public GrillaLevels grillaLevels;
+    public GrillaLevels grillaLevels;
 
-	public string filename = "grillaLevels.json";
+    public ActiveState overActiveState;
+    public enum ActiveState {
+        off,
+        active,
+        inactive
+    }
+
+    public string filename = "grillaLevels.json";
 
 	[Serializable]
 	public class GrillaLevels{

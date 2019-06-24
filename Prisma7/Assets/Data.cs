@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Android;
+using System;
 
 public class Data : MonoBehaviour
 {
@@ -26,13 +27,22 @@ public class Data : MonoBehaviour
 	public MusicManager musicManager;
     public UsersController usersDB;
 
-    public enum minigamesScenes
-	{
-		Figuras=0,
-		Combinatorias=1,
-		Pociones=2,
-		Grilla=3
-	}
+    public int lastMinigame;
+    public enum minigamesScenes {
+        Figuras = 0,
+        Combinatorias = 1,
+        Pociones = 2,
+        Grilla = 3
+    }
+
+    public string GetNextMGame() {
+        int mgCount = Enum.GetNames(typeof(Data.minigamesScenes)).Length;
+        lastMinigame++;
+        if (lastMinigame >= mgCount)
+            lastMinigame = 0;
+
+        return ((Data.minigamesScenes)lastMinigame).ToString();
+    }
 
 	public static Data Instance
     {

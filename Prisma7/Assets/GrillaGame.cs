@@ -28,7 +28,7 @@ public class GrillaGame : MateGame {
 
 	public InputField respuesta;
 
-	public Animator brujo;
+    public Animator brujo;    
 
 	[Serializable]
 	public class Rect{
@@ -43,7 +43,8 @@ public class GrillaGame : MateGame {
 		Data.Instance.inputManager.raycastUI = true;
 		levelBarStep = 1f / times2FullBar;
 		Events.OnGridClick += OnGrillaClick;
-		Events.OnTimeOver += TimeOver;
+        Events.OnGridOver += OnGrillaOver;
+        Events.OnTimeOver += TimeOver;
 
 		//Invoke ("Init", 0.1f);
 		Init();
@@ -71,7 +72,8 @@ public class GrillaGame : MateGame {
 	void OnDestroy(){
 		Events.OnTimeOver -= TimeOver;
 		Events.OnGridClick -= OnGrillaClick;
-	}
+        Events.OnGridOver -= OnGrillaOver;
+    }
 
 	// Update is called once per frame
 	void Update () {
@@ -143,12 +145,24 @@ public class GrillaGame : MateGame {
 		
 	}
 
-	void OnGrillaClick(Vector2 id, bool active){
-			grid [(int)id.x,(int)id.y] = active?1:0;
-			CheckGrid ();
-	}
+    void OnGrillaClick(Vector2 id, bool active) {
+        if(active)
+            Data.Instance.grillaData.overActiveState = GrillaData.ActiveState.active;
+        else
+            Data.Instance.grillaData.overActiveState = GrillaData.ActiveState.inactive;
+        grid[(int)id.x, (int)id.y] = active ? 1 : 0;
+        CheckGrid();
+    }
 
-	void CheckGrid(){
+    void OnGrillaOver(Vector2 id) {
+        bool active = false;
+        if (Data.Instance.grillaData.overActiveState == GrillaData.ActiveState.active)
+            active = true;
+        grid[(int)id.x, (int)id.y] = active ? 1 : 0;
+        CheckGrid();
+    }
+
+    void CheckGrid(){
 		rects.Clear ();
 		for (int x = 0; x < grid.GetLength(0); x++) {
 			for (int y = 0; y < grid.GetLength(1); y++) {

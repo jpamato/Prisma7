@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+//using UnityEngine.EventSystems;
 
 public class GemaGrid : MonoBehaviour {
 	
@@ -11,15 +12,15 @@ public class GemaGrid : MonoBehaviour {
 	public Vector2 id;
 	AudioSource audiosource;
 
-	Button button;
-	bool active;
+	public Button button;
+	public bool active;
 
 	// Use this for initialization
 	void Awake () {
 		
 		button = GetComponent<Button> ();
 			
-		button.onClick.AddListener (OnClick);
+		//button.onClick.AddListener (OnClick);
 		image.color = inactiveColor;
 
 		audiosource = GetComponent<AudioSource> ();
@@ -41,18 +42,47 @@ public class GemaGrid : MonoBehaviour {
 			image.color = Data.Instance.levelsData.GetNextLevel ().color;
 	}
 
-	void OnClick(){
-		active = !active;
-		if (active) {
-			image.color = activeColor;
-			audiosource.Play ();
-		}else
-			image.color = inactiveColor;
+    void OnClick() {
+        active = !active;
+        if (active) {
+            image.color = activeColor;
+            audiosource.Play();
+        } else
+            image.color = inactiveColor;
 
-		Events.OnGridClick (id, active);
-	}
+        Events.OnGridClick(id, active);
+    }
+      
+    public void OnPointerDown() {
+        active = !active;
+        if (active) {
+            image.color = activeColor;
+            audiosource.Play();
+        } else
+            image.color = inactiveColor;
 
-	public void SetInteractable(bool enable){
+        Debug.Log("aca: "+active);
+
+        Events.OnGridClick(id, active);
+    }
+
+    public void OnPointerEnter() {
+        if (Data.Instance.grillaData.overActiveState != GrillaData.ActiveState.off) {                
+            if(Data.Instance.grillaData.overActiveState== GrillaData.ActiveState.active)
+                active = true;
+            else
+                active = false;
+            if (active) {
+                image.color = activeColor;
+                audiosource.Play();
+            } else
+                image.color = inactiveColor;
+
+            Events.OnGridOver(id);
+        }
+    }
+
+    public void SetInteractable(bool enable){
 		button.interactable = enable;
 	}
 

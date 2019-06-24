@@ -98,13 +98,9 @@ public class Character : MonoBehaviour {
 			state = states.OPENING_FRUIT_NINJA;
 		} else {			
 			selectedInteractiveObject = io;
-			Door d = selectedInteractiveObject as Door;
+			Door d = selectedInteractiveObject as Door;			
 
-			int mgCount = Enum.GetNames (typeof(Data.minigamesScenes)).Length;
-
-			int random = UnityEngine.Random.Range (0, mgCount);
-
-			nextScene = ((Data.minigamesScenes)random).ToString ();
+			nextScene = Data.Instance.GetNextMGame();
 			Vector3 newPos = io.transform.localPosition;
 			newPos.z -= 0.35f;
 			OnFloorClicked (newPos);
