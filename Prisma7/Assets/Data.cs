@@ -128,6 +128,7 @@ public class Data : MonoBehaviour
         Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
+
     }
     
 	public void Reset(){

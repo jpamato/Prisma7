@@ -60,9 +60,7 @@ public class GemaGrid : MonoBehaviour {
             audiosource.Play();
         } else
             image.color = inactiveColor;
-
-        Debug.Log("aca: "+active);
-
+        
         Events.OnGridClick(id, active);
     }
 

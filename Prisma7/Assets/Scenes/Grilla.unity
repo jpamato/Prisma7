@@ -5085,7 +5085,7 @@ MonoBehaviour:
   colorDoneSign: {fileID: 432324056}
   loseSign: {fileID: 1696698050}
   consigna: {fileID: 585751050}
-  times2FullBar: 6
+  times2FullBar: 12
   totalTime: 20
   actualTime: 0
   state: 0
