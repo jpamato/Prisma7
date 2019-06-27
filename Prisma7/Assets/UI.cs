@@ -24,7 +24,8 @@ public class UI : MonoBehaviour {
 		progressBar.gameObject.SetActive (isOn);
         logout.SetActive(isOn);
 		GetComponent<AchievementsUI>(). SetStatus(isOn);
-	}
+        GetComponent<MapButton>().SetStatus(isOn);
+    }
 	public void HideTimer()
 	{
 		timer.gameObject.SetActive (false);
@@ -35,7 +36,8 @@ public class UI : MonoBehaviour {
 		timer.gameObject.SetActive (true);
 		clockSource.Play ();
 		GetComponent<AchievementsUI>(). SetStatus(false);
-	}
+        GetComponent<MapButton>().SetStatus(false);
+    }
 
 	public void ClockSfx(bool play){
 		if (play)
