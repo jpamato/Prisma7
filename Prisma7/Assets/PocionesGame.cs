@@ -91,11 +91,12 @@ public class PocionesGame : MateGame {
 		consigna.SetActive (true);
 		ConsignaPociones cs = consigna.GetComponent<ConsignaPociones> ();
 		cs.ResetIcons ();
-		cs.texto.text = "Para un buen color lograr,\nestos elementos balancear:\n";
+        //cs.texto.text = "Para un buen color lograr,\nestos elementos balancear:\n";
+        cs.texto.text = "";
 
-		receta.SetActive (true);
+        receta.SetActive (true);
 		RecetaPociones rp = receta.GetComponent<RecetaPociones> ();
-		rp.texto.text = "Armá la siguiente preparación\n";
+		rp.texto.text = "";
 
 		for (int i = 0; i < valores.Count; i++) {	
 			PocionesData.Valores v = new PocionesData.Valores ();
@@ -119,7 +120,7 @@ public class PocionesGame : MateGame {
 				gis.image.sprite = ingredientes [i].sprite;
 				//gis.text.text = ingredientes[i].name;
 				gis.id = valores [i].id;
-				rp.texto.text += ingredientes [i].name + ": "+v.val+"\n";
+				rp.texto.text += "-> ¿"+v.val+"?\n";
 				cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+"\n";
 				cs.images [i].sprite = ingredientes [i].sprite;
 				cs.images [i].color = Color.white;
@@ -129,11 +130,12 @@ public class PocionesGame : MateGame {
                     Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];
 					/*if (Data.Instance.levelsData.actualDiamondLevel == 3)
 						c = pocionesColors;*/
-					rp.texto.text += ingredientes [i].name + ": <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b><size=30>" + Math.Round(valores [i].val * pLevelData.factor) + "</size></b></color>\n";
+					rp.texto.text += "-> " + " <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + Math.Round(valores [i].val * pLevelData.factor) + "</b></color>\n";
 					cs.texto.text += "<color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + valores [i].val + "</b></color> " + ingredientes [i].name + "\n";
 				} else {				
 					cs.texto.text += ""+valores [i].val+" "+ingredientes [i].name+ "\n";
-				}
+                    rp.texto.text += "\n";
+                }
 				cs.images [i].sprite = ingredientes [i].sprite;
 				cs.images [i].color = Color.white;
 			}
@@ -143,17 +145,19 @@ public class PocionesGame : MateGame {
 
 	void UpdateReceta(bool reset){
 		RecetaPociones rp = receta.GetComponent<RecetaPociones> ();
-		rp.texto.text = "Armá la siguiente preparación\n";
+		rp.texto.text = "";
 		for (int i = 0; i < valores.Count; i++) {
 			if (reset)
 				valoresParciales [i].val = 0;
-			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {
-				rp.texto.text += ingredientes [i].name + ": "+valoresParciales[i].val+"\n";
-			} else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
-                Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];                
-				rp.texto.text += ingredientes [i].name+": <color="+Utils.rgb2Hex(c.r,c.g,c.b)+"><b><size=30>"+(Math.Round(valores [i].val*pLevelData.factor))+"</size></b></color>\n";
-			}
-		}
+			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {				
+                rp.texto.text += "-> ¿" + valoresParciales[i].val + "?\n";
+            } else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
+                Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];                				
+                rp.texto.text += "-> " + " <color=" + Utils.rgb2Hex(c.r, c.g, c.b) + "><b>" + Math.Round(valores[i].val * pLevelData.factor) + "</b></color>\n";
+            } else {                
+                rp.texto.text += "\n";
+            }
+        }
 	}
 
 	public void Reiniciar(){
