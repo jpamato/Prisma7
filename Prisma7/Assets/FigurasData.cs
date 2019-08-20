@@ -22,8 +22,8 @@ public class FigurasData : MonoBehaviour {
 			//r.enabled = true;
 		}
 
-		figurasLevels.intermedio = figurasLevels.basico;
-		figurasLevels.avanzado = figurasLevels.basico;
+		//figurasLevels.intermedio = figurasLevels.basico;
+		//figurasLevels.avanzado = figurasLevels.basico;
 
         Utils.Shuffle<Level>(figurasLevels.basico);
         Utils.Shuffle<Level>(figurasLevels.intermedio);

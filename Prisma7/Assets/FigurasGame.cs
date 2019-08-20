@@ -81,12 +81,16 @@ public class FigurasGame : MateGame {
 				bool done = figura.CheckRuna (hit.name);
 				Transform t = figuraGO.transform.Find (hit.name);
 				if (t != null) {
-					Renderer r = t.GetComponent<Renderer> ();
-					if (r == null)
-						r = t.GetComponentInChildren<Renderer> ();
+                    foreach (Transform tm in figuraGO.transform) {
+                        if (tm.name == hit.name) {
+                            Renderer r = tm.GetComponent<Renderer>();
+                            if (r == null)
+                                r = tm.GetComponentInChildren<Renderer>();
+                            r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
+                        }
+                    }
 					//r.material.color = figurOKColor;
-					audioSource.PlayOneShot (figuraOK);
-					r.material = figurOKMaterials [Data.Instance.levelsData.actualDiamondLevel];
+					audioSource.PlayOneShot (figuraOK);					
 					figurOKPS1.SetActive (true);
 					figurOKPS2.SetActive (true);
 					Vector3 h1 = hit.gameObject.transform.position;
@@ -176,11 +180,13 @@ public class FigurasGame : MateGame {
 
 		fLevelData = Data.Instance.figurasData.GetLevel ();
 		figura = fLevelData.figura;
-		figuraGO = Instantiate (figura.go);
+        Vector3 pos = figura.go.transform.localPosition;
+        Quaternion rot = figura.go.transform.localRotation;
+        figuraGO = Instantiate (figura.go);
 		figuraGO.transform.SetParent(gameObject.transform.Find("Figura"));
-		figuraGO.transform.localPosition = Vector3.zero;
-		//figuraGO.transform.localRotation = Quaternion.identity;
-		figuraGO.transform.parent.transform.localScale = new Vector3 (1.5f,1.5f,1.5f);
+		figuraGO.transform.localPosition = pos;
+		figuraGO.transform.localRotation = rot;
+		//figuraGO.transform.parent.transform.localScale = new Vector3 (1.5f,1.5f,1.5f);
 
 		SetButtons ();
 	}
