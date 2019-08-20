@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaptureQR.unity
     guid: 4405b4c0425e0024880ba825cb04374a
+  - enabled: 1
+    path: Assets/Scenes/World2.unity
+    guid: d8880c3f4a772db4ab95b5846a6c5015
   m_configObjects: {}
