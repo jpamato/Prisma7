@@ -36,7 +36,8 @@ public class PortalLevel : InteractiveObject {
 		{
 			if (Data.Instance.levelsData.actualDiamondLevel == 6 && !Data.Instance.levelsData.showOutro) {
 				Data.Instance.levelsData.showOutro = true;
-				Data.Instance.LoadScene ("cutscenes");
+                Data.Instance.LoadScene("cutscenes");
+                Events.OnLastPortalOpen();
 			}
 			return false;
 		}

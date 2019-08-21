@@ -15,7 +15,7 @@ public class ColorBar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Reset ();
+        Invoke("Reset", 2);
 	}
 
 	void OnColorComplete(){

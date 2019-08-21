@@ -15,13 +15,16 @@ public class Door : InteractiveObject {
 		UNAVAILABLE,
 		CLOSED,
 		OPENED,
-		OPENING
+		OPENING,
+        BLOCKED,
+        COMPLETED
 	}
 	public GameObject closed;
 	public GameObject opened;
 	public GameObject opening;
+    public GameObject blocked;
 
-	public void Reset()
+    public void Reset()
 	{
 		lastValue = 0;
 		hieloMesh.material.mainTexture = textures_hielo[lastValue];
@@ -32,8 +35,9 @@ public class Door : InteractiveObject {
 		closed.SetActive (false);
 		opened.SetActive (false);
 		opening.SetActive (false);
+        blocked.SetActive(false);
 
-		this.state = state;
+        this.state = state;
 		switch (state) {
 		case states.CLOSED:
 			SetProgress (1);
@@ -48,7 +52,13 @@ public class Door : InteractiveObject {
 		case states.OPENED:
 			opened.SetActive (true);
 			break;
-		}
+        case states.BLOCKED:
+             blocked.SetActive(true);
+             break;
+        case states.COMPLETED:
+            blocked.SetActive(true);
+            break;
+        }
 	}
 	int lastValue = 0;
 	public void SetProgress(float value)

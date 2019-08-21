@@ -14,19 +14,23 @@ public class UserData : MonoBehaviour {
 	public List<int> doorsPlayed;
 	public Vector3 lastPosition;
 	public int actualWorld;
+    public bool allPortalsOpened;
 
 	void Start()
 	{
 		portalOpenedID = PlayerPrefs.GetInt ("portalOpenedID", 0);
 		actualWorld = PlayerPrefs.GetInt ("OnChangeWorld");
+        allPortalsOpened = PlayerPrefs.GetFloat("OnLastPortalOpen", 0)==1?true:false;
         if (actualWorld <= 0)
             actualWorld = 1;
         Events.OnChangeWorld += OnChangeWorld;
-	}
+        Events.OnLastPortalOpen += OnLastPortalOpen;        
+    }
 	void OnDestroy()
 	{
 		Events.OnChangeWorld -= OnChangeWorld;
-	}
+        Events.OnLastPortalOpen -= OnLastPortalOpen;
+    }
 	void OnChangeWorld(int worldID)
 	{
 		actualWorld = worldID;
@@ -34,11 +38,26 @@ public class UserData : MonoBehaviour {
 		PlayerPrefs.SetInt ("OnChangeWorld", worldID);
         Events.SendData();
     }
-	public int GetPortalIDOpened()
+
+    void OnLastPortalOpen() {
+        allPortalsOpened = true;
+        PlayerPrefs.SetFloat("OnLastPortalOpen", 1);
+    }
+
+
+    public int GetPortalIDOpened()
 	{
 		return PlayerPrefs.GetInt ("portalOpenedID", 0);
 	}
-	public void OnDoorPlayed(int doorId)
+
+    public int GetLastDoorPlayed() {
+        if (doorsPlayed.Count == 0)
+            return -1;
+        return doorsPlayed[doorsPlayed.Count - 1];
+    }
+
+
+    public void OnDoorPlayed(int doorId)
 	{
 		doorsPlayed.Add (doorId);
 	}

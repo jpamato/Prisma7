@@ -5092,7 +5092,7 @@ MonoBehaviour:
   gemaGrid: {fileID: 1579142412853712, guid: 7a0553d6d0fda894ba4cae48fc46f695, type: 3}
   gridContent: {fileID: 558395342}
   consignaTween: {fileID: 585751052}
-  partidaGames: 2
+  partidaGames: 1
   gLevelData:
     consigna: 
     area: 0

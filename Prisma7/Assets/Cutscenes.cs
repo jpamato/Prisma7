@@ -10,7 +10,10 @@ public class Cutscenes : MonoBehaviour {
 	void Start () {
 		Data.Instance.ui.SetStatus (false);
 
-		if (Data.Instance.levelsData.showOutro) {
+        Data.Instance.inputManager.raycastUI = false;
+        Data.Instance.inputManager.raycastWorld = false;
+
+        if (Data.Instance.levelsData.showOutro) {
 			Events.OnVoice ("Outro/all");
 			intro.SetActive (false);
 			outro.SetActive (true);

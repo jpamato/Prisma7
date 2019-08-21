@@ -22,7 +22,7 @@ public class LevelsData : MonoBehaviour {
 			allLevelsComplete = true;
 
 		Events.OnColorComplete += OnColorComplete;
-	}
+    }
 
 	void OnDestroy(){
 		Events.OnColorComplete -= OnColorComplete;
@@ -36,7 +36,7 @@ public class LevelsData : MonoBehaviour {
 	void OnColorComplete(){
 		actualDiamondLevel++;
 		if (actualDiamondLevel >= diamondLevels.Count) {
-			actualDiamondLevel = diamondLevels.Count - 1;
+			actualDiamondLevel = diamondLevels.Count - 2;
 			if (!allLevelsComplete) {
 				Events.AllLevelsComplete ();
 			}

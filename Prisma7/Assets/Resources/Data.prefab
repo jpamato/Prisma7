@@ -1476,6 +1476,7 @@ MonoBehaviour:
   sawMago: 0
   sawMagoFirstTime: 0
   faltaFigura: 0
+  actualDiamondLevel: 0
 --- !u!114 &114321517813522338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1493,6 +1494,7 @@ MonoBehaviour:
   doorsPlayed: 
   lastPosition: {x: 0, y: 0, z: 0}
   actualWorld: 1
+  allPortalsOpened: 0
 --- !u!114 &114073732105930646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1764,6 +1766,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panel: {fileID: 1066328353}
   map: {fileID: 8063484342003888150}
+  map1: {fileID: 1970576365061987915}
+  map2: {fileID: 3129359753059737832}
+  map3: {fileID: 8682970640176331619}
 --- !u!1 &1114178335515526
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,7 +1806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 13.348022, y: -5.5}
+  m_AnchoredPosition: {x: 13.348022, y: -5.4999847}
   m_SizeDelta: {x: 476.5, y: 223.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114947055109859846
@@ -6171,7 +6176,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8950383351826376062
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6319,7 +6324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &627894419718469780
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7200,8 +7205,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 752f13653b5755046a944ede080035f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lock2: {fileID: 4417469876122637041}
-  lock3: {fileID: 3903383716557719088}
   area1: {fileID: 3683849727970764421}
   area2: {fileID: 3343512048974062878}
   area3: {fileID: 5384141666517110975}
+  current1: {fileID: 5173637723222064512}
+  current2: {fileID: 4834297153235748613}
+  current3: {fileID: 8664861296422419728}

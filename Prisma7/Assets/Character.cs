@@ -89,6 +89,9 @@ public class Character : MonoBehaviour {
 			Events.PortalUnavailable ();
 			return;
 		}
+        if (door.state == Door.states.BLOCKED || door.state == Door.states.COMPLETED) {			
+			return;
+		}
 		
 		if (door.state == Door.states.CLOSED) {			
 			selectedInteractiveObject = io;

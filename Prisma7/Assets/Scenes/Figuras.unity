@@ -9886,7 +9886,7 @@ MonoBehaviour:
     done: 0
   runasTween: {fileID: 13622180}
   consignaTween: {fileID: 585751052}
-  partidaGames: 3
+  partidaGames: 1
   figuraOK: {fileID: 8300000, guid: 23762e9c973314a41ae85375496f44b8, type: 3}
   figuraWrong: {fileID: 8300000, guid: c913455203bf9b24f9ff334e71178d36, type: 3}
   figurasDone: {fileID: 8300000, guid: babb60db9dc37024c96787cdd6702489, type: 3}

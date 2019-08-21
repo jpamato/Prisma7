@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Map : MonoBehaviour
-{
-    public GameObject lock2;
-    public GameObject lock3;
+{    
 
     public Image area1;
     public Image area2;
     public Image area3;
+
+    public GameObject current1;
+    public GameObject current2;
+    public GameObject current3;
 
     void Start()
     {
@@ -20,24 +22,26 @@ public class Map : MonoBehaviour
     {
         this.gameObject.SetActive(true);
 
-        area1.color = new Color(1, 1, 1, 0.5f);
-        area2.color = new Color(1, 1, 1, 0.5f);
-        area3.color = new Color(1, 1, 1, 0.5f);
+        area1.color = Color.white;        
+        area2.color = new Color(1, 1, 1, 0.2f);
+        area3.color = new Color(1, 1, 1, 0.2f);
+
+        current1.SetActive(false);
+        current2.SetActive(false);
+        current3.SetActive(false);
 
         if (Data.Instance.userData.actualWorld == 1)
-            area1.color = Color.white;
+            current1.SetActive(true);
         else if (Data.Instance.userData.actualWorld == 2)
-            area2.color = Color.white;
+            current2.SetActive(true);
         else if (Data.Instance.userData.actualWorld == 3)
-            area3.color = Color.white;
+            current3.SetActive(true);
 
-        lock2.gameObject.SetActive(true);
-        lock3.gameObject.SetActive(true);
 
         if (Data.Instance.userData.portalOpenedID > 0)
-            lock2.gameObject.SetActive(false);
+            area2.color = Color.white;
         if (Data.Instance.userData.portalOpenedID > 1)
-            lock3.gameObject.SetActive(false);
+            area3.color = Color.white;
 
     }
     public void Close()

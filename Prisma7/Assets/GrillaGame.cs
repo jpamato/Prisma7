@@ -163,20 +163,22 @@ public class GrillaGame : MateGame {
     }
 
     void CheckGrid(){
-		rects.Clear ();
+		rects.Clear ();        
 		for (int x = 0; x < grid.GetLength(0); x++) {
-			for (int y = 0; y < grid.GetLength(1); y++) {
-				if (grid [x, y] == 1) {
+			for (int y = 0; y < grid.GetLength(1); y++) {                
+                if (grid [x, y] == 1) {                    
 					FindRectEnd (x, y);
 				}
 			}
 		}
 
-
-		for (int x = 0; x < grid.GetLength(0); x++) {
+        int totalGrid = 0;
+        for (int x = 0; x < grid.GetLength(0); x++) {
 			for (int y = 0; y < grid.GetLength(1); y++) {
-				if (grid [x, y] > 0)
-					grid [x, y] = 1;
+                if (grid[x, y] > 0) {
+                    grid[x, y] = 1;
+                    totalGrid++;
+                }
 			}
 		}
 
@@ -188,7 +190,8 @@ public class GrillaGame : MateGame {
 			if (area == gLevelData.area) {
 				if (gLevelData.columnas < 1 || width == gLevelData.columnas) {
 					if (gLevelData.filas < 1 || height == gLevelData.filas) {
-						GrillaComplete ();
+                        if(totalGrid==gLevelData.area)
+						    GrillaComplete ();
 					}
 				}
 			}

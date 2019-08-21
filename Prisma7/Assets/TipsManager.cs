@@ -20,24 +20,32 @@ public class TipsManager : MonoBehaviour {
 	public bool sawMago;
 	public bool sawMagoFirstTime;
 	public bool faltaFigura;
-	int actualDiamondLevel;
+	public int actualDiamondLevel;
 
-	void Start()
-	{
-		saludoDone = CheckIfDone ("saludoDone");
-		fruitWinDone = CheckIfDone ("fruitWinDone");
+    void Start() {
+        saludoDone = CheckIfDone("saludoDone");
+        fruitWinDone = CheckIfDone("fruitWinDone");
 
-		if(loadData)
-			LoadGameData ();
-		
-		Events.OnMap += OnMap;
-		Events.PortalUnavailable += PortalUnavailable;
-		Events.PortalFinalUnavailable += PortalFinalUnavailable;
-		Events.OnCharacterChangeDirection += OnCharacterChangeDirection;
-		Events.OpenFruitNinja += OpenFruitNinja;
-		Events.CloseFruitNinja += CloseFruitNinja;
-		Events.OnPetSay += OnPetSay;
-	}
+        
+
+        if (loadData)
+            LoadGameData();
+
+        Events.OnMap += OnMap;
+        Events.PortalUnavailable += PortalUnavailable;
+        Events.PortalFinalUnavailable += PortalFinalUnavailable;
+        Events.OnCharacterChangeDirection += OnCharacterChangeDirection;
+        Events.OpenFruitNinja += OpenFruitNinja;
+        Events.CloseFruitNinja += CloseFruitNinja;
+        Events.OnPetSay += OnPetSay;
+
+        Invoke("Init", 2);
+    }
+
+    void Init() {
+        actualDiamondLevel = Data.Instance.levelsData.actualDiamondLevel;
+    }
+
 	void OnDestroy()
 	{
 		Events.OnMap -= OnMap;

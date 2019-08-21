@@ -10,11 +10,22 @@ public class DoorsManager : MonoBehaviour {
 		Events.OnChangeWorld += OnChangeWorld;
 		int diamondLevel = Data.Instance.levelsData.actualDiamondLevel;
 		foreach (Door door in doors) {
-			if(diamondLevel>=door.diamondLevel)
+            if(diamondLevel < door.diamondLevel)
+                door.SetState(Door.states.UNAVAILABLE);
+            else if (diamondLevel==door.diamondLevel)
 				door.SetState (Door.states.CLOSED);
 			else
-				door.SetState (Door.states.UNAVAILABLE);
-		}
+                door.SetState(Door.states.COMPLETED);
+
+            if(door.id==Data.Instance.userData.GetLastDoorPlayed())
+                door.SetState(Door.states.BLOCKED);
+
+            if(Data.Instance.userData.allPortalsOpened)
+                door.SetState(Door.states.CLOSED);
+
+        }
+
+
 		/*foreach (int doorID in Data.Instance.userData.doorsPlayed) {
 			GetDoorByID (doorID).SetState (Door.states.OPENED);				
 		}*/

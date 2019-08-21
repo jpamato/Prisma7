@@ -8,7 +8,7 @@ public class Prisma : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Reset ();
+        Invoke("Reset", 2);
 	}
 	
 	// Update is called once per frame
