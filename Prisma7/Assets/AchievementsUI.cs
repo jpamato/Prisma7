@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class AchievementsUI : MonoBehaviour {
 	public GameObject achievementsButton;
-	public GameObject NewAchievement;
+    public GameObject NewAchievement;
 	public GameObject panel;
 	public Text field;
 	public Transform container;
@@ -46,13 +46,17 @@ public class AchievementsUI : MonoBehaviour {
 		foreach (Achievement ach in AchievementsManager.Instance.all) {
 			AchievementButton b = Instantiate (button);
 			b.transform.SetParent (container);
+            b.transform.localScale = Vector3.one;
 			b.Init (this, ach);
 		}
+
+        Events.OnIngameUIPopup(true);
 	}
 	public void Close()
 	{
 		panel.SetActive (false);
-	}
+        Events.OnIngameUIPopup(false);
+    }
 	public void SetText(string text)
 	{
 		field.text = text;

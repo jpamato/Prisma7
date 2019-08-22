@@ -10,7 +10,8 @@ public class Character : MonoBehaviour {
 		PLAYING,
 		OPENING_FRUIT_NINJA,
 		ENTERING_DOOR,
-		CHANGING_LEVEL
+		CHANGING_LEVEL,
+        UI_POPUP
 	}
 	public GameObject target;
 
@@ -30,8 +31,9 @@ public class Character : MonoBehaviour {
 		Events.CloseFruitNinja += CloseFruitNinja;
 		Events.OnCharacterStopWalking += OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject += OnCharacterHitInteractiveObject;
-		//Events.OnMinigameDone += OnMinigameDone;
-		transform.localPosition = Data.Instance.userData.lastPosition;
+        Events.OnIngameUIPopup += OnIngameUIPopup;
+        //Events.OnMinigameDone += OnMinigameDone;
+        transform.localPosition = Data.Instance.userData.lastPosition;
 
 		if(Data.Instance.lastLevel == "Pociones" || 
 			Data.Instance.lastLevel == "Combinatorias" || 
@@ -44,9 +46,18 @@ public class Character : MonoBehaviour {
 		Events.CloseFruitNinja -= CloseFruitNinja;
 		Events.OnCharacterStopWalking -= OnCharacterStopWalking;
 		Events.OnCharacterHitInteractiveObject -= OnCharacterHitInteractiveObject;
-		//Events.OnMinigameDone -= OnMinigameDone;
-	}
-	void CloseFruitNinja(bool win)
+        Events.OnIngameUIPopup += OnIngameUIPopup;
+        //Events.OnMinigameDone -= OnMinigameDone;
+    }
+
+    void OnIngameUIPopup(bool enable) {
+        if (enable)
+            state = states.UI_POPUP;
+        else 
+            state = states.PLAYING;
+    }
+
+    void CloseFruitNinja(bool win)
 	{
 		state = states.PLAYING;
 		if (win)
@@ -65,8 +76,8 @@ public class Character : MonoBehaviour {
 
 	void OnCharacterHitInteractiveObject(InteractiveObject io)
 	{
-		if (state != states.PLAYING || state == states.CHANGING_LEVEL)
-			return;
+        if (state != states.PLAYING || state == states.CHANGING_LEVEL || state == states.UI_POPUP) 
+            return;
 
 		PortalLevel portalLevel = io.GetComponent<PortalLevel> ();
 		if (portalLevel != null) {
@@ -123,8 +134,11 @@ public class Character : MonoBehaviour {
 			return;
 		if (state == states.ENTERING_DOOR)
 			return;
-		else if (state == states.OPENING_FRUIT_NINJA)
-			state = states.PLAYING;
+        if (state == states.UI_POPUP)
+            return;
+
+        else if (state == states.OPENING_FRUIT_NINJA)
+            state = states.PLAYING;
 		
 		target.transform.position = pos;
 		LookAtTarget (target);

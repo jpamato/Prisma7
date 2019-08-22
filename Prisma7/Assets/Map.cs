@@ -43,9 +43,12 @@ public class Map : MonoBehaviour
         if (Data.Instance.userData.portalOpenedID > 1)
             area3.color = Color.white;
 
+        Events.OnIngameUIPopup(true);
+
     }
     public void Close()
     {
         this.gameObject.SetActive(false);
+        Events.OnIngameUIPopup(false);
     }
 }

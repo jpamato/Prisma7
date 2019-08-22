@@ -30,6 +30,7 @@ public static class Events {
 	public static System.Action PortalFinalUnavailable = delegate {	};
 	public static System.Action<int> OnChangeWorld = delegate {	};
     public static System.Action OnLastPortalOpen = delegate { };
+    public static System.Action<bool> OnIngameUIPopup = delegate { };
 
     public static System.Action OnRunaFound = delegate {};
 
