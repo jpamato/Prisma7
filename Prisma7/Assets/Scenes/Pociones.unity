@@ -263,7 +263,7 @@ Transform:
 --- !u!199 &36392417
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -5195,7 +5195,7 @@ MonoBehaviour:
   totalTime: 60
   actualTime: 0
   state: 0
-  partidaGames: 2
+  partidaGames: 1
   ingredienteItem: {fileID: 1328086065886828, guid: 887c6ca82afea5747a0918809a2720e0,
     type: 3}
   ingredienteSlot: {fileID: 1676485821075494, guid: 1f99760bf6bb9b049bc20c39f61942a9,
@@ -5420,7 +5420,7 @@ Transform:
 --- !u!199 &97052148
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199688151881503062, guid: ebfa75f3d67440f44806d3fe8c9067e4,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -10120,7 +10120,7 @@ Transform:
 --- !u!199 &105085077
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -18652,7 +18652,7 @@ Transform:
 --- !u!199 &196902082
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -23605,6 +23605,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1192281006921920, guid: 5b76bf101369b9f438852f77668fca77, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224475192326918296, guid: 5b76bf101369b9f438852f77668fca77,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -23621,10 +23625,6 @@ PrefabInstance:
       value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 1513461518397514, guid: 5b76bf101369b9f438852f77668fca77, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1192281006921920, guid: 5b76bf101369b9f438852f77668fca77, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -24450,7 +24450,7 @@ Transform:
 --- !u!199 &343424564
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -31128,7 +31128,7 @@ Transform:
 --- !u!199 &712924409
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -36378,7 +36378,7 @@ Transform:
 --- !u!199 &755823323
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 199688151881503062, guid: ebfa75f3d67440f44806d3fe8c9067e4,
     type: 3}
   m_PrefabInstance: {fileID: 0}
@@ -41501,7 +41501,7 @@ Transform:
 --- !u!199 &901760916
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -46355,7 +46355,7 @@ Transform:
 --- !u!199 &949755508
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -51566,7 +51566,7 @@ Transform:
 --- !u!199 &1129695123
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -56322,7 +56322,7 @@ Transform:
 --- !u!199 &1155712269
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -61400,7 +61400,7 @@ Transform:
 --- !u!199 &1418745564
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -66962,7 +66962,7 @@ Transform:
 --- !u!199 &1613526474
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 2
+  m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}

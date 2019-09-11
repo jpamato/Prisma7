@@ -31,7 +31,8 @@ public class AchievementsUI : MonoBehaviour {
 	}
 	void OnReady(Achievement ach)
 	{
-		NewAchievement.SetActive (true);
+        NewAchievement.SetActive(false);
+        NewAchievement.SetActive (true);
         unviewed = true;
 
 	}
