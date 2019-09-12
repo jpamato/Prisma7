@@ -36,6 +36,9 @@ public class ReadQR : MonoBehaviour {
 		}
 
 		Events.OnRunaFound += OnRunaFound;
+
+        /*Texture2D myQR = generateQR("Prisma2");
+		exportQR ("Prisma2", myQR);*/
 	}
 
 	void OnDestroy(){
@@ -66,7 +69,7 @@ public class ReadQR : MonoBehaviour {
 			}
 		} catch(Exception ex) { Debug.LogWarning (ex.Message); }*/
 
-		/*Texture2D myQR = generateQR("Piramide");
+        /*Texture2D myQR = generateQR("Piramide");
 		if (GUI.Button (new Rect (300, 300, 256, 256), myQR, GUIStyle.none)) {
 			exportQR ("Piramide", myQR);
 		}
@@ -74,9 +77,9 @@ public class ReadQR : MonoBehaviour {
 		if (GUI.Button (new Rect (600, 300, 256, 256), myQR2, GUIStyle.none)) {
 			exportQR ("Cubo", myQR2);
 		}*/
-	}
+    }
 
-	public void FindQR(){		
+    public void FindQR(){		
 		check = true;
 		captureBtn.image.color = captureBtn.colors.pressedColor;
 		Debug.Log ("FindQR");

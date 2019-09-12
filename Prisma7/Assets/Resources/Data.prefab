@@ -875,21 +875,21 @@ MonoBehaviour:
   - go: {fileID: 1408149391732362, guid: 9e571ee09fa4adf4d99aeb672f271a6c, type: 3}
     enabled: 1
   - go: {fileID: 1632771366761070, guid: 96b3587882004e341aa47ecc8ae850a9, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1999227643823362, guid: 7a974b4cf0fd173408c06f69e08d20eb, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1871634412864630, guid: db9881800a392ec4c973527e0518d2ec, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1481218963625474, guid: 1e4611ef789664a43b26119a0171b00a, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1188766808447460, guid: fd0cb0ddfcaa5334c896650af9a3005c, type: 3}
     enabled: 1
   - go: {fileID: 1433994642584956, guid: 68bcffb889b0a1348a11d066f625e973, type: 3}
     enabled: 1
   - go: {fileID: 1150219581431134, guid: c2d63485acd96d14b965784661d1b675, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1834548840658312, guid: a289d56c78cfaf843b45da582b650291, type: 3}
-    enabled: 1
+    enabled: 0
   - go: {fileID: 1408149391732362, guid: de95613081156fb4e81aba2e6e047f0a, type: 3}
     enabled: 0
   figuras:

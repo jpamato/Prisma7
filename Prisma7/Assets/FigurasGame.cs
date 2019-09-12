@@ -25,6 +25,8 @@ public class FigurasGame : MateGame {
 	public AudioClip figuraOK, figuraWrong,figurasDone;
 	AudioSource audioSource;
 
+    bool haveAllRunas;
+
 	// Use this for initialization
 	void Start () {
 		Data.Instance.ui.HideCapture ();
@@ -55,7 +57,8 @@ public class FigurasGame : MateGame {
 				enabledButtons.Add (go.name, true);
 			}
 		}
-		SetBarColor ();
+        CheckNeededRunas();
+        SetBarColor ();
 		if(fLevelData.time>0)
 			InitTimer ();
 		//consigna.SetActive (false);
@@ -74,6 +77,18 @@ public class FigurasGame : MateGame {
 	void Update () {
 		
 	}
+
+    void CheckNeededRunas() {
+        haveAllRunas = true;
+        if (enabledButtons.ContainsValue(false)) {
+            haveAllRunas = false;
+            List<string> keys = new List<string>(enabledButtons.Keys);
+            foreach (string key in keys) 
+                enabledButtons[key] = false;
+
+            Events.NotRuna();
+        }
+    }
 
 	void FigureSelect(GameObject hit){		
 		if (hit.tag == "Runa" && state == states.PLAYING) {
@@ -118,7 +133,7 @@ public class FigurasGame : MateGame {
 				}
 
 			} else {
-				Events.NotRuna ();
+				//Events.NotRuna ();
 			}
 		}
 	}

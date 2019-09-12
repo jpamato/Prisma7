@@ -45,7 +45,7 @@ public class RunaNotFound : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if(still){
+		/*if(still){
 			if (Time.frameCount >= lastF + (20*frame2Flash)) {
 				flash = false;
 				still = false;
@@ -69,6 +69,6 @@ public class RunaNotFound : MonoBehaviour {
 				for(int i=0;i<graf.Count;i++)
 					graf[i].color = new Color(colors[i].r,colors[i].g,colors[i].b,alpha);
 			}			
-		}
+		}*/
 	}
 }
