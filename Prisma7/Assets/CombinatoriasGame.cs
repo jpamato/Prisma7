@@ -61,7 +61,8 @@ public class CombinatoriasGame : MateGame {
 	void OnDestroy(){
 		Events.OnTimeOver -= TimeOver;
 		Events.DroppedUI -= DroppedUI;
-	}
+        Events.OnDropingOut -= OnDropingOut;
+    }
 	
 	// Update is called once per frame
 	void Update () {
