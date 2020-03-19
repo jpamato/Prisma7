@@ -62,7 +62,7 @@ public class TipsManager : MonoBehaviour {
 		if (sceneName != "World" && sceneName != "World2" && sceneName != "World3")
 			return;
 		
-		if (Game.Instance != null && Game.Instance.mode == Game.modes.FRUIT_NINJA)
+		if (Game.Instance != null && (Game.Instance.mode == Game.modes.FRUIT_NINJA || Game.Instance.mode == Game.modes.FREEZED))
 			return;
 		timeToSayWhenNotWalkingCount += Time.deltaTime;
 		timeToNotEnterPortalCount += Time.deltaTime;

@@ -26,6 +26,7 @@ public class Data : MonoBehaviour
 	public FadePanel fadePanel;
 	public MusicManager musicManager;
     public UsersController usersDB;
+    public CaptureScreen captureScreen;
 
     public int lastMinigame;
     public enum minigamesScenes {
@@ -125,6 +126,7 @@ public class Data : MonoBehaviour
 		tipsManager = GetComponent<TipsManager> ();
 		musicManager = GetComponent<MusicManager> ();
         usersDB = GetComponent<UsersController>();
+        captureScreen = GetComponent<CaptureScreen>();
         Scene actual = SceneManager.GetActiveScene ();
 		currentLevelIndex = actual.buildIndex;
 		currentLevel = actual.name;
@@ -144,10 +146,10 @@ public class Data : MonoBehaviour
 
         if (Permission.HasUserAuthorizedPermission(Permission.Camera)) {
             Events.ClickSfx();
-            if (currentLevel == "CaptureQR")
-                LoadScene("World");
+            if (captureScreen.isVisible)
+                captureScreen.SetActive(false);
             else
-                LoadScene("CaptureQR");
+                captureScreen.SetActive(true);
         } else {
             Permission.RequestUserPermission(Permission.Camera);
         }

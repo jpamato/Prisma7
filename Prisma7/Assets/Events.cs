@@ -33,8 +33,9 @@ public static class Events {
     public static System.Action<bool> OnIngameUIPopup = delegate { };
 
     public static System.Action OnRunaFound = delegate {};
+    public static System.Action OnRunaCaptureContinue = delegate { };
 
-	public static System.Action NotRuna = delegate {};
+    public static System.Action NotRuna = delegate {};
 
 	public static System.Action ClickSfx = delegate {};
 	public static System.Action<string> OnVoice = delegate {};

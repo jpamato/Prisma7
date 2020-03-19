@@ -20,9 +20,7 @@ public class ReadQR : MonoBehaviour {
 	bool check;
 
 	void Start() {
-		Data.Instance.ui.SetStatus (false);
-		Data.Instance.ui.ShowBack(false);
-		Data.Instance.ui.ShowCapture (true);
+		
 		source = GetComponent<AudioSource> ();
 
 		//screenRect = new Rect(0, 0, Screen.width, Screen.height);
@@ -36,10 +34,11 @@ public class ReadQR : MonoBehaviour {
 		}
 
 		Events.OnRunaFound += OnRunaFound;
+        Events.OnRunaCaptureContinue += OnRunaCaptureContinue;
 
         /*Texture2D myQR = generateQR("Prisma2");
 		exportQR ("Prisma2", myQR);*/
-	}
+    }
 
 	void OnDestroy(){
 		Events.OnRunaFound -= OnRunaFound;
@@ -53,7 +52,12 @@ public class ReadQR : MonoBehaviour {
 		source.PlayOneShot (photo);
 	}
 
-	void OnGUI () {
+    void OnRunaCaptureContinue() {
+        captureBtn.gameObject.SetActive(true);
+    }
+
+
+    void OnGUI () {
 		// drawing the camera on screen
 		//GUI.DrawTexture (screenRect, camTexture, ScaleMode.ScaleToFit);
 		//rawimage.texture = camTexture;

@@ -26,6 +26,12 @@ public class OnQRFound : MonoBehaviour {
 	}
 
 	public void Back2World(){
-		Data.Instance.LoadScene ("World");
+        Data.Instance.captureScreen.SetActive(false);
 	}
+
+    public void Continue() {
+        sign.SetActive(false);
+        Events.OnRunaCaptureContinue();
+        //Data.Instance.captureScreen.SetActive(true);
+    }
 }
