@@ -17,6 +17,8 @@ public class ReadQR : MonoBehaviour {
 
 	public Button captureBtn;
 
+    public RunasUI runasUI;
+
 	bool check;
 
 	void Start() {
@@ -107,7 +109,9 @@ public class ReadQR : MonoBehaviour {
 					//Debug.Log("DECODED TEXT FROM QR: " + result.Text);
 					Data.Instance.ui.SetStatus (false);
 					Data.Instance.figurasData.EnableRuna (result.Text);
-				}
+                    runasUI.EnableRuna(result.Text);
+
+                }
 			} catch (Exception ex) {
 				Debug.LogWarning (ex.Message);
 			}
