@@ -29,12 +29,19 @@ public class CaptureScreen : MonoBehaviour
 
     void UptadeWorld(bool enable) {
         if (!enable) {
-            Data.Instance.ui.SetStatus(true);
-            Data.Instance.ui.ShowCapture(false);
-            Data.Instance.ui.ShowBack(false);            
-            Data.Instance.ui.HideTimer();
-            if(Game.Instance!=null)
+            if (Game.Instance != null) {
+                Data.Instance.ui.SetStatus(true);
+                Data.Instance.ui.ShowCapture(false);
+                Data.Instance.ui.ShowBack(false);
+                Data.Instance.ui.HideTimer();
                 Game.Instance.mode = Game.modes.WORLD;
+            } else {
+                Data.Instance.ui.progressBar.gameObject.SetActive(true);
+                Data.Instance.ui.timer.gameObject.SetActive(true);
+                Data.Instance.ui.ShowBack(true);
+                Data.Instance.ui.HideCapture();
+                Events.OnUpdateRunas();
+            }
         } else {
             Data.Instance.ui.SetStatus(false);
             Data.Instance.ui.ShowBack(false);

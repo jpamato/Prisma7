@@ -34,6 +34,7 @@ public static class Events {
 
     public static System.Action OnRunaFound = delegate {};
     public static System.Action OnRunaCaptureContinue = delegate { };
+    public static System.Action OnUpdateRunas = delegate { };
 
     public static System.Action NotRuna = delegate {};
 

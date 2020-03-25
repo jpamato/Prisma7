@@ -35,29 +35,18 @@ public class FigurasGame : MateGame {
 		levelBarStep = 1f / times2FullBar;
 		Events.OnMouseCollide += FigureSelect;
 		Events.OnTimeOver += TimeOver;
-		Invoke ("Init", 5);
+        Events.OnUpdateRunas += UpdateRunas;
+
+        Invoke ("Init", 5);
 	}
 
 	void Init(){
 		doneSign.SetActive (false);
 		loseSign.SetActive (false);
-		enabledButtons = new Dictionary<string,bool> ();
 		//figura = Data.Instance.figurasData.figuras.Find (x=>x.go.name == figuraGO.name);
 		SetFigura();
-		foreach (GameObject go in runasButtons) {
-			bool enabled = Data.Instance.figurasData.runas.Find (x=>x.go.name ==go.name).enabled;
-			if (!enabled) {
-				Renderer r = go.GetComponent<Renderer> ();
-				if(r==null)
-					r = go.GetComponentInChildren<Renderer> ();
-				r.material.color = Color.black;
-				r.material.DisableKeyword ("_EMISSION");	
-				enabledButtons.Add (go.name, false);
-			} else {
-				enabledButtons.Add (go.name, true);
-			}
-		}
-        CheckNeededRunas();
+        UpdateRunas();
+        //CheckNeededRunas();
         SetBarColor ();
 		if(fLevelData.time>0)
 			InitTimer ();
@@ -68,10 +57,34 @@ public class FigurasGame : MateGame {
 		state = states.PLAYING;
 	}
 
+    void UpdateRunas() {
+        enabledButtons = new Dictionary<string, bool>();
+        //figura = Data.Instance.figurasData.figuras.Find (x=>x.go.name == figuraGO.name);
+        foreach (GameObject go in runasButtons) {
+            bool enabled = Data.Instance.figurasData.runas.Find(x => x.go.name == go.name).enabled;
+            if (!enabled) {
+                Renderer r = go.GetComponent<Renderer>();
+                if (r == null)
+                    r = go.GetComponentInChildren<Renderer>();
+                r.material.color = Color.black;
+                r.material.DisableKeyword("_EMISSION");
+                enabledButtons.Add(go.name, false);
+            } else {
+                Renderer r = go.GetComponent<Renderer>();
+                if (r == null)
+                    r = go.GetComponentInChildren<Renderer>();
+                r.material.color = new Color(0.7994196f, 0.877589f, 0.8862745f);
+                r.material.EnableKeyword("_EMISSION");
+                enabledButtons.Add(go.name, true);
+            }
+        }
+    }
+
 	void OnDestroy(){
 		Events.OnMouseCollide -= FigureSelect;
 		Events.OnTimeOver -= TimeOver;
-	}
+        Events.OnUpdateRunas -= UpdateRunas;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -133,7 +146,7 @@ public class FigurasGame : MateGame {
 				}
 
 			} else {
-				//Events.NotRuna ();
+				Events.NotRuna ();
 			}
 		}
 	}
