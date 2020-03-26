@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 public class PocionesGame : MateGame {
 
@@ -10,9 +11,9 @@ public class PocionesGame : MateGame {
 
 	List<GameObject> slots;
 	public GameObject ingredienteItem;
-	public GameObject ingredienteSlot;
+    public GameObject ingredienteSlot;
 	public Transform inventarioContent;
-	public Transform centralContent;
+    public Transform centralContent;
 	public GameObject receta;
 	public ParticleSystem ingredientFx;
 	public AudioClip salpica;
@@ -27,6 +28,9 @@ public class PocionesGame : MateGame {
 	List<PocionesData.Valores> valores;
 	public List<PocionesData.Valores> valoresParciales;
 	public List<Color> pocionesColors;
+
+    public Text itemX1, itemX10;
+    int itemMult = 1;
 
 	// Use this for initialization
 	void Start () {	
@@ -191,7 +195,7 @@ public class PocionesGame : MateGame {
 		audioSource.PlayOneShot (salpica);
 		IngredienteItem ii = dragged.GetComponent<IngredienteItem> ();
 		PocionesData.Valores v = valoresParciales.Find (x => x.id == ii.id);
-		v.val++;
+		v.val+=itemMult;
 		UpdateReceta (false);
 	}
 
@@ -254,4 +258,16 @@ public class PocionesGame : MateGame {
 		Data.Instance.LoadScene ("World");
 		Events.OnMinigameDone ();
 	}
+
+    public void ItemMultX10(bool enable) {
+        if (enable) {
+            itemX1.color = Color.white;
+            itemX10.color = Color.green;
+            itemMult = 10;
+        } else {
+            itemX1.color = Color.green;
+            itemX10.color = Color.white;
+            itemMult = 1;
+        }
+    }
 }
