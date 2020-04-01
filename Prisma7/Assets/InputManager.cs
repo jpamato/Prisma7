@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Game.Instance != null && Game.Instance.mode == Game.modes.FRUIT_NINJA)
+		if (Game.Instance != null && Game.Instance.mode == Game.modes.FRUIT_NINJA || Data.Instance.captureScreen.isVisible)
 			return;
 		if (Input.GetMouseButtonDown (0)) {
 			if (raycastWorld) {

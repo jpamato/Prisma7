@@ -261,12 +261,16 @@ public class PocionesGame : MateGame {
 
     public void ItemMultX10(bool enable) {
         if (enable) {
-            itemX1.color = Color.white;
-            itemX10.color = Color.green;
+            itemX10.color = Color.white;
+            itemX10.transform.parent.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+            itemX1.color = new Color(1f, 0.266f, 0.266f);
+            itemX1.transform.parent.localScale = new Vector3(1f, 1f, 1f);
             itemMult = 10;
         } else {
-            itemX1.color = Color.green;
-            itemX10.color = Color.white;
+            itemX10.color = new Color(1f, 0.266f, 0.266f);
+            itemX10.transform.parent.localScale = new Vector3(1f, 1f, 1f);
+            itemX1.color = Color.white;
+            itemX1.transform.parent.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             itemMult = 1;
         }
     }

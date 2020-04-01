@@ -101,6 +101,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5826915
       objectReference: {fileID: 0}
+    - target: {fileID: 136543379735132498, guid: 96b3587882004e341aa47ecc8ae850a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114178705661537488, guid: 96b3587882004e341aa47ecc8ae850a9,
         type: 3}
       propertyPath: m_Enabled
@@ -180,6 +185,11 @@ PrefabInstance:
     - target: {fileID: 4924959626376738, guid: 96b3587882004e341aa47ecc8ae850a9, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5826915
+      objectReference: {fileID: 0}
+    - target: {fileID: 136543379735132498, guid: 96b3587882004e341aa47ecc8ae850a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114178705661537488, guid: 96b3587882004e341aa47ecc8ae850a9,
         type: 3}
@@ -266,6 +276,11 @@ PrefabInstance:
       propertyPath: doRotate
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 65083680196968262, guid: c2d63485acd96d14b965784661d1b675,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2d63485acd96d14b965784661d1b675, type: 3}
 --- !u!4 &5047244139388098648 stripped
@@ -340,6 +355,11 @@ PrefabInstance:
     - target: {fileID: 4924959626376738, guid: 96b3587882004e341aa47ecc8ae850a9, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5826915
+      objectReference: {fileID: 0}
+    - target: {fileID: 136543379735132498, guid: 96b3587882004e341aa47ecc8ae850a9,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114178705661537488, guid: 96b3587882004e341aa47ecc8ae850a9,
         type: 3}
