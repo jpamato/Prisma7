@@ -38,6 +38,7 @@ public class TipsManager : MonoBehaviour {
         Events.OpenFruitNinja += OpenFruitNinja;
         Events.CloseFruitNinja += CloseFruitNinja;
         Events.OnPetSay += OnPetSay;
+        Events.OnRunaFound += OnRunaFound;
 
         Invoke("Init", 2);
     }
@@ -55,7 +56,8 @@ public class TipsManager : MonoBehaviour {
 		Events.OpenFruitNinja  -= OpenFruitNinja;
 		Events.CloseFruitNinja  -= CloseFruitNinja;
 		Events.OnPetSay -= OnPetSay;
-	}
+        Events.OnRunaFound -= OnRunaFound;
+    }
 	void Update()
 	{
 		string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name;
@@ -138,7 +140,10 @@ public class TipsManager : MonoBehaviour {
 	{
 		faltaFigura = true;
 	}
-	void Delayed()
+    void OnRunaFound() {
+        faltaFigura = false;
+    }
+    void Delayed()
 	{
 		if (faltaFigura) {
 			Events.OnPetSay (tipsContent.faltaFigura);

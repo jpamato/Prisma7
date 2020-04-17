@@ -58,6 +58,10 @@ public class ReadQR : MonoBehaviour {
         captureBtn.gameObject.SetActive(true);
     }
 
+    private void OnEnable() {
+        captureBtn.gameObject.SetActive(true);
+    }
+
 
     void OnGUI () {
 		// drawing the camera on screen
