@@ -18,15 +18,20 @@ public class LevelsData : MonoBehaviour {
 		actualDiamondLevel = PlayerPrefs.GetInt ("actualDiamondLevel");
 		actualLevelPercent = PlayerPrefs.GetFloat ("actualLevelPercent");
 
-		if(actualDiamondLevel >= diamondLevels.Count)
+        //actualDiamondLevel = 5;
+        //actualLevelPercent = 0.9f;
+
+        if (actualDiamondLevel >= diamondLevels.Count)
 			allLevelsComplete = true;
 
 		Events.OnColorComplete += OnColorComplete;
+        Events.OnLastPortalOpen += Restart;
     }
 
 	void OnDestroy(){
 		Events.OnColorComplete -= OnColorComplete;
-	}
+        Events.OnLastPortalOpen -= Restart;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -72,20 +77,29 @@ public class LevelsData : MonoBehaviour {
 	}
 
 	public DiamondLevel GetActualLevel(){
-		return diamondLevels [actualDiamondLevel];
+		return diamondLevels [(actualDiamondLevel%diamondLevels.Count)];
 	}
 
 	public DiamondLevel GetNextLevel(){
-		return diamondLevels [actualDiamondLevel+1];
+		return diamondLevels [(actualDiamondLevel + 1 )% diamondLevels.Count];
 	}
 
 	public DiamondLevel GetInProgressLevel(){
-		return diamondLevels [actualDiamondLevel+1];
-	}
+		return diamondLevels [(actualDiamondLevel + 1) % diamondLevels.Count];
+    }
 
 	[Serializable]
 	public class DiamondLevel{
 		public int levelNumber;
 		public Color color;
 	}
+
+    void Restart() {        
+        actualDiamondLevel = 0;
+        actualLevelPercent = 0;
+        PlayerPrefs.SetInt("actualDiamondLevel", actualDiamondLevel);
+        PlayerPrefs.SetFloat("actualLevelPercent", actualLevelPercent);
+        ColorsReset();        
+        allLevelsComplete = false;
+    }
 }

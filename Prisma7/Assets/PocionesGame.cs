@@ -131,7 +131,7 @@ public class PocionesGame : MateGame {
 			} else {
 				
 				if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
-                    Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];
+                    Color c = pocionesColors[(Data.Instance.levelsData.actualDiamondLevel + 1) % Data.Instance.levelsData.diamondLevels.Count];
 					/*if (Data.Instance.levelsData.actualDiamondLevel == 3)
 						c = pocionesColors;*/
 					rp.texto.text += "-> " + " <color=" + Utils.rgb2Hex (c.r, c.g, c.b) + "><b>" + Math.Round(valores [i].val * pLevelData.factor) + "</b></color>\n";
@@ -156,7 +156,7 @@ public class PocionesGame : MateGame {
 			if (Array.Exists(pLevelData.respuestas_index,x => x==valores [i].id)) {				
                 rp.texto.text += "-> ¿" + valoresParciales[i].val + "?\n";
             } else if (Array.Exists (pLevelData.pistas_elementos_index, x => x == valores [i].id)) {
-                Color c = pocionesColors[Data.Instance.levelsData.actualDiamondLevel + 1];                				
+                Color c = pocionesColors[(Data.Instance.levelsData.actualDiamondLevel + 1) % Data.Instance.levelsData.diamondLevels.Count];
                 rp.texto.text += "-> " + " <color=" + Utils.rgb2Hex(c.r, c.g, c.b) + "><b>" + Math.Round(valores[i].val * pLevelData.factor) + "</b></color>\n";
             } else {                
                 rp.texto.text += "\n";

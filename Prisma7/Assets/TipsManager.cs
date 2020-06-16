@@ -39,8 +39,9 @@ public class TipsManager : MonoBehaviour {
         Events.CloseFruitNinja += CloseFruitNinja;
         Events.OnPetSay += OnPetSay;
         Events.OnRunaFound += OnRunaFound;
+        Events.OnLastPortalOpen += Restart;
 
-        Invoke("Init", 2);
+        Invoke("Init", 2);        
     }
 
     void Init() {
@@ -57,7 +58,8 @@ public class TipsManager : MonoBehaviour {
 		Events.CloseFruitNinja  -= CloseFruitNinja;
 		Events.OnPetSay -= OnPetSay;
         Events.OnRunaFound -= OnRunaFound;
-    }
+        Events.OnLastPortalOpen -= Restart;
+}
 	void Update()
 	{
 		string sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene ().name;
@@ -239,4 +241,15 @@ public class TipsManager : MonoBehaviour {
 			return "faltaFigura";
 		return "";
 	}
+
+    void Restart() {
+        PlayerPrefs.DeleteKey("saludoDone");
+        PlayerPrefs.DeleteKey("fruitWinDone");
+        saludoDone = false;
+        fruitWinDone = false;
+        sawMago = false;
+        sawMagoFirstTime = false;
+        faltaFigura = false;
+        actualDiamondLevel = 0;
+    }
 }

@@ -32,10 +32,16 @@ public class FigurasData : MonoBehaviour {
         levelsDone = new List<int>[3];
         for (int i = 0; i < levelsDone.Length; i++)
             levelsDone[i] = new List<int>();
+
+        Events.OnLastPortalOpen += Restart;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void OnDestroy() {
+        Events.OnLastPortalOpen -= Restart;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
@@ -158,4 +164,14 @@ public class FigurasData : MonoBehaviour {
 			Events.OnRunaFound ();
 		}
 	}
+
+    void Restart() {
+        foreach (Runa r in runas) {
+            string s = PlayerPrefs.GetString(r.go.name);
+            if (!r.enabled)
+                r.enabled = s == "done" ? false : false;
+            //r.enabled = true;
+            PlayerPrefs.DeleteKey(r.go.name);
+        }
+    }
 }

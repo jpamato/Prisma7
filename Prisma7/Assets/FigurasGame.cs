@@ -114,7 +114,7 @@ public class FigurasGame : MateGame {
                             Renderer r = tm.GetComponent<Renderer>();
                             if (r == null)
                                 r = tm.GetComponentInChildren<Renderer>();
-                            r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel];
+                            r.material = figurOKMaterials[Data.Instance.levelsData.actualDiamondLevel% figurOKMaterials.Count];
                         }
                     }
 					//r.material.color = figurOKColor;

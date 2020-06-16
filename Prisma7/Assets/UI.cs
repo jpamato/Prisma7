@@ -18,6 +18,14 @@ public class UI : MonoBehaviour {
 	public GameObject back;
     public GameObject logout;
 
+    private void Start() {
+        Events.OnLastPortalOpen += HideCapture;
+    }
+
+    void OnDestroy() {
+        Events.OnLastPortalOpen -= HideCapture;
+    }
+
     public void SetStatus(bool isOn)
 	{
 		timer.gameObject.SetActive (isOn);

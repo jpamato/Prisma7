@@ -57,8 +57,14 @@ public class AchievementsManager : MonoBehaviour
 		if (force_reset)
 			PlayerPrefs.DeleteAll ();
 		AchievementsEvents.NewPointToAchievement += NewPointToAchievement;
+        Events.OnLastPortalOpen += Restart;
     }
-	void NewPointToAchievement(Achievement.types _type)
+
+    private void OnDestroy() {
+        Events.OnLastPortalOpen -= Restart;
+    }
+
+    void NewPointToAchievement(Achievement.types _type)
 	{
 		int points = 0;
 		foreach (Achievement achievement in all)
@@ -79,4 +85,15 @@ public class AchievementsManager : MonoBehaviour
 		return allAchievementsByType;
 	}
 
+    void Restart() {
+        string[] PieceTypeNames = System.Enum.GetNames(typeof(Achievement.types));
+        for (int i = 0; i < PieceTypeNames.Length; i++) {
+            string achievementType = (PieceTypeNames[i]);
+            PlayerPrefs.DeleteKey(achievementType);
+            int value = 0;
+            List<Achievement> allAchievementsByType = GetAchievementsByType(achievementType);
+            foreach (Achievement ach in allAchievementsByType)
+                ach.Init(value);
+        }
+    }
 }
