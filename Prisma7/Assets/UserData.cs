@@ -24,14 +24,16 @@ public class UserData : MonoBehaviour {
         if (actualWorld <= 0)
             actualWorld = 1;
         Events.OnChangeWorld += OnChangeWorld;
-        Events.OnLastPortalOpen += OnLastPortalOpen;        
+        Events.OnLastPortalOpen += OnLastPortalOpen;
+        Events.OnLastPortalOpen += Restart;
     }
 	void OnDestroy()
 	{
 		Events.OnChangeWorld -= OnChangeWorld;
         Events.OnLastPortalOpen -= OnLastPortalOpen;
-    }
-	void OnChangeWorld(int worldID)
+        Events.OnLastPortalOpen -= Restart;
+    }    
+    void OnChangeWorld(int worldID)
 	{
 		actualWorld = worldID;
 		doorsPlayed.Clear ();
@@ -82,5 +84,16 @@ public class UserData : MonoBehaviour {
 			doorsPlayed [num] = 0;
 		}
 	}
+
+    void Restart() {
+        actualWorld = 1;
+        lastPosition = Vector3.zero;
+        portalOpenedID = 0;
+        doorsPlayed = new List<int>();
+        allPortalsOpened = false;
+        PlayerPrefs.SetInt("portalOpenedID", 0);
+        PlayerPrefs.SetInt("OnChangeWorld", actualWorld);
+        PlayerPrefs.SetFloat("OnLastPortalOpen", 0);
+    }
 }
 

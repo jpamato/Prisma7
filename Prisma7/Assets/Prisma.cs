@@ -9,10 +9,15 @@ public class Prisma : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Invoke("Reset", 2);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        Events.OnLastPortalOpen += Reset;
+    }
+
+    private void OnDestroy() {
+        Events.OnLastPortalOpen -= Reset;
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 

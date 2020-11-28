@@ -39,7 +39,8 @@ public class Cutscenes : MonoBehaviour {
 			return;
 		if (Input.GetMouseButtonDown (0)) {
 			if (Data.Instance.levelsData.showOutro) {
-				Data.Instance.LoadScene ("World3");
+                Data.Instance.levelsData.showOutro = false;
+                Data.Instance.LoadScene ("splash");
 			} else {
 				Data.Instance.LoadScene ("CharacterSelector");
 			}

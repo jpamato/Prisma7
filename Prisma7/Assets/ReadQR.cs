@@ -40,9 +40,9 @@ public class ReadQR : MonoBehaviour {
 
         /*Texture2D myQR = generateQR("Prisma2");
 		exportQR ("Prisma2", myQR);*/
-    }
+    }       
 
-	void OnDestroy(){
+    void OnDestroy(){
 		Events.OnRunaFound -= OnRunaFound;
 		camTexture.Stop ();
 	}
@@ -58,6 +58,16 @@ public class ReadQR : MonoBehaviour {
         captureBtn.gameObject.SetActive(true);
     }
 
+    private void OnEnable() {
+        captureBtn.gameObject.SetActive(true);
+        if (camTexture != null) {
+            camTexture.Play();
+        }
+    }
+
+    void OnDisable() {
+        camTexture.Stop();
+    }
 
     void OnGUI () {
 		// drawing the camera on screen

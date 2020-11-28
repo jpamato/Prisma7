@@ -35,7 +35,7 @@ public class ColorBar : MonoBehaviour {
 
 	public void Reset(){
 		index = Data.Instance.levelsData.actualDiamondLevel;
-		image = colors [index].GetComponent<Image> ();
+		image = colors [index % colors.Count].GetComponent<Image> ();
 		SetColorBar ();
 		SetValue(Data.Instance.levelsData.actualLevelPercent);
 	}
