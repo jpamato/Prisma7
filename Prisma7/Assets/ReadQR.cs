@@ -56,6 +56,7 @@ public class ReadQR : MonoBehaviour {
 
     void OnRunaCaptureContinue() {
         captureBtn.gameObject.SetActive(true);
+        Data.Instance.ui.ShowCapture(true);
     }
 
     private void OnEnable() {
