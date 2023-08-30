@@ -1,0 +1,358 @@
+Unity Editor version:    2021.3.12f1 (8af3c3e441b1)
+Branch:                  2021.3/release
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 12.6.6 (Build 21G646)
+Darwin version:          21.6.0
+Architecture:            x86_64
+Running under Rosetta:   NO
+Available memory:        8192 MB
+Using pre-set license
+Pro License: YES
+
+COMMAND LINE ARGUMENTS:
+/Applications/unity/2021.3.12f1/Unity.app/Contents/MacOS/Unity
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+/Users/yaguar/Documents/GitHub/Prisma7/Prisma7
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+61822
+Successfully changed project path to: /Users/yaguar/Documents/GitHub/Prisma7/Prisma7
+Unable to parse file ProjectSettings/ProjectVersion.txt: [Parser Failure at line 1: Expected non empty YAML buffer]
+Unable to parse file ProjectSettings/ProjectVersion.txt: [Parser Failure at line 1: Expected non empty YAML buffer]
+/Users/yaguar/Documents/GitHub/Prisma7/Prisma7
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 116.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.12f1 (8af3c3e441b1)
+[Subsystems] Discovering subsystems at path /Applications/unity/2021.3.12f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/yaguar/Documents/GitHub/Prisma7/Prisma7/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Color LCD preferred device: Intel(R) Iris(TM) Graphics 6000 (low power)
+Metal devices available: 1
+0: Intel(R) Iris(TM) Graphics 6000 (low power)
+Using device Intel(R) Iris(TM) Graphics 6000 (low power)
+Initializing Metal device caps: Intel(R) Iris(TM) Graphics 6000
+Initialize mono
+Mono path[0] = '/Applications/unity/2021.3.12f1/Unity.app/Contents/Managed'
+Mono path[1] = '/Applications/unity/2021.3.12f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/unity/2021.3.12f1/Unity.app/Contents/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56468
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/unity/2021.3.12f1/Unity.app/Contents/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+Register platform support module: /Applications/unity/2021.3.12f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll
+Registered in 0.008111 seconds.
+[usbmuxd] Start listen thread
+[usbmuxd] Listen thread started
+[usbmuxd] Send listen message
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 99.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.418 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2420ms)
+		BeginReloadAssembly (258ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (1848ms)
+			LoadAssemblies (263ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (409ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (103ms)
+			SetupLoadedEditorAssemblies (1169ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (117ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (100ms)
+				BeforeProcessingInitializeOnLoad (3ms)
+				ProcessInitializeOnLoadAttributes (801ms)
+				ProcessInitializeOnLoadMethodAttributes (148ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.014488 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for iOS target not found
+Native extension for OSXStandalone target not found
+Refreshing native plugins compatible for Editor in 1.13 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.736 seconds
+Domain Reload Profiling:
+	ReloadAssembly (2738ms)
+		BeginReloadAssembly (338ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (21ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (97ms)
+		EndReloadAssembly (2048ms)
+			LoadAssemblies (238ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (598ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (155ms)
+			SetupLoadedEditorAssemblies (953ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (49ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (105ms)
+				ProcessInitializeOnLoadAttributes (666ms)
+				ProcessInitializeOnLoadMethodAttributes (130ms)
+				AfterProcessingInitializeOnLoad (1ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (6ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launching external process: /Applications/unity/2021.3.12f1/Unity.app/Contents/Tools/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.15 seconds
+Refreshing native plugins compatible for Editor in 0.87 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2073 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 51 unused Assets / (44.0 KB). Loaded Objects now: 2516.
+Memory consumption went from 175.2 MB to 175.1 MB.
+Total: 5.182234 ms (FindLiveObjects: 0.208470 ms CreateObjectMapping: 0.082660 ms MarkObjects: 4.710872 ms  DeleteObjects: 0.178278 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:framework-osx-AVFoundation: e770b220cccbd017edd2c1fefb359320 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 453984.094348 seconds.
+  path: Assets/BrujoRT.renderTexture
+  artifactKey: Guid(e56a349352e1fef46bcf8062ca5ade28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/BrujoRT.renderTexture using Guid(e56a349352e1fef46bcf8062ca5ade28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b7cd2fd9f2e46f3bd422976ead347db') in 0.381493 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 224.696001 seconds.
+  path: Assets/Images/UI/achievements.png
+  artifactKey: Guid(31b01c30a0f6372418721a79a826d4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/UI/achievements.png using Guid(31b01c30a0f6372418721a79a826d4f0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '54673dfbe6dca0448693ea7af08542e4') in 1.417889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000166 seconds.
+  path: Assets/3D Art/Background/background textures/ARBOLES HUMEDAD COPAS.psd
+  artifactKey: Guid(195099907e8ea074abb185e8295f90e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/background textures/ARBOLES HUMEDAD COPAS.psd using Guid(195099907e8ea074abb185e8295f90e1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '013324949a72ec0c322b5bc967f343e3') in 1.236024 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000108 seconds.
+  path: Assets/Images/Achivements/achivements_zone_1.png
+  artifactKey: Guid(fe258c89db332d84a87d88ea4e4c33e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_zone_1.png using Guid(fe258c89db332d84a87d88ea4e4c33e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2430bf961ec4d5f15b506967faa8f32c') in 0.046029 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000143 seconds.
+  path: Assets/3D Art/Background/background textures/arbol grande copas.psd
+  artifactKey: Guid(ab75aadfcb97aa343afbb06d86e5ddda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/background textures/arbol grande copas.psd using Guid(ab75aadfcb97aa343afbb06d86e5ddda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4d84b5cf5f34bb2608008415d7d25ec') in 0.028523 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Images/Achivements/achivements_zone_2.png
+  artifactKey: Guid(0937992b1d2014046b667931eb7a5d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_zone_2.png using Guid(0937992b1d2014046b667931eb7a5d92) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc2e05889acf72234ec3eb68266b6cf1') in 0.037186 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000134 seconds.
+  path: Assets/3D Art/Background/background textures/arbol grande copas.jpg
+  artifactKey: Guid(538afc8c337d29e479f9dab3a08201b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/background textures/arbol grande copas.jpg using Guid(538afc8c337d29e479f9dab3a08201b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6feb405074db7ada42869128cedb7f10') in 1.413226 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Scenes/splash.unity
+  artifactKey: Guid(7a9977cbd45e5c54486b22d9691f3a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/splash.unity using Guid(7a9977cbd45e5c54486b22d9691f3a96) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f6b29477067b80dfe4f6fedb1d7ee8a') in 0.002392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Images/Achivements/achivements_fruitninja_3.png
+  artifactKey: Guid(d6981fd3409d2d84891e4efcfab79dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_fruitninja_3.png using Guid(d6981fd3409d2d84891e4efcfab79dcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f87817b10752ba0fb66d8f82834a95f') in 0.023883 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000146 seconds.
+  path: Assets/Images/Achivements/achivements_combinatorias_3.png
+  artifactKey: Guid(f3e109d7e32124f488f4cf3e4ebe74f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_combinatorias_3.png using Guid(f3e109d7e32124f488f4cf3e4ebe74f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1207d54c59b5bdfef8eab5b471806191') in 0.030081 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000084 seconds.
+  path: Assets/Images/Achivements/achivements_figuras_1.png
+  artifactKey: Guid(207ad8849a9245b4b85380f204a1611b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_figuras_1.png using Guid(207ad8849a9245b4b85380f204a1611b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d9ebe26e72b8d9ccaada9af9d768f04') in 0.024700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Images/Achivements/achivements_fruitninja_2.png
+  artifactKey: Guid(083de979acc5d0840bbf1399a712c817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_fruitninja_2.png using Guid(083de979acc5d0840bbf1399a712c817) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6332427ca866f2e7d3a10b55cabd1c6d') in 0.027123 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/Images/Achivements/achivements_pociones_1.png
+  artifactKey: Guid(58d116a8f9cf04445a7d6ebf9e103b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_pociones_1.png using Guid(58d116a8f9cf04445a7d6ebf9e103b5c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4a07652c0b4faff74f2ce1c70b57a6b8') in 0.028455 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000081 seconds.
+  path: Assets/Images/Achivements/achivements_grilla_3.png
+  artifactKey: Guid(d375c6ca8d0aea64393873ac87b97355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_grilla_3.png using Guid(d375c6ca8d0aea64393873ac87b97355) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1bf1894970cc8f2112b2b2aa0e5ad1b') in 0.024241 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000111 seconds.
+  path: Assets/Prefabs/iceBreaker/antiestrella.prefab
+  artifactKey: Guid(6824cd4e5a518394683a839cd2d02622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/iceBreaker/antiestrella.prefab using Guid(6824cd4e5a518394683a839cd2d02622) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c59fa4ed2b34fb8f5a16202c51d8c1e') in 0.673865 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000120 seconds.
+  path: Assets/Images/Achivements/achivements_combinatorias_1.png
+  artifactKey: Guid(2b3b87ba426776b4f813ce247bb1d595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_combinatorias_1.png using Guid(2b3b87ba426776b4f813ce247bb1d595) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8366e9ed426f4a58c53250642736a65') in 0.057204 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/Images/Achivements/achivements_grilla_2.png
+  artifactKey: Guid(8c92c4c84486da84d9342532e0ce5170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_grilla_2.png using Guid(8c92c4c84486da84d9342532e0ce5170) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc35f67f8f9d5457502b7abe974bf3f6') in 0.039952 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000124 seconds.
+  path: Assets/Images/Achivements/achivements_pociones_3.png
+  artifactKey: Guid(cfcd3562fcc0ca94e8ecd2df7960af86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_pociones_3.png using Guid(cfcd3562fcc0ca94e8ecd2df7960af86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6e8d46d391a6e92d20d0bc131844f730') in 0.051597 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/Images/Achivements/achivements_pociones_2.png
+  artifactKey: Guid(ac4164eebcfc97b4ebbc2e34d3791f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_pociones_2.png using Guid(ac4164eebcfc97b4ebbc2e34d3791f9b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6a27b2f4160a0e522924e09e9a5aedb') in 0.032114 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000888 seconds.
+  path: Assets/Images/Achivements/achivements_grilla_1.png
+  artifactKey: Guid(b2dbc94a9fcbcad4b88e8141d2e4b7bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_grilla_1.png using Guid(b2dbc94a9fcbcad4b88e8141d2e4b7bd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c67037654db08bb9cdb4117f459cfa0') in 0.033607 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.001605 seconds.
+  path: Assets/Images/Combinatoria/wireframe/circleSplash.png
+  artifactKey: Guid(ebc641f67461885409cbfabd51c07e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Combinatoria/wireframe/circleSplash.png using Guid(ebc641f67461885409cbfabd51c07e74) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a08c8094345934caa5ce73dbd453e9f6') in 0.196094 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000130 seconds.
+  path: Assets/3D Art/Background/background textures/arbol grande copas amarillo.psd
+  artifactKey: Guid(604675b9f955b67438d6149ed1f1059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/background textures/arbol grande copas amarillo.psd using Guid(604675b9f955b67438d6149ed1f1059b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '985f8182cdad715ef1bbb4403814d184') in 0.020960 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/Images/Achivements/achivements_fruitninja_1.png
+  artifactKey: Guid(55a2e78254a04ab4a977401d37f1dfe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_fruitninja_1.png using Guid(55a2e78254a04ab4a977401d37f1dfe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2abfa5fed6534260415135c4c93569f5') in 0.030325 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Images/Achivements/achivements_combinatorias_2.png
+  artifactKey: Guid(3f0942e78aa114248bfa1eaa9070e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_combinatorias_2.png using Guid(3f0942e78aa114248bfa1eaa9070e04f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d2d41b5eafe0c2b86f12ea402edad02') in 0.030227 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Images/Achivements/achivements_zone_3.png
+  artifactKey: Guid(4894065d8223b8e438a203b24cf29a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_zone_3.png using Guid(4894065d8223b8e438a203b24cf29a5f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa960704478d3ffc3b9b0fc0ff33c41b') in 0.041104 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/Prefabs/iceBreaker/antigas.prefab
+  artifactKey: Guid(3e88ee0d5dd7ac147a68191816d471ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/iceBreaker/antigas.prefab using Guid(3e88ee0d5dd7ac147a68191816d471ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bdaf74e998addb70558cb0f2c7e2293') in 0.052889 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000138 seconds.
+  path: Assets/3D Art/Background/background textures/ARBOLES HUMEDAD COPAS.jpg
+  artifactKey: Guid(9405c6c49add8f5429074eeabd0029e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/background textures/ARBOLES HUMEDAD COPAS.jpg using Guid(9405c6c49add8f5429074eeabd0029e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a39042be709ef88b0e05d5e5b617e5e8') in 0.019345 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000104 seconds.
+  path: Assets/Images/Achivements/achivements_figuras_2.png
+  artifactKey: Guid(4131a29c042a7db4eaff4f694f4c88d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_figuras_2.png using Guid(4131a29c042a7db4eaff4f694f4c88d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9219bd70bf86c78a9267ab3172bccbec') in 0.029001 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000175 seconds.
+  path: Assets/Images/Achivements/achivements_figuras_3.png
+  artifactKey: Guid(f039b6b1d8eb4814f941ea7c17351439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/Achivements/achivements_figuras_3.png using Guid(f039b6b1d8eb4814f941ea7c17351439) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87e8071bd114afff2c154fda47e0c0fa') in 0.023433 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Images/UI/splash.psd
+  artifactKey: Guid(b9c211adcbeb76a409a87bd2800c8c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Images/UI/splash.psd using Guid(b9c211adcbeb76a409a87bd2800c8c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81c82e221f9ba6750033dbdce9f1061f') in 0.461778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000107 seconds.
+  path: Assets/3D Art/Background/arbol casa.FBX
+  artifactKey: Guid(df31cd3cc4212a84a9437e9d3c2b86a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/3D Art/Background/arbol casa.FBX using Guid(df31cd3cc4212a84a9437e9d3c2b86a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '16046e576c7bea21e4cf26dece7635de') in 3.079315 seconds 
