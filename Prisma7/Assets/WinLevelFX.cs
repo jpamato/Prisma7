@@ -23,7 +23,7 @@ public class WinLevelFX : MonoBehaviour {
 	}
 
 	public void OnMathGameComplete(){
-		Debug.Log ("aca index: "+index);
+		//Debug.Log ("aca index: "+index);
 		for (int i = 0; i < levelFX.Count; i++) {			
 			levelFX [i].SetActive (i == index);
 			if (i == index)

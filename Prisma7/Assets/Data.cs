@@ -138,6 +138,13 @@ public class Data : MonoBehaviour
         Application.Quit();
     }
 
+    public void Logout() {
+        Instance.usersDB.Logout();
+        Events.OnLastPortalOpen();
+        Debug.Log("APP QUIT");
+        //Application.Quit();
+    }
+
 	public void Back(){
 		LoadScene (lastLevel);
 	}

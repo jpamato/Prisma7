@@ -41,7 +41,9 @@ public class Splash : MonoBehaviour
 
     public void Reiniciar()
     {
-        Data.Instance.Reset();        
+        Data.Instance.Logout();
+        loginBtn.gameObject.SetActive(true);
+        startBtn.gameObject.SetActive(false);
     }
 
     public void LoginShow(bool enable)
@@ -50,9 +52,11 @@ public class Splash : MonoBehaviour
     }
 
     public void SendLogin(){
-        StartCoroutine(Data.Instance.usersDB.GetUser(nombre.text,pass.text));
+        //StartCoroutine(Data.Instance.usersDB.GetUser(nombre.text,pass.text));
+        Data.Instance.usersDB.GetUser(nombre.text);
         entrar.interactable = false;
-        Invoke("OnLogged", 4);
+        //Invoke("OnLogged", 4);
+        OnLogged();
     }
 
     public void OnLogged()
@@ -71,6 +75,7 @@ public class Splash : MonoBehaviour
             entrar.interactable = true;
         }
         LoginShow(false);
+        entrar.interactable = true;
     }
 
 }

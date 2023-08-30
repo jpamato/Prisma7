@@ -11,6 +11,8 @@ public class AchievementsManager : MonoBehaviour
     const string PREFAB_PATH = "AchievementsManager";
     static AchievementsManager mInstance = null;
 
+    private char fieldSeparator = '&';
+
     public static AchievementsManager Instance
     {
         get
@@ -58,10 +60,12 @@ public class AchievementsManager : MonoBehaviour
 			PlayerPrefs.DeleteAll ();
 		AchievementsEvents.NewPointToAchievement += NewPointToAchievement;
         Events.OnLastPortalOpen += Restart;
+        Events.LoadUserAchievmentsLocal += LoadUserAchievmentsLocal;
     }
 
     private void OnDestroy() {
         Events.OnLastPortalOpen -= Restart;
+        Events.LoadUserAchievmentsLocal -= LoadUserAchievmentsLocal;
     }
 
     void NewPointToAchievement(Achievement.types _type)
@@ -73,7 +77,8 @@ public class AchievementsManager : MonoBehaviour
 				points = achievement.points;
 			}
 		PlayerPrefs.SetInt(_type.ToString(), points);
-	}
+        SaveUserAchievmentsLocal();
+    }
 	List<Achievement> GetAchievementsByType(string _type)
 	{
 		List<Achievement> allAchievementsByType = new List<Achievement> ();
@@ -84,6 +89,35 @@ public class AchievementsManager : MonoBehaviour
 		}
 		return allAchievementsByType;
 	}
+
+    public void LoadUserAchievmentsLocal() {
+        string s = PlayerPrefs.GetString(Data.Instance.usersDB.user.username + "_achievments", "");
+        Debug.Log(s);
+        if (s == "")
+            return;
+        string[] data = s.Split(fieldSeparator);
+
+        string[] PieceTypeNames = System.Enum.GetNames(typeof(Achievement.types));
+        for (int i = 0; i < PieceTypeNames.Length; i++) {
+            int value = int.Parse(data[i]);
+            PlayerPrefs.SetInt(PieceTypeNames[i], value);
+            List<Achievement> allAchievementsByType = GetAchievementsByType(PieceTypeNames[i]);
+            foreach (Achievement ach in allAchievementsByType)
+                ach.Init(value);
+        }
+    }
+
+    public void SaveUserAchievmentsLocal() {
+        string data = "";
+        string[] PieceTypeNames = System.Enum.GetNames(typeof(Achievement.types));
+        for (int i = 0; i < PieceTypeNames.Length; i++) {
+            string achievementType = (PieceTypeNames[i]);
+            int value = PlayerPrefs.GetInt(achievementType);
+            data += ""+value+fieldSeparator;
+        }
+
+        PlayerPrefs.SetString(Data.Instance.usersDB.user.username+"_achievments", data);
+    }
 
     void Restart() {
         string[] PieceTypeNames = System.Enum.GetNames(typeof(Achievement.types));
