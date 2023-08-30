@@ -13,7 +13,7 @@ public class FigurasData : MonoBehaviour {
     public FigurasLevels figurasLevels;
 	public string filename = "figurasLevels.json";
 
-	// Use this for initialization
+	char fieldSeparator = '&';
 	void Start () {
 		foreach (Runa r in runas) {
 			string s = PlayerPrefs.GetString (r.go.name);
@@ -161,15 +161,43 @@ public class FigurasData : MonoBehaviour {
 			r.enabled = true;
 			Debug.Log (name);
 			PlayerPrefs.SetString (name, "done");
+			SaveUserRunasLocal();
 			Events.OnRunaFound ();
 		}
 	}
 
-    void Restart() {
+	public void SaveUserRunasLocal() {
+		string data = "";
+		foreach (Runa r in runas)
+			data += "" + r.enabled + fieldSeparator;
+
+		Debug.Log("SaveUserRunasLocal: " + data);
+		PlayerPrefs.SetString(Data.Instance.usersDB.user.username + "_runas", data);
+	}
+
+	public void LoadUserAchievmentsLocal() {
+		string s = PlayerPrefs.GetString(Data.Instance.usersDB.user.username + "_runas", "");
+		Debug.Log(s);
+		if (s == "")
+			return;
+		string[] data = s.Split(fieldSeparator);
+		int i = 0;
+		foreach (Runa r in runas) {
+			if (!r.enabled) {
+				r.enabled = bool.Parse(data[i]);
+				if(r.enabled)
+					PlayerPrefs.SetString(r.go.name, "done");
+			}
+			i++;
+		}
+	}
+
+	void Restart() {
+		Debug.Log("REstart");
         foreach (Runa r in runas) {
             string s = PlayerPrefs.GetString(r.go.name);
-            if (!r.enabled)
-                r.enabled = s == "done" ? false : false;
+            if (s == "done")
+                r.enabled = false;
             //r.enabled = true;
             PlayerPrefs.DeleteKey(r.go.name);
         }

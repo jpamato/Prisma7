@@ -46,4 +46,6 @@ public static class Events {
 
     public static System.Action SendData = delegate { };
 
+	public static System.Action LoadUserAchievmentsLocal = delegate { };
+
 }
